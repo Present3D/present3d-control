@@ -6,18 +6,24 @@
 //  Copyright (c) 2013 Stephan Huber. All rights reserved.
 //
 
-#import "P3DViewController.h"
+#import "P3DRootViewController.h"
 
-@interface P3DViewController ()
+@interface P3DRootViewController ()
 
 @end
 
-@implementation P3DViewController
+@implementation P3DRootViewController
+
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SceneView"];
+
 }
 
 - (void)didReceiveMemoryWarning

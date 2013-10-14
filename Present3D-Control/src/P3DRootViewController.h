@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ECSlidingViewController.h"
 
-@interface P3DViewController : UIViewController
+@interface P3DRootViewController : ECSlidingViewController
 
 @end

@@ -1,0 +1,3 @@
+[submodule "Present3D-Control/vendor/ECSlidingViewController"]
+	path = Present3D-Control/vendor/ECSlidingViewController
+	url = https://github.com/edgecase/ECSlidingViewController.git

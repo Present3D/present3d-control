@@ -20,7 +20,10 @@
 		D4A89389180BD70700ACB0B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4A89387180BD70700ACB0B9 /* InfoPlist.strings */; };
 		D4A8938B180BD70700ACB0B9 /* Present3D_ControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8938A180BD70700ACB0B9 /* Present3D_ControlTests.m */; };
 		D4A89399180BD86000ACB0B9 /* P3DAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A89396180BD86000ACB0B9 /* P3DAppDelegate.m */; };
-		D4A8939A180BD86000ACB0B9 /* P3DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A89398180BD86000ACB0B9 /* P3DViewController.m */; };
+		D4A8939A180BD86000ACB0B9 /* P3DRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A89398180BD86000ACB0B9 /* P3DRootViewController.m */; };
+		D4A8939F180BEE6F00ACB0B9 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8939E180BEE6F00ACB0B9 /* ECSlidingViewController.m */; };
+		D4A893A2180BF0BF00ACB0B9 /* P3DSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A893A1180BF0BF00ACB0B9 /* P3DSceneViewController.m */; };
+		D4A893A5180BF17300ACB0B9 /* P3DMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A893A4180BF17300ACB0B9 /* P3DMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +54,14 @@
 		D4A8938A180BD70700ACB0B9 /* Present3D_ControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Present3D_ControlTests.m; sourceTree = "<group>"; };
 		D4A89395180BD86000ACB0B9 /* P3DAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DAppDelegate.h; sourceTree = "<group>"; };
 		D4A89396180BD86000ACB0B9 /* P3DAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DAppDelegate.m; sourceTree = "<group>"; };
-		D4A89397180BD86000ACB0B9 /* P3DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DViewController.h; sourceTree = "<group>"; };
-		D4A89398180BD86000ACB0B9 /* P3DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DViewController.m; sourceTree = "<group>"; };
+		D4A89397180BD86000ACB0B9 /* P3DRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DRootViewController.h; sourceTree = "<group>"; };
+		D4A89398180BD86000ACB0B9 /* P3DRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DRootViewController.m; sourceTree = "<group>"; };
+		D4A8939D180BEE6F00ACB0B9 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		D4A8939E180BEE6F00ACB0B9 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		D4A893A0180BF0BF00ACB0B9 /* P3DSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P3DSceneViewController.h; path = src/P3DSceneViewController.h; sourceTree = SOURCE_ROOT; };
+		D4A893A1180BF0BF00ACB0B9 /* P3DSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = P3DSceneViewController.m; path = src/P3DSceneViewController.m; sourceTree = SOURCE_ROOT; };
+		D4A893A3180BF17300ACB0B9 /* P3DMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DMenuViewController.h; sourceTree = "<group>"; };
+		D4A893A4180BF17300ACB0B9 /* P3DMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +121,7 @@
 		D4A89365180BD70700ACB0B9 /* Present3D-Control */ = {
 			isa = PBXGroup;
 			children = (
+				D4A8939B180BEE5800ACB0B9 /* vendor */,
 				D4A89394180BD86000ACB0B9 /* src */,
 				D4A89371180BD70700ACB0B9 /* Main.storyboard */,
 				D4A89377180BD70700ACB0B9 /* Images.xcassets */,
@@ -154,10 +164,32 @@
 			children = (
 				D4A89395180BD86000ACB0B9 /* P3DAppDelegate.h */,
 				D4A89396180BD86000ACB0B9 /* P3DAppDelegate.m */,
-				D4A89397180BD86000ACB0B9 /* P3DViewController.h */,
-				D4A89398180BD86000ACB0B9 /* P3DViewController.m */,
+				D4A893A0180BF0BF00ACB0B9 /* P3DSceneViewController.h */,
+				D4A893A1180BF0BF00ACB0B9 /* P3DSceneViewController.m */,
+				D4A89397180BD86000ACB0B9 /* P3DRootViewController.h */,
+				D4A89398180BD86000ACB0B9 /* P3DRootViewController.m */,
+				D4A893A3180BF17300ACB0B9 /* P3DMenuViewController.h */,
+				D4A893A4180BF17300ACB0B9 /* P3DMenuViewController.m */,
 			);
 			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
+		D4A8939B180BEE5800ACB0B9 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				D4A8939C180BEE6F00ACB0B9 /* ECSlidingViewController */,
+			);
+			name = vendor;
+			sourceTree = "<group>";
+		};
+		D4A8939C180BEE6F00ACB0B9 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D4A8939D180BEE6F00ACB0B9 /* ECSlidingViewController.h */,
+				D4A8939E180BEE6F00ACB0B9 /* ECSlidingViewController.m */,
+			);
+			name = ECSlidingViewController;
+			path = vendor/ECSlidingViewController/ECSlidingViewController/Vendor/ECSlidingViewController;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -258,9 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A893A2180BF0BF00ACB0B9 /* P3DSceneViewController.m in Sources */,
 				D4A89399180BD86000ACB0B9 /* P3DAppDelegate.m in Sources */,
+				D4A8939F180BEE6F00ACB0B9 /* ECSlidingViewController.m in Sources */,
 				D4A8936C180BD70700ACB0B9 /* main.m in Sources */,
-				D4A8939A180BD86000ACB0B9 /* P3DViewController.m in Sources */,
+				D4A8939A180BD86000ACB0B9 /* P3DRootViewController.m in Sources */,
+				D4A893A5180BF17300ACB0B9 /* P3DMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
