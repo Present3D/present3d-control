@@ -12,15 +12,15 @@
 		D4A89364180BD70700ACB0B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A89363180BD70700ACB0B9 /* UIKit.framework */; };
 		D4A8936A180BD70700ACB0B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4A89368180BD70700ACB0B9 /* InfoPlist.strings */; };
 		D4A8936C180BD70700ACB0B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8936B180BD70700ACB0B9 /* main.m */; };
-		D4A89370180BD70700ACB0B9 /* P3DAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8936F180BD70700ACB0B9 /* P3DAppDelegate.m */; };
 		D4A89373180BD70700ACB0B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A89371180BD70700ACB0B9 /* Main.storyboard */; };
-		D4A89376180BD70700ACB0B9 /* P3DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A89375180BD70700ACB0B9 /* P3DViewController.m */; };
 		D4A89378180BD70700ACB0B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4A89377180BD70700ACB0B9 /* Images.xcassets */; };
 		D4A8937F180BD70700ACB0B9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A8937E180BD70700ACB0B9 /* XCTest.framework */; };
 		D4A89380180BD70700ACB0B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A8935F180BD70700ACB0B9 /* Foundation.framework */; };
 		D4A89381180BD70700ACB0B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A89363180BD70700ACB0B9 /* UIKit.framework */; };
 		D4A89389180BD70700ACB0B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4A89387180BD70700ACB0B9 /* InfoPlist.strings */; };
 		D4A8938B180BD70700ACB0B9 /* Present3D_ControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8938A180BD70700ACB0B9 /* Present3D_ControlTests.m */; };
+		D4A89399180BD86000ACB0B9 /* P3DAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A89396180BD86000ACB0B9 /* P3DAppDelegate.m */; };
+		D4A8939A180BD86000ACB0B9 /* P3DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A89398180BD86000ACB0B9 /* P3DViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,17 +42,17 @@
 		D4A89369180BD70700ACB0B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4A8936B180BD70700ACB0B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4A8936D180BD70700ACB0B9 /* Present3D-Control-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Present3D-Control-Prefix.pch"; sourceTree = "<group>"; };
-		D4A8936E180BD70700ACB0B9 /* P3DAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = P3DAppDelegate.h; path = ../src/P3DAppDelegate.h; sourceTree = "<group>"; };
-		D4A8936F180BD70700ACB0B9 /* P3DAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = P3DAppDelegate.m; path = ../src/P3DAppDelegate.m; sourceTree = "<group>"; };
 		D4A89372180BD70700ACB0B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4A89374180BD70700ACB0B9 /* P3DViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = P3DViewController.h; path = ../src/P3DViewController.h; sourceTree = "<group>"; };
-		D4A89375180BD70700ACB0B9 /* P3DViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = P3DViewController.m; path = ../src/P3DViewController.m; sourceTree = "<group>"; };
 		D4A89377180BD70700ACB0B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D4A8937D180BD70700ACB0B9 /* Present3D-ControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Present3D-ControlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A8937E180BD70700ACB0B9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D4A89386180BD70700ACB0B9 /* Present3D-ControlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Present3D-ControlTests-Info.plist"; sourceTree = "<group>"; };
 		D4A89388180BD70700ACB0B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4A8938A180BD70700ACB0B9 /* Present3D_ControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Present3D_ControlTests.m; sourceTree = "<group>"; };
+		D4A89395180BD86000ACB0B9 /* P3DAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DAppDelegate.h; sourceTree = "<group>"; };
+		D4A89396180BD86000ACB0B9 /* P3DAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DAppDelegate.m; sourceTree = "<group>"; };
+		D4A89397180BD86000ACB0B9 /* P3DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DViewController.h; sourceTree = "<group>"; };
+		D4A89398180BD86000ACB0B9 /* P3DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +112,8 @@
 		D4A89365180BD70700ACB0B9 /* Present3D-Control */ = {
 			isa = PBXGroup;
 			children = (
-				D4A8936E180BD70700ACB0B9 /* P3DAppDelegate.h */,
-				D4A8936F180BD70700ACB0B9 /* P3DAppDelegate.m */,
+				D4A89394180BD86000ACB0B9 /* src */,
 				D4A89371180BD70700ACB0B9 /* Main.storyboard */,
-				D4A89374180BD70700ACB0B9 /* P3DViewController.h */,
-				D4A89375180BD70700ACB0B9 /* P3DViewController.m */,
 				D4A89377180BD70700ACB0B9 /* Images.xcassets */,
 				D4A89366180BD70700ACB0B9 /* Supporting Files */,
 			);
@@ -151,6 +148,17 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		D4A89394180BD86000ACB0B9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D4A89395180BD86000ACB0B9 /* P3DAppDelegate.h */,
+				D4A89396180BD86000ACB0B9 /* P3DAppDelegate.m */,
+				D4A89397180BD86000ACB0B9 /* P3DViewController.h */,
+				D4A89398180BD86000ACB0B9 /* P3DViewController.m */,
+			);
+			path = src;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -250,9 +258,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A89370180BD70700ACB0B9 /* P3DAppDelegate.m in Sources */,
+				D4A89399180BD86000ACB0B9 /* P3DAppDelegate.m in Sources */,
 				D4A8936C180BD70700ACB0B9 /* main.m in Sources */,
-				D4A89376180BD70700ACB0B9 /* P3DViewController.m in Sources */,
+				D4A8939A180BD86000ACB0B9 /* P3DViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

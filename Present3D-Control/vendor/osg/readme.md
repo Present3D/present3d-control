@@ -1,0 +1,1 @@
+Place osg includes and libs into this folder, or adjust project settings
