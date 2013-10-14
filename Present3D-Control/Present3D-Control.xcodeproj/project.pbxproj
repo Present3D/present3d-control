@@ -42,11 +42,11 @@
 		D4A89369180BD70700ACB0B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4A8936B180BD70700ACB0B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4A8936D180BD70700ACB0B9 /* Present3D-Control-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Present3D-Control-Prefix.pch"; sourceTree = "<group>"; };
-		D4A8936E180BD70700ACB0B9 /* P3DAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = P3DAppDelegate.h; sourceTree = "<group>"; };
-		D4A8936F180BD70700ACB0B9 /* P3DAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P3DAppDelegate.m; sourceTree = "<group>"; };
+		D4A8936E180BD70700ACB0B9 /* P3DAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = P3DAppDelegate.h; path = ../src/P3DAppDelegate.h; sourceTree = "<group>"; };
+		D4A8936F180BD70700ACB0B9 /* P3DAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = P3DAppDelegate.m; path = ../src/P3DAppDelegate.m; sourceTree = "<group>"; };
 		D4A89372180BD70700ACB0B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4A89374180BD70700ACB0B9 /* P3DViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = P3DViewController.h; sourceTree = "<group>"; };
-		D4A89375180BD70700ACB0B9 /* P3DViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P3DViewController.m; sourceTree = "<group>"; };
+		D4A89374180BD70700ACB0B9 /* P3DViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = P3DViewController.h; path = ../src/P3DViewController.h; sourceTree = "<group>"; };
+		D4A89375180BD70700ACB0B9 /* P3DViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = P3DViewController.m; path = ../src/P3DViewController.m; sourceTree = "<group>"; };
 		D4A89377180BD70700ACB0B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D4A8937D180BD70700ACB0B9 /* Present3D-ControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Present3D-ControlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A8937E180BD70700ACB0B9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -463,6 +463,7 @@
 				D4A89390180BD70700ACB0B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4A89391180BD70700ACB0B9 /* Build configuration list for PBXNativeTarget "Present3D-ControlTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +472,7 @@
 				D4A89393180BD70700ACB0B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
