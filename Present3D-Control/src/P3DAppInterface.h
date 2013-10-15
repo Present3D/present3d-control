@@ -54,7 +54,7 @@ public:
     }
     
     FileCollection* getLocalFiles() { return getFiles(LOCAL); }
-    FileCollection* getRemoteFiles() { return getFiles(REMOTEto); }
+    FileCollection* getRemoteFiles() { return getFiles(REMOTE); }
 
     
     void addSupportedFileType(const std::string& file_type) { _supportedFileTypes.insert(file_type); }
