@@ -23,7 +23,8 @@
 		D4A8939A180BD86000ACB0B9 /* P3DRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A89398180BD86000ACB0B9 /* P3DRootViewController.m */; };
 		D4A8939F180BEE6F00ACB0B9 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8939E180BEE6F00ACB0B9 /* ECSlidingViewController.m */; };
 		D4A893A2180BF0BF00ACB0B9 /* P3DSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A893A1180BF0BF00ACB0B9 /* P3DSceneViewController.m */; };
-		D4A893A5180BF17300ACB0B9 /* P3DMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A893A4180BF17300ACB0B9 /* P3DMenuViewController.m */; };
+		D4BE74AF180D2A74008028DA /* P3DMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BE74AE180D2A74008028DA /* P3DMenuViewController.m */; };
+		D4BE74B2180D2D40008028DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4BE74B0180D2D40008028DA /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,9 @@
 		D4A8939E180BEE6F00ACB0B9 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		D4A893A0180BF0BF00ACB0B9 /* P3DSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P3DSceneViewController.h; path = src/P3DSceneViewController.h; sourceTree = SOURCE_ROOT; };
 		D4A893A1180BF0BF00ACB0B9 /* P3DSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = P3DSceneViewController.m; path = src/P3DSceneViewController.m; sourceTree = SOURCE_ROOT; };
-		D4A893A3180BF17300ACB0B9 /* P3DMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DMenuViewController.h; sourceTree = "<group>"; };
-		D4A893A4180BF17300ACB0B9 /* P3DMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DMenuViewController.m; sourceTree = "<group>"; };
+		D4BE74AD180D2A74008028DA /* P3DMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DMenuViewController.h; sourceTree = "<group>"; };
+		D4BE74AE180D2A74008028DA /* P3DMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DMenuViewController.m; sourceTree = "<group>"; };
+		D4BE74B1180D2D40008028DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Present3D-Control/en.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		D4A89353180BD70700ACB0B9 = {
 			isa = PBXGroup;
 			children = (
+				D4BE74B0180D2D40008028DA /* Localizable.strings */,
 				D4A89365180BD70700ACB0B9 /* Present3D-Control */,
 				D4A89384180BD70700ACB0B9 /* Present3D-ControlTests */,
 				D4A8935E180BD70700ACB0B9 /* Frameworks */,
@@ -168,8 +171,8 @@
 				D4A893A1180BF0BF00ACB0B9 /* P3DSceneViewController.m */,
 				D4A89397180BD86000ACB0B9 /* P3DRootViewController.h */,
 				D4A89398180BD86000ACB0B9 /* P3DRootViewController.m */,
-				D4A893A3180BF17300ACB0B9 /* P3DMenuViewController.h */,
-				D4A893A4180BF17300ACB0B9 /* P3DMenuViewController.m */,
+				D4BE74AD180D2A74008028DA /* P3DMenuViewController.h */,
+				D4BE74AE180D2A74008028DA /* P3DMenuViewController.m */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A89378180BD70700ACB0B9 /* Images.xcassets in Resources */,
+				D4BE74B2180D2D40008028DA /* Localizable.strings in Resources */,
 				D4A8936A180BD70700ACB0B9 /* InfoPlist.strings in Resources */,
 				D4A89373180BD70700ACB0B9 /* Main.storyboard in Resources */,
 			);
@@ -295,7 +299,7 @@
 				D4A8939F180BEE6F00ACB0B9 /* ECSlidingViewController.m in Sources */,
 				D4A8936C180BD70700ACB0B9 /* main.m in Sources */,
 				D4A8939A180BD86000ACB0B9 /* P3DRootViewController.m in Sources */,
-				D4A893A5180BF17300ACB0B9 /* P3DMenuViewController.m in Sources */,
+				D4BE74AF180D2A74008028DA /* P3DMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +344,14 @@
 				D4A89388180BD70700ACB0B9 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D4BE74B0180D2D40008028DA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4BE74B1180D2D40008028DA /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

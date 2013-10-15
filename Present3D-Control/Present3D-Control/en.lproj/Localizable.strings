@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Present3D-Control
+
+  Created by Stephan Huber on 15.10.13.
+  Copyright (c) 2013 Stephan Huber. All rights reserved.
+*/
+
+"localFileSectionName" = "Local files";
+"remoteFileSectionName" = "Remote files";
+"settingsSectionName" = "Settings";
