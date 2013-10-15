@@ -8,6 +8,9 @@
 
 #import "P3DMenuViewController.h"
 
+#include "P3DAppInterface.h"
+#include "IOSUtils.h"
+
 @interface P3DMenuViewController ()
 
 @end
@@ -52,15 +55,52 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 3;
+    osg::ref_ptr<P3DAppInterface> app = P3DAppInterface::instance();
+    switch(section) {
+        case 0:
+            app->getLocalFiles()->collect();
+            return app->getLocalFiles()->getNumFiles();
+            break;
+        case 1:
+            app->getRemoteFiles()->collect();
+            return app->getRemoteFiles()->getNumFiles() + 1;
+
+            break;
+        case 2:
+            return 4;
+            break;
+    }
+    
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    osg::ref_ptr<P3DAppInterface> app = P3DAppInterface::instance();
+    UITableViewCell *cell = NULL;
     
     // Configure the cell...
+    switch(indexPath.section) {
+        case 0:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"LocalFileCell" forIndexPath:indexPath];
+            cell.textLabel.text = IOSUtils::toNSString(app->getLocalFiles()->getSimpleNameAt(indexPath.row));
+            break;
+            
+        case 1:
+            if (indexPath.row < app->getRemoteFiles()->getNumFiles())
+            {
+                cell = [tableView dequeueReusableCellWithIdentifier:@"RemoteFileCell" forIndexPath:indexPath];
+                cell.textLabel.text = IOSUtils::toNSString(app->getRemoteFiles()->getSimpleNameAt(indexPath.row));
+            }
+            else
+            {
+                cell = [tableView dequeueReusableCellWithIdentifier:@"ConnectRemoteCell" forIndexPath:indexPath];
+            }
+            break;
+        default:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+            break;
+    }
     
     return cell;
 }
@@ -138,6 +178,25 @@
             break;
     }    
     return sectionName;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    osg::ref_ptr<P3DAppInterface> app = P3DAppInterface::instance();
+    
+    switch (indexPath.section) {
+        case 0:
+            app->getLocalFiles()->loadAt(indexPath.row);
+            break;
+        case 1:
+            if(indexPath.row < app->getRemoteFiles()->getNumFiles())
+                app->getRemoteFiles()->loadAt(indexPath.row);
+            break;
+
+        default:
+            break;
+    }
 }
 
 @end

@@ -7,12 +7,19 @@
 //
 
 #import "P3DAppDelegate.h"
+#include "P3DAppInterface.h"
+#include "IOSUtils.h"
 
 @implementation P3DAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSString* bundle_path = [[NSBundle mainBundle] bundlePath];
+    P3DAppInterface::instance()->addLocalFilePath(IOSUtils::toString(bundle_path));
+    P3DAppInterface::instance()->addLocalFilePath(IOSUtils::getDocumentsFolder());
+    
     return YES;
 }
 							
