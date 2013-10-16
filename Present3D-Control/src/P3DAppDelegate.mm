@@ -16,6 +16,10 @@
 {
     // Override point for customization after application launch.
     
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+
+
+    
     NSString* bundle_path = [[NSBundle mainBundle] bundlePath];
     P3DAppInterface::instance()->addLocalFilePath(IOSUtils::toString(bundle_path));
     P3DAppInterface::instance()->addLocalFilePath(IOSUtils::getDocumentsFolder());

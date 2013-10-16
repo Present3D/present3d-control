@@ -10,4 +10,7 @@
 
 @interface P3DMenuViewController : UITableViewController
 
+-(void) startReadingSequence;
+-(void) handleReadFileResult: (BOOL) success;
+
 @end

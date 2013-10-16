@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,6 +109,7 @@
                             <outlet property="delegate" destination="ha5-p7-Gri" id="Lq2-a6-860"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PgH-pR-f6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,14 +120,53 @@
             <objects>
                 <viewController storyboardIdentifier="SceneView" id="m9N-bZ-QMu" customClass="P3DSceneViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2RS-x0-BA0"/>
-                        <viewControllerLayoutGuide type="bottom" id="QaM-tg-FgO"/>
+                        <viewControllerLayoutGuide type="top" id="bgT-8J-bP1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pw7-7j-s0F"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VIn-aC-HmB">
+                    <view key="view" contentMode="scaleToFill" id="Mh5-We-jIQ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.39954377689999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqG-Ec-gC0">
+                                <rect key="frame" x="40" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Toggle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleButtonTapped:" destination="m9N-bZ-QMu" eventType="touchUpInside" id="fVl-fN-b9S"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6P-Hv-U8X" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZtQ-jk-mgP">
+                                        <rect key="frame" x="366" y="494" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="ZtQ-jk-mgP" secondAttribute="centerX" id="R7t-d7-ObI"/>
+                                    <constraint firstAttribute="centerY" secondItem="ZtQ-jk-mgP" secondAttribute="centerY" id="RuV-Xg-Mpo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13599115566481476" green="0.077569978611046961" blue="0.86965013586956519" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Z6P-Hv-U8X" secondAttribute="trailing" id="Qca-0l-Oyp"/>
+                            <constraint firstItem="Z6P-Hv-U8X" firstAttribute="leading" secondItem="Mh5-We-jIQ" secondAttribute="leading" id="RyM-eK-hgR"/>
+                            <constraint firstItem="Z6P-Hv-U8X" firstAttribute="top" secondItem="bgT-8J-bP1" secondAttribute="bottom" id="ihe-Er-DV0"/>
+                            <constraint firstItem="Pw7-7j-s0F" firstAttribute="top" secondItem="Z6P-Hv-U8X" secondAttribute="bottom" id="ypM-v1-NYi"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="loadingView" destination="Z6P-Hv-U8X" id="9fc-uL-ChO"/>
+                        <outlet property="toggleButton" destination="HqG-Ec-gC0" id="MNd-VL-6fC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJN-Nu-EmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

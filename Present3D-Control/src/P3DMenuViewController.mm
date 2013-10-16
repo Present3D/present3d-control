@@ -7,9 +7,26 @@
 //
 
 #import "P3DMenuViewController.h"
+#import "ECSlidingViewController.h"
+#import "P3DSceneViewController.h"
 
 #include "P3DAppInterface.h"
 #include "IOSUtils.h"
+
+
+class MyReadFileCompletionHandler : public ReadFileCompleteHandler {
+public:
+    MyReadFileCompletionHandler(P3DMenuViewController* controller) : ReadFileCompleteHandler(), _controller(controller) {}
+    
+    virtual void operator()(bool success, osg::Node* node) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_controller handleReadFileResult: success];
+        });
+    }
+    
+private:
+    P3DMenuViewController* _controller;
+};
 
 @interface P3DMenuViewController ()
 
@@ -91,6 +108,7 @@
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:@"RemoteFileCell" forIndexPath:indexPath];
                 cell.textLabel.text = IOSUtils::toNSString(app->getRemoteFiles()->getSimpleNameAt(indexPath.row));
+                cell.detailTextLabel.text = IOSUtils::toNSString(app->getRemoteFiles()->getDetailedAt(indexPath.row));
             }
             else
             {
@@ -187,15 +205,41 @@
     
     switch (indexPath.section) {
         case 0:
+            [self startReadingSequence];
             app->getLocalFiles()->loadAt(indexPath.row);
             break;
+            
         case 1:
             if(indexPath.row < app->getRemoteFiles()->getNumFiles())
+            {
+                [self startReadingSequence];
                 app->getRemoteFiles()->loadAt(indexPath.row);
+            }
             break;
 
         default:
             break;
+    }
+}
+
+- (void)startReadingSequence
+{
+    ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
+    
+    [(P3DSceneViewController*)svc.topViewController startReadingSequence];
+    
+    P3DAppInterface::instance()->setReadFileCompleteHandler(new MyReadFileCompletionHandler(self));
+}
+
+-(void) handleReadFileResult: (BOOL) success
+{
+    ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
+    [(P3DSceneViewController*)svc.topViewController stopReadingSequence];
+    if (success)
+        P3DAppInterface::instance()->applySceneData();
+    else {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle: @"Error" message:@"Could not read scene-file." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
     }
 }
 

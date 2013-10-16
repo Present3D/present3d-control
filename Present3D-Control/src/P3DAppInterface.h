@@ -14,58 +14,56 @@
 #include <string>
 #include <osg/Referenced>
 #include <osg/ref_ptr>
-#include <osgDB/FileNameUtils>
+#include <osg/Node>
+
+#include "FileCollection.h"
+#include "ReadFileThread.h"
+#include "ReadFileCompleteHandler.h"
 
 class P3DAppInterface : public osg::Referenced {
 public:
     
-    enum FileCollectionType {
-        LOCAL,
-        REMOTE
-    };
+ 
     
-    class FileCollection : public osg::Referenced {
-    public:
-        typedef std::vector<std::string> FilesVector;
-
-        FileCollection(FileCollectionType type) : osg::Referenced(), _type(type) {}
-        unsigned int getNumFiles() const { return _files.size(); }
-        
-        virtual void collect() = 0;
-        virtual void loadAt(unsigned int ndx) = 0;
-        virtual std::string getSimpleNameAt(unsigned int ndx) { return osgDB::getSimpleFileName(_files[ndx]); }
-        virtual std::string getDetailedAt(unsigned int ndx) { return ""; }
-        
-    protected:
-        
-        FileCollectionType _type;
-        FilesVector _files;
-    };
+   
     
     typedef std::set<std::string> SupportedFileTypesSet;
-    typedef std::map<FileCollectionType, osg::ref_ptr<FileCollection> > FilesMap;
+    typedef std::map<FileCollection::Type, osg::ref_ptr<FileCollection> > FilesMap;
     P3DAppInterface();
     
     static P3DAppInterface* instance();
     
-    FileCollection* getFiles(FileCollectionType type) {
+    FileCollection* getFiles(FileCollection::Type type) {
         FilesMap::iterator i = _files.find(type);
         return i != _files.end() ? i->second.get() : NULL;
     }
     
-    FileCollection* getLocalFiles() { return getFiles(LOCAL); }
-    FileCollection* getRemoteFiles() { return getFiles(REMOTE); }
+    FileCollection* getLocalFiles() { return getFiles(FileCollection::LOCAL); }
+    FileCollection* getRemoteFiles() { return getFiles(FileCollection::REMOTE); }
 
     
     void addSupportedFileType(const std::string& file_type) { _supportedFileTypes.insert(file_type); }
     void addLocalFilePath(const std::string& path);
-
+    
+    void setReadFileCompleteHandler(ReadFileCompleteHandler* handler) { _readFileCompleteHandler = handler; }
+    
+    void applySceneData();
+    
+protected:
+    void readFile(const std::string& file);
+    
 private:
+    void readFinished(bool success, osg::Node* node);
     bool fileTypeSupported(const std::string& file_extension);
     
     FilesMap _files;
     SupportedFileTypesSet _supportedFileTypes;
     
+    osg::ref_ptr<ReadFileThread> _readFileThread;
+    osg::ref_ptr<ReadFileCompleteHandler> _readFileCompleteHandler;
+    osg::ref_ptr<osg::Node> _sceneNode;
+    
     friend class LocalFileCollection;
     friend class RemoteFileCollection;
+    friend class ReadFileThread;
 };

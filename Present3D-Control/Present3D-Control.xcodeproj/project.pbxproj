@@ -259,6 +259,9 @@
 		D4BE7695180D370E008028DA /* venus256128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D4BE75AD180D370E008028DA /* venus256128.jpg */; };
 		D4BE7696180D370E008028DA /* spaceship.osgt in Resources */ = {isa = PBXBuildFile; fileRef = D4BE75AE180D370E008028DA /* spaceship.osgt */; };
 		D4BE7699180D38DD008028DA /* IOSUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = D4BE7698180D38DD008028DA /* IOSUtils.mm */; };
+		D4D50268180E89CB00F445D4 /* ReadFileCompleteHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4D50266180E89CB00F445D4 /* ReadFileCompleteHandler.cpp */; };
+		D4D5026B180E89FA00F445D4 /* FileCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4D50269180E89FA00F445D4 /* FileCollection.cpp */; };
+		D4D5026E180E8AE600F445D4 /* ReadFileThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4D5026C180E8AE600F445D4 /* ReadFileThread.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -534,6 +537,12 @@
 		D4BE75AE180D370E008028DA /* spaceship.osgt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spaceship.osgt; sourceTree = "<group>"; };
 		D4BE7697180D38DD008028DA /* IOSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSUtils.h; sourceTree = "<group>"; };
 		D4BE7698180D38DD008028DA /* IOSUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOSUtils.mm; sourceTree = "<group>"; };
+		D4D50266180E89CB00F445D4 /* ReadFileCompleteHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReadFileCompleteHandler.cpp; sourceTree = "<group>"; };
+		D4D50267180E89CB00F445D4 /* ReadFileCompleteHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadFileCompleteHandler.h; sourceTree = "<group>"; };
+		D4D50269180E89FA00F445D4 /* FileCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileCollection.cpp; sourceTree = "<group>"; };
+		D4D5026A180E89FA00F445D4 /* FileCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCollection.h; sourceTree = "<group>"; };
+		D4D5026C180E8AE600F445D4 /* ReadFileThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReadFileThread.cpp; sourceTree = "<group>"; };
+		D4D5026D180E8AE600F445D4 /* ReadFileThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadFileThread.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,7 +572,6 @@
 		D4A89353180BD70700ACB0B9 = {
 			isa = PBXGroup;
 			children = (
-				D4BE74B0180D2D40008028DA /* Localizable.strings */,
 				D4A89365180BD70700ACB0B9 /* Present3D-Control */,
 				D4A89384180BD70700ACB0B9 /* Present3D-ControlTests */,
 				D4A8935E180BD70700ACB0B9 /* Frameworks */,
@@ -608,6 +616,7 @@
 			children = (
 				D4BE74B6180D370D008028DA /* OpenSceneGraph-Data */,
 				D4A89367180BD70700ACB0B9 /* Present3D-Control-Info.plist */,
+				D4BE74B0180D2D40008028DA /* Localizable.strings */,
 				D4A89368180BD70700ACB0B9 /* InfoPlist.strings */,
 				D4A8936B180BD70700ACB0B9 /* main.m */,
 				D4A8936D180BD70700ACB0B9 /* Present3D-Control-Prefix.pch */,
@@ -636,18 +645,9 @@
 		D4A89394180BD86000ACB0B9 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D4BE7697180D38DD008028DA /* IOSUtils.h */,
-				D4BE7698180D38DD008028DA /* IOSUtils.mm */,
-				D4A89395180BD86000ACB0B9 /* P3DAppDelegate.h */,
-				D4A89396180BD86000ACB0B9 /* P3DAppDelegate.mm */,
-				D4A893A0180BF0BF00ACB0B9 /* P3DSceneViewController.h */,
-				D4A893A1180BF0BF00ACB0B9 /* P3DSceneViewController.m */,
-				D4A89397180BD86000ACB0B9 /* P3DRootViewController.h */,
-				D4A89398180BD86000ACB0B9 /* P3DRootViewController.m */,
-				D4BE74AD180D2A74008028DA /* P3DMenuViewController.h */,
-				D4BE74AE180D2A74008028DA /* P3DMenuViewController.mm */,
-				D4BE74B3180D321B008028DA /* P3DAppInterface.cpp */,
-				D4BE74B4180D321B008028DA /* P3DAppInterface.h */,
+				D4D50265180E899F00F445D4 /* C++ */,
+				D4D50264180E899700F445D4 /* Tools */,
+				D4D50263180E898D00F445D4 /* UI */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1038,6 +1038,45 @@
 			path = SolarSystem;
 			sourceTree = "<group>";
 		};
+		D4D50263180E898D00F445D4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D4A89395180BD86000ACB0B9 /* P3DAppDelegate.h */,
+				D4A89396180BD86000ACB0B9 /* P3DAppDelegate.mm */,
+				D4A893A0180BF0BF00ACB0B9 /* P3DSceneViewController.h */,
+				D4A893A1180BF0BF00ACB0B9 /* P3DSceneViewController.m */,
+				D4A89397180BD86000ACB0B9 /* P3DRootViewController.h */,
+				D4A89398180BD86000ACB0B9 /* P3DRootViewController.m */,
+				D4BE74AD180D2A74008028DA /* P3DMenuViewController.h */,
+				D4BE74AE180D2A74008028DA /* P3DMenuViewController.mm */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		D4D50264180E899700F445D4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D4BE7697180D38DD008028DA /* IOSUtils.h */,
+				D4BE7698180D38DD008028DA /* IOSUtils.mm */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		D4D50265180E899F00F445D4 /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				D4BE74B3180D321B008028DA /* P3DAppInterface.cpp */,
+				D4BE74B4180D321B008028DA /* P3DAppInterface.h */,
+				D4D50266180E89CB00F445D4 /* ReadFileCompleteHandler.cpp */,
+				D4D50267180E89CB00F445D4 /* ReadFileCompleteHandler.h */,
+				D4D50269180E89FA00F445D4 /* FileCollection.cpp */,
+				D4D5026A180E89FA00F445D4 /* FileCollection.h */,
+				D4D5026C180E8AE600F445D4 /* ReadFileThread.cpp */,
+				D4D5026D180E8AE600F445D4 /* ReadFileThread.h */,
+			);
+			name = "C++";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1331,11 +1370,13 @@
 				D4BE7687180D370E008028DA /* volume_tf.frag in Sources */,
 				D4BE74B5180D321B008028DA /* P3DAppInterface.cpp in Sources */,
 				D4BE767E180D370E008028DA /* stereomatch_select.frag in Sources */,
+				D4D50268180E89CB00F445D4 /* ReadFileCompleteHandler.cpp in Sources */,
 				D4BE7679180D370E008028DA /* screen.vert in Sources */,
 				D4BE7683180D370E008028DA /* volume_iso.frag in Sources */,
 				D4BE7673180D370E008028DA /* point_rain.frag in Sources */,
 				D4BE7681180D370E008028DA /* volume.frag in Sources */,
 				D4BE7685180D370E008028DA /* volume_lit_tf.frag in Sources */,
+				D4D5026E180E8AE600F445D4 /* ReadFileThread.cpp in Sources */,
 				D4BE767A180D370E008028DA /* shader.vert in Sources */,
 				D4BE766E180D370E008028DA /* lookup.vert in Sources */,
 				D4BE7677180D370E008028DA /* rain.vert in Sources */,
@@ -1343,6 +1384,7 @@
 				D4BE7688180D370E008028DA /* volume_tf_iso.frag in Sources */,
 				D4BE766D180D370E008028DA /* lookup.frag in Sources */,
 				D4BE766A180D370E008028DA /* eroded.vert in Sources */,
+				D4D5026B180E89FA00F445D4 /* FileCollection.cpp in Sources */,
 				D4BE7678180D370E008028DA /* screen.frag in Sources */,
 				D4BE7669180D370E008028DA /* eroded.frag in Sources */,
 				D4BE767B180D370E008028DA /* skinning.vert in Sources */,
@@ -1429,6 +1471,7 @@
 				D4BE74B1180D2D40008028DA /* en */,
 			);
 			name = Localizable.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

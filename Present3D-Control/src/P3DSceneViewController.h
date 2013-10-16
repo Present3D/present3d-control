@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 
-@interface P3DSceneViewController : UIViewController
+@interface P3DSceneViewController : UIViewController {
+
+    IBOutlet UIButton* toggleButton;
+    IBOutlet UIView* loadingView;
+
+}
+
+- (IBAction)toggleButtonTapped:(id)sender;
+- (void)startReadingSequence;
+- (void)stopReadingSequence;
 
 @end

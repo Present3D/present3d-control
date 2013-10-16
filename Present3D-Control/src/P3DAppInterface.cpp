@@ -13,9 +13,9 @@
 
 
 
-class LocalFileCollection : public P3DAppInterface::FileCollection {
+class LocalFileCollection : public FileCollection {
 public:
-    LocalFileCollection() : FileCollection(P3DAppInterface::LOCAL) {}
+    LocalFileCollection() : FileCollection(LOCAL) {}
     
     virtual void collect()
     {
@@ -37,7 +37,7 @@ public:
     }
     
     virtual void loadAt(unsigned int ndx) {
-        std::cout << "loading local file from " << _files[ndx] << std::endl;
+        P3DAppInterface::instance()->readFile(_files[ndx]);;
     }
 
     
@@ -49,17 +49,24 @@ private:
 };
 
 
-class RemoteFileCollection : public P3DAppInterface::FileCollection {
+class RemoteFileCollection : public FileCollection {
 public:
-    RemoteFileCollection() : P3DAppInterface::FileCollection(P3DAppInterface::REMOTE) {}
+    RemoteFileCollection()
+        : FileCollection(REMOTE)
+    {
+    }
     
     virtual void loadAt(unsigned int ndx) {
-        std::cout << "loading remote file from " << _files[ndx] << std::endl;
+        P3DAppInterface::instance()->readFile(_files[ndx]);;
     }
+    
+    virtual std::string getDetailedAt(unsigned int ndx) { return osgDB::getServerAddress(_files[ndx]); }
     
     virtual void collect()
     {
         _files.clear();
+        _files.push_back("http://192.168.1.1/test_presentation.p3d");
+        _files.push_back("http://svn.openscenegraph.org/osg/OpenSceneGraph-Data/trunk/cow.osgt");
     }
 
 };
@@ -67,15 +74,14 @@ public:
 
 P3DAppInterface::P3DAppInterface()
     : osg::Referenced()
+    , _sceneNode(NULL)
 {
     addSupportedFileType("osgt");
     addSupportedFileType("osgb");
     addSupportedFileType("p3d");
     
-    _files[LOCAL] = new LocalFileCollection();
-    _files[REMOTE] = new RemoteFileCollection();
-    
-    
+    _files[FileCollection::LOCAL] = new LocalFileCollection();
+    _files[FileCollection::REMOTE] = new RemoteFileCollection();
 }
 
 
@@ -94,11 +100,32 @@ bool P3DAppInterface::fileTypeSupported(const std::string& file_extension)
 
 void P3DAppInterface::addLocalFilePath(const std::string& path)
 {
-    LocalFileCollection* fc = dynamic_cast<LocalFileCollection*>(getFiles(LOCAL));
+    LocalFileCollection* fc = dynamic_cast<LocalFileCollection*>(getFiles(FileCollection::LOCAL));
     if (fc)
         fc->addLocalFilePath(path);
 }
 
+void P3DAppInterface::readFile(const std::string& file_name)
+{
+    std::cout << "read file: " << file_name << std::endl;
+    
+    _readFileThread = new ReadFileThread(file_name);
+    _readFileThread->start();
+}
+
+void P3DAppInterface::readFinished(bool success, osg::Node* node)
+{
+    std::cout << "finished with file: " << _readFileThread->getFileName() << std::endl;
+    _sceneNode = node;
+    if (_readFileCompleteHandler) {
+        _readFileCompleteHandler->operator()(success, node);
+    }
+}
 
 
+void P3DAppInterface::applySceneData()
+{
+    _readFileThread = NULL;
+    std::cout << "applying scene data" << std::endl;
+}
 
