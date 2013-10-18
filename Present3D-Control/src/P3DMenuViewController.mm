@@ -9,6 +9,7 @@
 #import "P3DMenuViewController.h"
 #import "ECSlidingViewController.h"
 #import "P3DSceneViewController.h"
+#import "P3DTextfieldTableViewCell.h"
 
 #include "P3DAppInterface.h"
 #include "IOSUtils.h"
@@ -18,9 +19,9 @@ class MyReadFileCompletionHandler : public ReadFileCompleteHandler {
 public:
     MyReadFileCompletionHandler(P3DMenuViewController* controller) : ReadFileCompleteHandler(), _controller(controller) {}
     
-    virtual void operator()(bool success, osg::Node* node) {
+    virtual void operator()(bool success, osg::Node* node, const std::string& file_name) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_controller handleReadFileResult: success];
+            [_controller handleReadFileResult: success withFileName:IOSUtils::toNSString(osgDB::getSimpleFileName(file_name))];
         });
     }
     
@@ -113,6 +114,8 @@ private:
             else
             {
                 cell = [tableView dequeueReusableCellWithIdentifier:@"ConnectRemoteCell" forIndexPath:indexPath];
+                P3DTextfieldTableViewCell* tf_cell = (P3DTextfieldTableViewCell*)(cell);
+                tf_cell.textfield.delegate = self;
             }
             break;
         default:
@@ -222,6 +225,24 @@ private:
     }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    osg::ref_ptr<P3DAppInterface> app = P3DAppInterface::instance();
+    
+    std::string entered_address = IOSUtils::toString(textField.text);
+    
+    // app->getRemoteFiles()->addTemporaryFile(entered_text);
+    
+    // [self.tableView reloadData];
+    
+    [self startReadingSequence];
+    app->readFile(entered_address);
+
+    // textField.text = @"";
+
+    return YES;
+}
+
 - (void)startReadingSequence
 {
     ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
@@ -231,14 +252,14 @@ private:
     P3DAppInterface::instance()->setReadFileCompleteHandler(new MyReadFileCompletionHandler(self));
 }
 
--(void) handleReadFileResult: (BOOL) success
+-(void) handleReadFileResult: (BOOL) success withFileName:(NSString *)fileName
 {
     ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
     [(P3DSceneViewController*)svc.topViewController stopReadingSequence];
     if (success)
         P3DAppInterface::instance()->applySceneData();
     else {
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle: @"Error" message:@"Could not read scene-file." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle: @"Error" message: [NSString stringWithFormat: @"Could not read scene-file %@", fileName] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
 }

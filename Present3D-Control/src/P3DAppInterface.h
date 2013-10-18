@@ -48,12 +48,13 @@ public:
     void setReadFileCompleteHandler(ReadFileCompleteHandler* handler) { _readFileCompleteHandler = handler; }
     
     void applySceneData();
-    
-protected:
+
     void readFile(const std::string& file);
+
+protected:
     
 private:
-    void readFinished(bool success, osg::Node* node);
+    void readFinished(bool success, osg::Node* node, const std::string& file_name);
     bool fileTypeSupported(const std::string& file_extension);
     
     FilesMap _files;

@@ -113,12 +113,12 @@ void P3DAppInterface::readFile(const std::string& file_name)
     _readFileThread->start();
 }
 
-void P3DAppInterface::readFinished(bool success, osg::Node* node)
+void P3DAppInterface::readFinished(bool success, osg::Node* node, const std::string& file_name)
 {
     std::cout << "finished with file: " << _readFileThread->getFileName() << std::endl;
     _sceneNode = node;
     if (_readFileCompleteHandler) {
-        _readFileCompleteHandler->operator()(success, node);
+        _readFileCompleteHandler->operator()(success, node, file_name);
     }
 }
 

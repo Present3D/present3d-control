@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D48F47331811521C00A2F8E7 /* P3DTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */; };
 		D4A89360180BD70700ACB0B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A8935F180BD70700ACB0B9 /* Foundation.framework */; };
 		D4A89362180BD70700ACB0B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A89361180BD70700ACB0B9 /* CoreGraphics.framework */; };
 		D4A89364180BD70700ACB0B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A89363180BD70700ACB0B9 /* UIKit.framework */; };
@@ -275,6 +276,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D48F47311811521C00A2F8E7 /* P3DTextfieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DTextfieldTableViewCell.h; sourceTree = "<group>"; };
+		D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DTextfieldTableViewCell.m; sourceTree = "<group>"; };
 		D4A8935C180BD70700ACB0B9 /* Present3D-Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Present3D-Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A8935F180BD70700ACB0B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4A89361180BD70700ACB0B9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1049,6 +1052,8 @@
 				D4A89398180BD86000ACB0B9 /* P3DRootViewController.m */,
 				D4BE74AD180D2A74008028DA /* P3DMenuViewController.h */,
 				D4BE74AE180D2A74008028DA /* P3DMenuViewController.mm */,
+				D48F47311811521C00A2F8E7 /* P3DTextfieldTableViewCell.h */,
+				D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -1373,6 +1378,7 @@
 				D4D50268180E89CB00F445D4 /* ReadFileCompleteHandler.cpp in Sources */,
 				D4BE7679180D370E008028DA /* screen.vert in Sources */,
 				D4BE7683180D370E008028DA /* volume_iso.frag in Sources */,
+				D48F47331811521C00A2F8E7 /* P3DTextfieldTableViewCell.m in Sources */,
 				D4BE7673180D370E008028DA /* point_rain.frag in Sources */,
 				D4BE7681180D370E008028DA /* volume.frag in Sources */,
 				D4BE7685180D370E008028DA /* volume_lit_tf.frag in Sources */,
@@ -1584,6 +1590,7 @@
 				GCC_PREFIX_HEADER = "Present3D-Control/Present3D-Control-Prefix.pch";
 				INFOPLIST_FILE = "Present3D-Control/Present3D-Control-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1593,10 +1600,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Present3D-Control/Present3D-Control-Prefix.pch";
 				INFOPLIST_FILE = "Present3D-Control/Present3D-Control-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "81BF0D14-759C-42F7-B3B1-F6B53A666A50";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

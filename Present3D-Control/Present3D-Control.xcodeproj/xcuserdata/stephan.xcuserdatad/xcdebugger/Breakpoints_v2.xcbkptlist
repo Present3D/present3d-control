@@ -26,13 +26,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DMenuViewController.mm"
-            timestampString = "403608444.334657"
+            timestampString = "403790631.633567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "-handleReadFileResult:"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "-handleReadFileResult:withFileName:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/P3DMenuViewController.mm"
+            timestampString = "403790631.633567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-textFieldShouldReturn:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DMenuViewController startReadingSequence]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file://localhost/Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DMenuViewController.mm"
+                  timestampString = "403790213.701794"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DMenuViewController startReadingSequence]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file://localhost/Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DMenuViewController.mm"
+                  timestampString = "403790213.702086"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "299">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

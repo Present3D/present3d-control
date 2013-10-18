@@ -23,5 +23,5 @@ void ReadFileThread::run()
 {
     OpenThreads::Thread::microSleep(3 * 1000 * 1000);
     
-    P3DAppInterface::instance()->readFinished(true, _node);
+    P3DAppInterface::instance()->readFinished(false, _node, _fileName);
 }

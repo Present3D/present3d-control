@@ -29,18 +29,19 @@
     [super viewWillAppear:animated];
 
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[P3DMenuViewController class]]) {
-    self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
 
     // TODO
     //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
+    self.slidingViewController.underLeftWidthLayout = ECFixedRevealWidth;
+
 
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-
 }
 
 - (void)viewDidLoad

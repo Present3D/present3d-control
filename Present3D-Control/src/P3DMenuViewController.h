@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface P3DMenuViewController : UITableViewController
+@interface P3DMenuViewController : UITableViewController<UITextFieldDelegate>
 
 -(void) startReadingSequence;
--(void) handleReadFileResult: (BOOL) success;
+-(void) handleReadFileResult: (BOOL) success withFileName: (NSString*) fileName;
 
 @end
