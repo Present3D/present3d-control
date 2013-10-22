@@ -29,4 +29,12 @@
     // Configure the view for the selected state
 }
 
+
+-(void) setInputEnabled: (BOOL) isEnabled
+{
+    [self setUserInteractionEnabled: isEnabled];
+    self.textfield.enabled = isEnabled;
+    self.textLabel.enabled = isEnabled;
+}
+
 @end

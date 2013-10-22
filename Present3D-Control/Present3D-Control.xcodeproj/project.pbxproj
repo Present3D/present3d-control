@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D42498A818166158002C8418 /* P3DSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D42498A718166158002C8418 /* P3DSwitchTableViewCell.m */; };
 		D463C407181668570038BD75 /* P3DLabelTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */; };
+		D463C40A1816700C0038BD75 /* P3DOSCSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D463C4091816700C0038BD75 /* P3DOSCSettingsController.m */; };
 		D48F47331811521C00A2F8E7 /* P3DTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */; };
 		D4A89360180BD70700ACB0B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A8935F180BD70700ACB0B9 /* Foundation.framework */; };
 		D4A89362180BD70700ACB0B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A89361180BD70700ACB0B9 /* CoreGraphics.framework */; };
@@ -282,6 +283,8 @@
 		D42498A718166158002C8418 /* P3DSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DSwitchTableViewCell.m; sourceTree = "<group>"; };
 		D463C405181668570038BD75 /* P3DLabelTextfieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DLabelTextfieldTableViewCell.h; sourceTree = "<group>"; };
 		D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DLabelTextfieldTableViewCell.m; sourceTree = "<group>"; };
+		D463C4081816700C0038BD75 /* P3DOSCSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DOSCSettingsController.h; sourceTree = "<group>"; };
+		D463C4091816700C0038BD75 /* P3DOSCSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DOSCSettingsController.m; sourceTree = "<group>"; };
 		D48F47311811521C00A2F8E7 /* P3DTextfieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DTextfieldTableViewCell.h; sourceTree = "<group>"; };
 		D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DTextfieldTableViewCell.m; sourceTree = "<group>"; };
 		D4A8935C180BD70700ACB0B9 /* Present3D-Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Present3D-Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1064,6 +1067,8 @@
 				D42498A718166158002C8418 /* P3DSwitchTableViewCell.m */,
 				D463C405181668570038BD75 /* P3DLabelTextfieldTableViewCell.h */,
 				D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */,
+				D463C4081816700C0038BD75 /* P3DOSCSettingsController.h */,
+				D463C4091816700C0038BD75 /* P3DOSCSettingsController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -1430,6 +1435,7 @@
 				D4BE7666180D370E008028DA /* depthpeel_final.vert in Sources */,
 				D4BE767C180D370E008028DA /* stereomatch_aggregate.frag in Sources */,
 				D4BE766F180D370E008028DA /* marble.frag in Sources */,
+				D463C40A1816700C0038BD75 /* P3DOSCSettingsController.m in Sources */,
 				D4BE765F180D370E008028DA /* brick.frag in Sources */,
 				D4BE7668180D370E008028DA /* depthpeel_normaldepthmap.vert in Sources */,
 				D4BE7662180D370E008028DA /* depthpeel_colormap.vert in Sources */,

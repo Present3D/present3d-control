@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "P3DOSCSettingsController.h"
 
-@interface P3DMenuViewController : UITableViewController<UITextFieldDelegate>
+@interface P3DMenuViewController : UITableViewController<UITextFieldDelegate>{
+}
+
+@property (nonatomic, strong) IBOutlet P3DOSCSettingsController* oscSettingsController;
 
 -(void) startReadingSequence;
 -(void) handleReadFileResult: (BOOL) success withFileName: (NSString*) fileName;

@@ -12,4 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *textLabel;
 
+-(void) setInputEnabled: (BOOL) isEnabled;
+
 @end

@@ -36,11 +36,26 @@ private:
 
 @implementation P3DMenuViewController
 
+- (void) commonInit
+{
+    self.oscSettingsController = [[P3DOSCSettingsController alloc] init];
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super initWithCoder:decoder];
+    if (self) {
+        [self commonInit];
     }
     return self;
 }
@@ -140,6 +155,8 @@ private:
                     {
                         P3DSwitchTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"SwitchCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Automatic discovery";
+                        [the_cell.toggleSwitch addTarget: self.oscSettingsController action:@selector(toggleDiscovery:) forControlEvents:UIControlEventValueChanged];
+                        self.oscSettingsController.toggleSwitch = the_cell.toggleSwitch;
                         cell = the_cell;
                     }
                     break;
@@ -147,7 +164,8 @@ private:
                     {
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Host";
-                        
+                        self.oscSettingsController.hostTextfield = the_cell.textfield;
+
                         cell = the_cell;
                     }
                     break;
@@ -156,7 +174,8 @@ private:
                     {
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Port";
-                        
+                        self.oscSettingsController.portTextfield = the_cell.textfield;
+
                         cell = the_cell;
                     }
                     break;
@@ -164,7 +183,8 @@ private:
                     {
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Messages / event";
-                        
+                        self.oscSettingsController.numMessagesTextfield = the_cell.textfield;
+
                         cell = the_cell;
                     }
                     break;
@@ -173,6 +193,7 @@ private:
                     {
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Delay (ms)";
+                        self.oscSettingsController.delayTextfield = the_cell.textfield;
                         
                         cell = the_cell;
                     }
@@ -183,6 +204,7 @@ private:
                     cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
                     break;
             }
+            [self.oscSettingsController updateDelegates];
     }
     
     return cell;
