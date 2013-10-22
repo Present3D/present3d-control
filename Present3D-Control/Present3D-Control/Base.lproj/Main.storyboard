@@ -79,7 +79,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConnectRemoteCell" id="dU0-hg-1rg" customClass="P3DTextfieldTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextfieldCell" id="dU0-hg-1rg" customClass="P3DTextfieldTableViewCell">
                                 <rect key="frame" x="0.0" y="187" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dU0-hg-1rg" id="57r-qi-Oq9">
@@ -101,6 +101,71 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="textfield" destination="w4g-at-IEL" id="daI-jC-x2U"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LabelTextfieldCell" id="Hsr-rg-H5p" customClass="P3DLabelTextfieldTableViewCell">
+                                <rect key="frame" x="0.0" y="231" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hsr-rg-H5p" id="E1A-kJ-W3X">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLT-MG-Cbh">
+                                            <rect key="frame" x="15" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOg-4s-OsF">
+                                            <rect key="frame" x="65" y="11" width="235" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="pLT-MG-Cbh" secondAttribute="centerY" id="Nb3-jg-mjL"/>
+                                        <constraint firstAttribute="trailing" secondItem="AOg-4s-OsF" secondAttribute="trailing" constant="20" id="ZHR-G9-Y8l"/>
+                                        <constraint firstItem="AOg-4s-OsF" firstAttribute="leading" secondItem="pLT-MG-Cbh" secondAttribute="trailing" constant="8" id="bGa-tR-pbY"/>
+                                        <constraint firstAttribute="centerY" secondItem="AOg-4s-OsF" secondAttribute="centerY" id="hmK-n1-zeN"/>
+                                        <constraint firstItem="pLT-MG-Cbh" firstAttribute="leading" secondItem="E1A-kJ-W3X" secondAttribute="leading" constant="15" id="v85-Hv-oeK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textLabel" destination="pLT-MG-Cbh" id="5Pq-cK-oc4"/>
+                                    <outlet property="textfield" destination="AOg-4s-OsF" id="QJu-B5-MZ3"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SwitchCell" id="xGk-nV-5Od" customClass="P3DSwitchTableViewCell">
+                                <rect key="frame" x="0.0" y="275" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xGk-nV-5Od" id="98C-4a-EYI">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="right" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="of7-S4-RzV">
+                                            <rect key="frame" x="251" y="6" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </switch>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngL-C2-Yzg">
+                                            <rect key="frame" x="15" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="of7-S4-RzV" secondAttribute="centerY" id="6Xl-uf-xtn"/>
+                                        <constraint firstItem="ngL-C2-Yzg" firstAttribute="leading" secondItem="98C-4a-EYI" secondAttribute="leading" constant="15" id="HT4-Ym-ti2"/>
+                                        <constraint firstAttribute="centerY" secondItem="ngL-C2-Yzg" secondAttribute="centerY" id="U3U-7V-N4v"/>
+                                        <constraint firstAttribute="trailing" secondItem="of7-S4-RzV" secondAttribute="trailing" constant="20" id="row-xg-Foh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textLabel" destination="ngL-C2-Yzg" id="hiY-5B-ki5"/>
+                                    <outlet property="toggleSwitch" destination="of7-S4-RzV" id="90O-9b-PB1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

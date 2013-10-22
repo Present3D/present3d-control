@@ -10,6 +10,7 @@
 #import "ECSlidingViewController.h"
 #import "P3DSceneViewController.h"
 #import "P3DTextfieldTableViewCell.h"
+#import "P3DSwitchTableViewCell.h"
 
 #include "P3DAppInterface.h"
 #include "IOSUtils.h"
@@ -66,7 +67,7 @@ private:
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -85,7 +86,10 @@ private:
 
             break;
         case 2:
-            return 4;
+            return 1;
+            break;
+        case 3:
+            return 5;
             break;
     }
     
@@ -113,14 +117,72 @@ private:
             }
             else
             {
-                cell = [tableView dequeueReusableCellWithIdentifier:@"ConnectRemoteCell" forIndexPath:indexPath];
+                cell = [tableView dequeueReusableCellWithIdentifier:@"TextfieldCell" forIndexPath:indexPath];
                 P3DTextfieldTableViewCell* tf_cell = (P3DTextfieldTableViewCell*)(cell);
                 tf_cell.textfield.delegate = self;
             }
             break;
-        default:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-            break;
+        case 2:
+            switch(indexPath.row) {
+                case 0:
+                    {
+                        P3DSwitchTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"SwitchCell" forIndexPath:indexPath];
+                        the_cell.textLabel.text = @"Disable interface";
+                        cell = the_cell;
+                    }
+                    break;
+            }
+
+            
+        case 3:
+            switch(indexPath.row) {
+                case 0:
+                    {
+                        P3DSwitchTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"SwitchCell" forIndexPath:indexPath];
+                        the_cell.textLabel.text = @"Automatic discovery";
+                        cell = the_cell;
+                    }
+                    break;
+                case 1:
+                    {
+                        P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
+                        the_cell.textLabel.text = @"Host";
+                        
+                        cell = the_cell;
+                    }
+                    break;
+
+                case 2:
+                    {
+                        P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
+                        the_cell.textLabel.text = @"Port";
+                        
+                        cell = the_cell;
+                    }
+                    break;
+                case 3:
+                    {
+                        P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
+                        the_cell.textLabel.text = @"Messages / event";
+                        
+                        cell = the_cell;
+                    }
+                    break;
+                    
+                case 4:
+                    {
+                        P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
+                        the_cell.textLabel.text = @"Delay (ms)";
+                        
+                        cell = the_cell;
+                    }
+                    break;
+
+
+                default:
+                    cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+                    break;
+            }
     }
     
     return cell;
@@ -191,6 +253,9 @@ private:
             break;
         case 2:
             sectionName = NSLocalizedString(@"settingsSectionName", @"settingsSectionName");
+            break;
+         case 3:
+            sectionName = NSLocalizedString(@"oscSettingsSectionName", @"oscSettingsSectionName");
             break;
             
         // ...

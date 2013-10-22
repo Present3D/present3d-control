@@ -9,3 +9,4 @@
 "localFileSectionName" = "Local files";
 "remoteFileSectionName" = "Remote files";
 "settingsSectionName" = "Settings";
+"oscSettingsSectionName" = "OSC Settings";
