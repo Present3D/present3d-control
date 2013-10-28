@@ -165,7 +165,7 @@ private:
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Host";
                         self.oscSettingsController.hostTextfield = the_cell.textfield;
-
+    
                         cell = the_cell;
                     }
                     break;

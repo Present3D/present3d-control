@@ -9,10 +9,38 @@
 #import "P3DOSCSettingsController.h"
 #import "P3DLabelTextfieldTableViewCell.h"
 
+NSString *const oscDiscoverKey          = @"oscDiscover";
+NSString *const oscHostKey              = @"oscHost";
+NSString *const oscPortKey              = @"oscPort";
+NSString *const oscMessagesPerEventKey  = @"oscMessagesPerEvent";
+NSString *const oscDelayKey             = @"oscDelay";
+
+
 @implementation P3DOSCSettingsController
+
+- (id)init
+{
+    self = [super init];
+    if(self) {
+        NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
+        [standardDefaults registerDefaults:@{oscDiscoverKey: @TRUE, oscHostKey: @"", oscPortKey: @9000, oscMessagesPerEventKey: @3, oscDelayKey: @1000}];
+        [standardDefaults synchronize];
+    }
+    return self;
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    if (textField == _hostTextfield) {
+        [self setHost: textField.text];
+    } else if (textField == _portTextfield) {
+        [self setPort: [textField.text integerValue]];
+    } else if (textField == _numMessagesTextfield) {
+        [self setNumMessagesPerEvent: [textField.text integerValue]];
+    } else if (textField == _delayTextfield) {
+        [self setDelay:[textField.text integerValue]];
+    }
+    
     UITextField* fields[4] = { _hostTextfield, _portTextfield, _numMessagesTextfield, _delayTextfield };
     for(unsigned int i=0; i < 4; ++i) {
         if (fields[i] == textField) {
@@ -24,8 +52,8 @@
                 return NO;
             }
         }
-        
     }
+   
     return YES;
 }
 
@@ -61,6 +89,81 @@
         if (fields[i])
             [fields[i] setDelegate: self];
     }
+}
+
+-(void)setToggleSwitch:(UISwitch *)toggleSwitch
+{
+    _toggleSwitch = toggleSwitch;
+    _toggleSwitch.on = [self getAutomaticDiscovery];
+}
+
+-(void)setHostTextfield:(UITextField *)hostTextfield
+{
+    _hostTextfield = hostTextfield;
+    _hostTextfield.text = [self getHost];
+}
+
+-(void)setPortTextfield:(UITextField *)portTextfield
+{
+    _portTextfield = portTextfield;
+    _portTextfield.text = [NSString stringWithFormat:@"%d", [self getPort]];
+}
+
+-(void)setNumMessagesTextfield:(UITextField *)numMessagesTextfield
+{
+    _numMessagesTextfield = numMessagesTextfield;
+    _numMessagesTextfield.text = [NSString stringWithFormat:@"%d", [self getNumMessagesPerEvent]];
+}
+
+-(void)setDelayTextfield:(UITextField *)delayTextfield
+{
+    _delayTextfield = delayTextfield;
+    _delayTextfield.text = [NSString stringWithFormat:@"%d", [self getDelay]];
+}
+
+- (BOOL) getAutomaticDiscovery {
+    return [[NSUserDefaults standardUserDefaults] boolForKey: oscDiscoverKey];
+}
+
+- (void) setAutomaticDiscovery: (BOOL)discovery
+{
+    [[NSUserDefaults standardUserDefaults] setBool: discovery forKey: oscDiscoverKey];
+}
+
+- (NSString*) getHost {
+    return [[NSUserDefaults standardUserDefaults] stringForKey: oscHostKey];
+}
+
+
+- (void) setHost: (NSString*)host {
+    [[NSUserDefaults standardUserDefaults] setObject: host forKey: oscHostKey];
+}
+
+
+-(unsigned int)getPort {
+    return [[NSUserDefaults standardUserDefaults] integerForKey: oscPortKey];
+}
+
+-(void)setPort:(unsigned int)port {
+    [[NSUserDefaults standardUserDefaults] setInteger:port forKey: oscPortKey];
+}
+
+-(unsigned int)getNumMessagesPerEvent {
+    return [[NSUserDefaults standardUserDefaults] integerForKey: oscMessagesPerEventKey];
+}
+
+-(void)setNumMessagesPerEvent:(unsigned int)messages {
+    [[NSUserDefaults standardUserDefaults] setInteger:messages forKey: oscMessagesPerEventKey];
+}
+
+
+-(unsigned int)getDelay {
+    return [[NSUserDefaults standardUserDefaults] integerForKey: oscDelayKey];
+}
+
+-(void)setDelay:(unsigned int)delay {
+    [[NSUserDefaults standardUserDefaults] setInteger:delay forKey: oscDelayKey];
+
 }
 
 @end

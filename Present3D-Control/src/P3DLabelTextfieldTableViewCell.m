@@ -35,6 +35,7 @@
     [self setUserInteractionEnabled: isEnabled];
     self.textfield.enabled = isEnabled;
     self.textLabel.enabled = isEnabled;
+    self.textfield.textColor = (isEnabled) ? [UIColor blackColor] : [UIColor lightGrayColor];
 }
 
 @end

@@ -24,5 +24,22 @@
 - (IBAction)toggleDiscovery:(id)sender;
 - (void) updateDelegates;
 
+- (BOOL) getAutomaticDiscovery;
+- (void) setAutomaticDiscovery: (BOOL)discovery;
+- (NSString*) getHost;
+- (void) setHost: (NSString*)host;
+
+-(unsigned int)getPort;
+-(void)setPort:(unsigned int)port;
+
+-(unsigned int)getNumMessagesPerEvent;
+-(void)setNumMessagesPerEvent:(unsigned int)messages;
+
+-(unsigned int)getDelay;
+-(void)setDelay:(unsigned int)delay;
+
+
+
+
 
 @end
