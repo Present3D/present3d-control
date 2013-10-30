@@ -38,6 +38,7 @@
     // NSLog(@"toggle: %d", _toggleSwitch.on);
     
     [_toggleSwitch setOn: !_toggleSwitch.on animated: YES];
+    [_toggleSwitch sendActionsForControlEvents: UIControlEventValueChanged];
 }
 
 

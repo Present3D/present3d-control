@@ -25,6 +25,8 @@ NSString *const oscDelayKey             = @"oscDelay";
         NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
         [standardDefaults registerDefaults:@{oscDiscoverKey: @TRUE, oscHostKey: @"", oscPortKey: @9000, oscMessagesPerEventKey: @3, oscDelayKey: @1000}];
         [standardDefaults synchronize];
+        
+        NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
     }
     return self;
 }
@@ -79,6 +81,7 @@ NSString *const oscDelayKey             = @"oscDelay";
 {
     UISwitch *onoff = (UISwitch *) sender;
     [self toggleHostAndPortInput: !onoff.on];
+    [self setAutomaticDiscovery: onoff.on];
 }
 
 
@@ -86,8 +89,9 @@ NSString *const oscDelayKey             = @"oscDelay";
 {
     UITextField* fields[4] = { _hostTextfield, _portTextfield, _numMessagesTextfield, _delayTextfield };
     for(unsigned int i=0; i < 4; ++i) {
-        if (fields[i])
+        if (fields[i]) {
             [fields[i] setDelegate: self];
+        }
     }
 }
 
@@ -95,6 +99,8 @@ NSString *const oscDelayKey             = @"oscDelay";
 {
     _toggleSwitch = toggleSwitch;
     _toggleSwitch.on = [self getAutomaticDiscovery];
+    [self toggleDiscovery: _toggleSwitch];
+
 }
 
 -(void)setHostTextfield:(UITextField *)hostTextfield
@@ -102,6 +108,7 @@ NSString *const oscDelayKey             = @"oscDelay";
     _hostTextfield = hostTextfield;
     _hostTextfield.text = [self getHost];
     [_hostTextfield setKeyboardType:UIKeyboardTypeURL];
+    [self toggleDiscovery: _toggleSwitch];
 }
 
 -(void)setPortTextfield:(UITextField *)portTextfield
@@ -109,6 +116,7 @@ NSString *const oscDelayKey             = @"oscDelay";
     _portTextfield = portTextfield;
     _portTextfield.text = [NSString stringWithFormat:@"%d", [self getPort]];
     [_portTextfield setKeyboardType:UIKeyboardTypeNumberPad];
+    [self toggleDiscovery: _toggleSwitch];
 }
 
 -(void)setNumMessagesTextfield:(UITextField *)numMessagesTextfield
