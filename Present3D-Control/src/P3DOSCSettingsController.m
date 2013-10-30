@@ -101,24 +101,30 @@ NSString *const oscDelayKey             = @"oscDelay";
 {
     _hostTextfield = hostTextfield;
     _hostTextfield.text = [self getHost];
+    [_hostTextfield setKeyboardType:UIKeyboardTypeURL];
 }
 
 -(void)setPortTextfield:(UITextField *)portTextfield
 {
     _portTextfield = portTextfield;
     _portTextfield.text = [NSString stringWithFormat:@"%d", [self getPort]];
+    [_portTextfield setKeyboardType:UIKeyboardTypeNumberPad];
 }
 
 -(void)setNumMessagesTextfield:(UITextField *)numMessagesTextfield
 {
     _numMessagesTextfield = numMessagesTextfield;
     _numMessagesTextfield.text = [NSString stringWithFormat:@"%d", [self getNumMessagesPerEvent]];
+    [_numMessagesTextfield setKeyboardType:UIKeyboardTypeNumberPad];
+
 }
 
 -(void)setDelayTextfield:(UITextField *)delayTextfield
 {
     _delayTextfield = delayTextfield;
     _delayTextfield.text = [NSString stringWithFormat:@"%d", [self getDelay]];
+    [_delayTextfield setKeyboardType:UIKeyboardTypeNumberPad];
+
 }
 
 - (BOOL) getAutomaticDiscovery {

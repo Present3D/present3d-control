@@ -15,5 +15,6 @@
 @property (nonatomic, weak) IBOutlet UISwitch *toggleSwitch;
 @property (nonatomic, weak) IBOutlet UILabel *textLabel;
 
+- (void)handleTap:(id)sender;
 
 @end

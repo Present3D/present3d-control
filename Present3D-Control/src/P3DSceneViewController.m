@@ -19,9 +19,40 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self initCommon];
     }
     return self;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder ];
+    if (self) {
+        [self initCommon];
+    }
+    return self;
+
+}
+
+- (void)initCommon
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(guidedAccessChanged) name:UIAccessibilityGuidedAccessStatusDidChangeNotification object:nil];
+}
+
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)guidedAccessChanged
+{
+    bool toggle_btn_enabled = !(UIAccessibilityIsGuidedAccessEnabled());
+    
+    [UIView animateWithDuration:0.25 animations:^{ toggleButton.alpha = toggle_btn_enabled ? 1 : 0;}];
+    
+    if (!toggle_btn_enabled) {
+        [self.slidingViewController resetTopView];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

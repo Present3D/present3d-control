@@ -19,5 +19,7 @@
 - (IBAction)toggleButtonTapped:(id)sender;
 - (void)startReadingSequence;
 - (void)stopReadingSequence;
+- (void)initCommon;
+- (void)guidedAccessChanged;
 
 @end

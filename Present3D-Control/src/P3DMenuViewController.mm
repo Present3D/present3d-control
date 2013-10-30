@@ -135,6 +135,7 @@ private:
                 cell = [tableView dequeueReusableCellWithIdentifier:@"TextfieldCell" forIndexPath:indexPath];
                 P3DTextfieldTableViewCell* tf_cell = (P3DTextfieldTableViewCell*)(cell);
                 tf_cell.textfield.delegate = self;
+                [tf_cell.textfield setKeyboardType:UIKeyboardTypeURL];
             }
             break;
         case 2:
