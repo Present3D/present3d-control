@@ -73,6 +73,37 @@
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    if (_displayLink)
+        [_displayLink invalidate];
+    
+    //_displayLink = [self.view.window.screen displayLinkWithTarget:self selector:@selector(updateScene)];
+    //
+    
+    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateScene)];
+    [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    _app = P3DAppInterface::instance();
+    _openGLView = _app->initInView(self.view, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view sendSubviewToBack: _openGLView];
+    _openGLView.backgroundColor = [UIColor redColor];
+    
+    NSLog(@"subviews: %@",self.view.subviews);
+    NSLog(@"view bounds: %fx%f, %fx%f)", _openGLView.frame.origin.x, _openGLView.frame.origin.y, _openGLView.frame.size.width, _openGLView.frame.size.height);
+    _app->realize();
+    
+    [_openGLView setBounds: CGRectMake(200,200,self.view.frame.size.width-400, self.view.frame.size.height-400)];
+    NSLog(@"view bounds: %fx%f, %fx%f)", _openGLView.frame.origin.x, _openGLView.frame.origin.y, _openGLView.frame.size.width, _openGLView.frame.size.height);
+
+    
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    if (_displayLink)
+        [_displayLink invalidate];
+    _displayLink = NULL;
 }
 
 - (void)viewDidLoad
@@ -84,7 +115,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _app->handleMemoryWarning();
 }
 
 - (IBAction)toggleButtonTapped:(id)sender
@@ -93,6 +124,11 @@
         [self.slidingViewController resetTopView];
     else
         [self.slidingViewController anchorTopViewTo: ECRight animations:nil onComplete:nil];
+}
+
+- (void)updateScene
+{
+    _app->frame();
 }
 
 - (void)startReadingSequence

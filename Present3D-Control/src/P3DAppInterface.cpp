@@ -10,7 +10,12 @@
 #include <osg/ref_ptr>
 #include <osgDB/FileUtils>
 #include <osgDB/FileNameUtils>
+#include <osgUtil/Optimizer>
+#include <osgViewer/api/IOS/GraphicsWindowIOS>
+#include <osgGA/MultiTouchTrackballManipulator>
 
+
+USE_GRAPICSWINDOW_IMPLEMENTATION(IOS)
 
 
 class LocalFileCollection : public FileCollection {
@@ -82,6 +87,8 @@ P3DAppInterface::P3DAppInterface()
     
     _files[FileCollection::LOCAL] = new LocalFileCollection();
     _files[FileCollection::REMOTE] = new RemoteFileCollection();
+    
+    osg::setNotifyLevel(osg::DEBUG_INFO);
 }
 
 
@@ -127,5 +134,63 @@ void P3DAppInterface::applySceneData()
 {
     _readFileThread = NULL;
     std::cout << "applying scene data" << std::endl;
+    
+    osgUtil::Optimizer o;
+    o.optimize(_sceneNode);
+    _viewer->setSceneData(_sceneNode);
+    _sceneNode = NULL;
 }
 
+
+UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
+{
+    if(!_viewer) {
+        _viewer = new osgViewer::Viewer();
+    }
+    _viewer->setThreadingModel(osgViewer::Viewer::SingleThreaded);
+    _viewer->getEventQueue()->setFirstTouchEmulatesMouse(true);
+    
+ 
+    osg::ref_ptr<osgViewer::GraphicsWindowIOS::WindowData> window_data = new osgViewer::GraphicsWindowIOS::WindowData(view);
+    window_data->setViewContentScaleFactor(1.0);
+    osg::ref_ptr<osg::GraphicsContext::Traits> traits = new osg::GraphicsContext::Traits();
+    
+    traits->x = 0;
+    traits->y = 0;
+    traits->width = width;
+    traits->height = height;
+    traits->depth = 24; //keep memory down, default is currently 24
+    traits->windowDecoration = false;
+    traits->doubleBuffer = true;
+    traits->sharedContext = 0;
+    //traits->samples = 4;
+    //traits->sampleBuffers = 1;
+    
+    traits->inheritedWindowData = window_data;
+    osg::ref_ptr<osgViewer::GraphicsWindowIOS> graphicsContext = dynamic_cast<osgViewer::GraphicsWindowIOS*>(osg::GraphicsContext::createGraphicsContext(traits));
+
+    if(graphicsContext)
+    {
+        _viewer->getCamera()->setGraphicsContext(graphicsContext);
+        _viewer->getCamera()->setViewport(new osg::Viewport(0, 0, traits->width, traits->height));
+        
+        graphicsContext->realize();
+        return (UIView*)(graphicsContext->getView());
+    }
+    
+    
+    return NULL;
+    
+}
+
+void P3DAppInterface::realize()
+{
+    _viewer->setCameraManipulator(new osgGA::MultiTouchTrackballManipulator());
+    _viewer->realize();
+
+}
+
+void P3DAppInterface::handleMemoryWarning()
+{
+    osgDB::Registry::instance()->clearObjectCache();
+}

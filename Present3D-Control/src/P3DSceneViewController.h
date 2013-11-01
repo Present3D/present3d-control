@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
+#include "P3DAppInterface.h"
 
 @interface P3DSceneViewController : UIViewController {
 
     IBOutlet UIButton* toggleButton;
     IBOutlet UIView* loadingView;
+    
+    P3DAppInterface*    _app;
+    CADisplayLink*      _displayLink;
+    UIView*             _openGLView;
 
 }
 
@@ -21,5 +26,6 @@
 - (void)stopReadingSequence;
 - (void)initCommon;
 - (void)guidedAccessChanged;
+- (void)updateScene;
 
 @end

@@ -15,17 +15,20 @@
 #include <osg/Referenced>
 #include <osg/ref_ptr>
 #include <osg/Node>
+#include <osgViewer/Viewer>
 
 #include "FileCollection.h"
 #include "ReadFileThread.h"
 #include "ReadFileCompleteHandler.h"
 
+#ifdef __OBJC__
+@class UIView;
+#else
+class UIView;
+#endif
+
 class P3DAppInterface : public osg::Referenced {
 public:
-    
- 
-    
-   
     
     typedef std::set<std::string> SupportedFileTypesSet;
     typedef std::map<FileCollection::Type, osg::ref_ptr<FileCollection> > FilesMap;
@@ -50,7 +53,17 @@ public:
     void applySceneData();
 
     void readFile(const std::string& file);
-
+    
+    UIView* initInView(UIView* view, int width, int height);
+    
+    inline void frame() {
+        _viewer->frame();
+    }
+    
+    void realize();
+    
+    void handleMemoryWarning();
+    
 protected:
     
 private:
@@ -67,4 +80,5 @@ private:
     friend class LocalFileCollection;
     friend class RemoteFileCollection;
     friend class ReadFileThread;
+    osg::ref_ptr<osgViewer::Viewer> _viewer;
 };
