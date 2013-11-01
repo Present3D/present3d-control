@@ -88,6 +88,8 @@ P3DAppInterface::P3DAppInterface()
     _files[FileCollection::LOCAL] = new LocalFileCollection();
     _files[FileCollection::REMOTE] = new RemoteFileCollection();
     
+    _viewer = new osgViewer::Viewer();
+    
     osg::setNotifyLevel(osg::DEBUG_INFO);
 }
 
@@ -144,14 +146,11 @@ void P3DAppInterface::applySceneData()
 
 UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
 {
-    if(!_viewer) {
-        _viewer = new osgViewer::Viewer();
-    }
     _viewer->setThreadingModel(osgViewer::Viewer::SingleThreaded);
     _viewer->getEventQueue()->setFirstTouchEmulatesMouse(true);
     
  
-    osg::ref_ptr<osgViewer::GraphicsWindowIOS::WindowData> window_data = new osgViewer::GraphicsWindowIOS::WindowData(view);
+    osg::ref_ptr<osgViewer::GraphicsWindowIOS::WindowData> window_data = new osgViewer::GraphicsWindowIOS::WindowData(view, osgViewer::GraphicsWindowIOS::WindowData::IGNORE_ORIENTATION);
     window_data->setViewContentScaleFactor(1.0);
     osg::ref_ptr<osg::GraphicsContext::Traits> traits = new osg::GraphicsContext::Traits();
     
@@ -160,11 +159,13 @@ UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
     traits->width = width;
     traits->height = height;
     traits->depth = 24; //keep memory down, default is currently 24
+    traits->alpha = 8;
     traits->windowDecoration = false;
     traits->doubleBuffer = true;
     traits->sharedContext = 0;
-    //traits->samples = 4;
-    //traits->sampleBuffers = 1;
+    
+    traits->samples = 4;
+    traits->sampleBuffers = 1;
     
     traits->inheritedWindowData = window_data;
     osg::ref_ptr<osgViewer::GraphicsWindowIOS> graphicsContext = dynamic_cast<osgViewer::GraphicsWindowIOS*>(osg::GraphicsContext::createGraphicsContext(traits));
@@ -174,7 +175,7 @@ UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
         _viewer->getCamera()->setGraphicsContext(graphicsContext);
         _viewer->getCamera()->setViewport(new osg::Viewport(0, 0, traits->width, traits->height));
         
-        graphicsContext->realize();
+        _viewer->realize();
         return (UIView*)(graphicsContext->getView());
     }
     

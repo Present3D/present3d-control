@@ -90,12 +90,6 @@
     
     NSLog(@"subviews: %@",self.view.subviews);
     NSLog(@"view bounds: %fx%f, %fx%f)", _openGLView.frame.origin.x, _openGLView.frame.origin.y, _openGLView.frame.size.width, _openGLView.frame.size.height);
-    _app->realize();
-    
-    [_openGLView setBounds: CGRectMake(200,200,self.view.frame.size.width-400, self.view.frame.size.height-400)];
-    NSLog(@"view bounds: %fx%f, %fx%f)", _openGLView.frame.origin.x, _openGLView.frame.origin.y, _openGLView.frame.size.width, _openGLView.frame.size.height);
-
-    
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
