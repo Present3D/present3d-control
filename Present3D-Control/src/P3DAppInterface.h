@@ -59,9 +59,7 @@ public:
     inline void frame() {
         _viewer->frame();
     }
-    
-    void realize();
-    
+        
     void handleMemoryWarning();
     
 protected:

@@ -1,0 +1,10 @@
+//
+//  Present3D.xcconfig
+//  Present3D-Control
+//
+//  Created by Stephan Huber on 03.11.13.
+//  Copyright (c) 2013 Stephan Huber. All rights reserved.
+//
+#include "Present3D-Common.xcconfig"
+
+OTHER_LDFLAGS = $(inherited) -lOpenThreads -losg -losgDB -losgGA -losgUtil -losgViewer -losgText -losgAnimation -losgFX -losgTerrain -losgVolume -losgSim -losgManipulator -losgPresentation -losgdb_imageio -losgdb_rgb -losgdb_osc -losgdb_zeroconf -losgdb_p3d -losgdb_curl -losgdb_osg -losgdb_osg_serializers_osg

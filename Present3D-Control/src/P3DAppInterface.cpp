@@ -17,6 +17,29 @@
 
 USE_GRAPICSWINDOW_IMPLEMENTATION(IOS)
 
+USE_OSGPLUGIN(imageio)
+USE_OSGPLUGIN(rgb)
+USE_OSGPLUGIN(osc)
+USE_OSGPLUGIN(zeroconf)
+USE_OSGPLUGIN(p3d)
+USE_OSGPLUGIN(curl)
+USE_OSGPLUGIN(osg)
+USE_OSGPLUGIN(osg2)
+USE_OSGPLUGIN(freetype)
+
+USE_SERIALIZER_WRAPPER_LIBRARY(osg)
+USE_SERIALIZER_WRAPPER_LIBRARY(osgAnimation)
+USE_SERIALIZER_WRAPPER_LIBRARY(osgFX)
+USE_SERIALIZER_WRAPPER_LIBRARY(osgManipulator)
+USE_SERIALIZER_WRAPPER_LIBRARY(osgParticle)
+USE_SERIALIZER_WRAPPER_LIBRARY(osgSim)
+USE_SERIALIZER_WRAPPER_LIBRARY(osgText)
+
+USE_SERIALIZER_WRAPPER_LIBRARY(osgTerrain)
+USE_SERIALIZER_WRAPPER_LIBRARY(osgShadow)
+USE_SERIALIZER_WRAPPER_LIBRARY(osgVolume)
+
+
 
 class LocalFileCollection : public FileCollection {
 public:
@@ -89,8 +112,7 @@ P3DAppInterface::P3DAppInterface()
     _files[FileCollection::REMOTE] = new RemoteFileCollection();
     
     _viewer = new osgViewer::Viewer();
-    
-    osg::setNotifyLevel(osg::DEBUG_INFO);
+    _viewer->setCameraManipulator(new osgGA::MultiTouchTrackballManipulator());
 }
 
 
@@ -184,12 +206,7 @@ UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
     
 }
 
-void P3DAppInterface::realize()
-{
-    _viewer->setCameraManipulator(new osgGA::MultiTouchTrackballManipulator());
-    _viewer->realize();
 
-}
 
 void P3DAppInterface::handleMemoryWarning()
 {

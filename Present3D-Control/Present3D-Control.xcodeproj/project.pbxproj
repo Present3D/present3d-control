@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		D42498A818166158002C8418 /* P3DSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D42498A718166158002C8418 /* P3DSwitchTableViewCell.m */; };
+		D46015CA18269A77003EA6E3 /* Present3D-Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D46015C918269A77003EA6E3 /* Present3D-Release.xcconfig */; };
+		D46015CC18269ACE003EA6E3 /* Present3D-Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D46015CB18269ACD003EA6E3 /* Present3D-Common.xcconfig */; };
+		D46015CE1826B5F1003EA6E3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D46015CD1826B5F1003EA6E3 /* libz.dylib */; };
+		D46015D01826B5FA003EA6E3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46015CF1826B5FA003EA6E3 /* CoreMedia.framework */; };
 		D463C407181668570038BD75 /* P3DLabelTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */; };
 		D463C40A1816700C0038BD75 /* P3DOSCSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D463C4091816700C0038BD75 /* P3DOSCSettingsController.m */; };
+		D481CB381826B68900C967B0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB371826B68900C967B0 /* CoreImage.framework */; };
+		D481CB3A1826B6B400C967B0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB391826B6B400C967B0 /* ImageIO.framework */; };
+		D481CB3C1826B6C900C967B0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB3B1826B6C900C967B0 /* MobileCoreServices.framework */; };
+		D481CB3E1826B72F00C967B0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB3D1826B72F00C967B0 /* Accelerate.framework */; };
 		D48F47331811521C00A2F8E7 /* P3DTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */; };
 		D4A89360180BD70700ACB0B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A8935F180BD70700ACB0B9 /* Foundation.framework */; };
 		D4A89362180BD70700ACB0B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A89361180BD70700ACB0B9 /* CoreGraphics.framework */; };
@@ -54,10 +62,19 @@
 /* Begin PBXFileReference section */
 		D42498A618166158002C8418 /* P3DSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DSwitchTableViewCell.h; sourceTree = "<group>"; };
 		D42498A718166158002C8418 /* P3DSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DSwitchTableViewCell.m; sourceTree = "<group>"; };
+		D46015C8182699B2003EA6E3 /* Present3D-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Present3D-Debug.xcconfig"; sourceTree = "<group>"; };
+		D46015C918269A77003EA6E3 /* Present3D-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Present3D-Release.xcconfig"; sourceTree = "<group>"; };
+		D46015CB18269ACD003EA6E3 /* Present3D-Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Present3D-Common.xcconfig"; sourceTree = "<group>"; };
+		D46015CD1826B5F1003EA6E3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D46015CF1826B5FA003EA6E3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D463C405181668570038BD75 /* P3DLabelTextfieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DLabelTextfieldTableViewCell.h; sourceTree = "<group>"; };
 		D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DLabelTextfieldTableViewCell.m; sourceTree = "<group>"; };
 		D463C4081816700C0038BD75 /* P3DOSCSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DOSCSettingsController.h; sourceTree = "<group>"; };
 		D463C4091816700C0038BD75 /* P3DOSCSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DOSCSettingsController.m; sourceTree = "<group>"; };
+		D481CB371826B68900C967B0 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D481CB391826B6B400C967B0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		D481CB3B1826B6C900C967B0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D481CB3D1826B72F00C967B0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		D48F47311811521C00A2F8E7 /* P3DTextfieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DTextfieldTableViewCell.h; sourceTree = "<group>"; };
 		D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DTextfieldTableViewCell.m; sourceTree = "<group>"; };
 		D4A8935C180BD70700ACB0B9 /* Present3D-Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Present3D-Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +125,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D481CB3E1826B72F00C967B0 /* Accelerate.framework in Frameworks */,
+				D481CB3C1826B6C900C967B0 /* MobileCoreServices.framework in Frameworks */,
+				D481CB3A1826B6B400C967B0 /* ImageIO.framework in Frameworks */,
+				D481CB381826B68900C967B0 /* CoreImage.framework in Frameworks */,
+				D46015D01826B5FA003EA6E3 /* CoreMedia.framework in Frameworks */,
+				D46015CE1826B5F1003EA6E3 /* libz.dylib in Frameworks */,
 				D4A89362180BD70700ACB0B9 /* CoreGraphics.framework in Frameworks */,
 				D4A89364180BD70700ACB0B9 /* UIKit.framework in Frameworks */,
 				D4A89360180BD70700ACB0B9 /* Foundation.framework in Frameworks */,
@@ -130,6 +153,9 @@
 		D4A89353180BD70700ACB0B9 = {
 			isa = PBXGroup;
 			children = (
+				D46015CB18269ACD003EA6E3 /* Present3D-Common.xcconfig */,
+				D46015C8182699B2003EA6E3 /* Present3D-Debug.xcconfig */,
+				D46015C918269A77003EA6E3 /* Present3D-Release.xcconfig */,
 				D4A89365180BD70700ACB0B9 /* Present3D-Control */,
 				D4A89384180BD70700ACB0B9 /* Present3D-ControlTests */,
 				D4A8935E180BD70700ACB0B9 /* Frameworks */,
@@ -149,6 +175,12 @@
 		D4A8935E180BD70700ACB0B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D481CB3D1826B72F00C967B0 /* Accelerate.framework */,
+				D481CB3B1826B6C900C967B0 /* MobileCoreServices.framework */,
+				D481CB391826B6B400C967B0 /* ImageIO.framework */,
+				D481CB371826B68900C967B0 /* CoreImage.framework */,
+				D46015CF1826B5FA003EA6E3 /* CoreMedia.framework */,
+				D46015CD1826B5F1003EA6E3 /* libz.dylib */,
 				D4A8935F180BD70700ACB0B9 /* Foundation.framework */,
 				D4A89361180BD70700ACB0B9 /* CoreGraphics.framework */,
 				D4A89363180BD70700ACB0B9 /* UIKit.framework */,
@@ -364,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46015CC18269ACE003EA6E3 /* Present3D-Common.xcconfig in Resources */,
 				D4B67E2D1823F41400C65864 /* introduction.p3d in Resources */,
 				D4A89378180BD70700ACB0B9 /* Images.xcassets in Resources */,
 				D4BE74B2180D2D40008028DA /* Localizable.strings in Resources */,
@@ -371,6 +404,7 @@
 				D4B67E2E1823F41400C65864 /* OpenSceneGraphlogo.png in Resources */,
 				D4B67E2F1823F41400C65864 /* present3dwhite.png in Resources */,
 				D4A8936A180BD70700ACB0B9 /* InfoPlist.strings in Resources */,
+				D46015CA18269A77003EA6E3 /* Present3D-Release.xcconfig in Resources */,
 				D4B67E2B1823F41400C65864 /* cow.osgt in Resources */,
 				D4A89373180BD70700ACB0B9 /* Main.storyboard in Resources */,
 			);
@@ -466,6 +500,7 @@
 /* Begin XCBuildConfiguration section */
 		D4A8938C180BD70700ACB0B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D46015C8182699B2003EA6E3 /* Present3D-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -501,16 +536,9 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/vendor/osg/include\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/vendor/osg/lib\"";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-lOpenThreadsd",
-					"-losgd",
-					"-losgDBd",
-				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -518,6 +546,7 @@
 		};
 		D4A8938D180BD70700ACB0B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D46015C918269A77003EA6E3 /* Present3D-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -547,15 +576,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/vendor/osg/include\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/vendor/osg/lib\"";
-				OTHER_LDFLAGS = (
-					"-lOpenThreads",
-					"-losg",
-					"-losgDB",
-				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -567,19 +589,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Present3D-Control/Present3D-Control-Prefix.pch";
 				INFOPLIST_FILE = "Present3D-Control/Present3D-Control-Info.plist";
-				OTHER_LDFLAGS = (
-					"-lOpenThreadsd",
-					"-losgd",
-					"-losgDBd",
-					"-losgGAd",
-					"-losgUtild",
-					"-losgTextd",
-					"-losgViewerd",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -592,20 +606,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Present3D-Control/Present3D-Control-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Present3D-Control/Present3D-Control-Info.plist";
-				OTHER_LDFLAGS = (
-					"-lOpenThreads",
-					"-losg",
-					"-losgDB",
-					"-losgGA",
-					"-losgUtil",
-					"-losgText",
-					"-losgViewer",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "81BF0D14-759C-42F7-B3B1-F6B53A666A50";
 				VALID_ARCHS = "armv7 armv7s";

@@ -1,0 +1,10 @@
+//
+//  Present3D.xcconfig
+//  Present3D-Control
+//
+//  Created by Stephan Huber on 03.11.13.
+//  Copyright (c) 2013 Stephan Huber. All rights reserved.
+//
+
+SHARED_HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/vendor/osg/include"
+SHARED_LIBRARY_SEARCH_PATHS = $(inherited) "$(SRCROOT)/vendor/osg/lib"

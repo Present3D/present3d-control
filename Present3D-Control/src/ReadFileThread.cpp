@@ -8,6 +8,7 @@
 
 #include "ReadFileThread.h"
 #include "P3DAppInterface.h"
+#include <osgDB/ReadFile>
 
 
 ReadFileThread::ReadFileThread(const std::string& file_name)
@@ -21,7 +22,7 @@ ReadFileThread::ReadFileThread(const std::string& file_name)
 
 void ReadFileThread::run()
 {
-    OpenThreads::Thread::microSleep(3 * 1000 * 1000);
+    _node = osgDB::readNodeFile(_fileName);
     
-    P3DAppInterface::instance()->readFinished(false, _node, _fileName);
+    P3DAppInterface::instance()->readFinished(_node.valid(), _node, _fileName);
 }

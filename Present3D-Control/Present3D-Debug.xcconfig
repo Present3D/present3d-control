@@ -1,0 +1,12 @@
+//
+//  Present3D.xcconfig
+//  Present3D-Control
+//
+//  Created by Stephan Huber on 03.11.13.
+//  Copyright (c) 2013 Stephan Huber. All rights reserved.
+//
+#include "Present3D-Common.xcconfig"
+
+HEADER_SEARCH_PATHS = $(SHARED_HEADER_SEARCH_PATHS)
+LIBRARY_SEARCH_PATHS = $(SHARED_LIBRARY_SEARCH_PATHS) "$(SRCROOT)/vendor/freetype/lib" "$(SRCROOT)/vendor/libcurl/lib"
+OTHER_LDFLAGS = $(inherited) -lOpenThreadsd -losgd -losgDBd -losgGAd -losgUtild -losgViewerd -losgTextd  -losgAnimationd -losgFXd -losgTerraind -losgVolumed -losgManipulatord -losgParticled -losgShadowd -losgPresentationd -losgSimd -losgdb_imageiod -losgdb_rgbd -losgdb_oscd -losgdb_zeroconfd -losgdb_p3dd -losgdb_freetyped -losgdb_curld -losgdb_osgd -losgdb_serializers_osgd -losgdb_osgd -losgdb_serializers_osggad -losgdb_serializers_osgFXd -losgdb_serializers_osgfxd -losgdb_serializers_osgvolumed -losgdb_serializers_osgtextd -losgdb_serializers_osgTerraind -losgdb_serializers_osgsimd -losgdb_serializers_osgshadowd -losgdb_serializers_osgparticled -losgdb_serializers_osgmanipulatord -losgdb_serializers_osganimationd -lcurl -lfreetype
