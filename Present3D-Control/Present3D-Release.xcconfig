@@ -7,4 +7,6 @@
 //
 #include "Present3D-Common.xcconfig"
 
-OTHER_LDFLAGS = $(inherited) -lOpenThreads -losg -losgDB -losgGA -losgUtil -losgViewer -losgText -losgAnimation -losgFX -losgTerrain -losgVolume -losgSim -losgManipulator -losgPresentation -losgdb_imageio -losgdb_rgb -losgdb_osc -losgdb_zeroconf -losgdb_p3d -losgdb_curl -losgdb_osg -losgdb_osg_serializers_osg
+HEADER_SEARCH_PATHS = $(SHARED_HEADER_SEARCH_PATHS)
+LIBRARY_SEARCH_PATHS = $(SHARED_LIBRARY_SEARCH_PATHS) "$(SRCROOT)/vendor/freetype/lib" "$(SRCROOT)/vendor/libcurl/lib"
+OTHER_LDFLAGS = $(inherited) -lOpenThreads -losg -losgDB -losgGA -losgUtil -losgViewer -losgText  -losgAnimation -losgFX -losgTerrain -losgVolume -losgManipulator -losgParticle -losgShadow -losgPresentation -losgSim -losgdb_imageio -losgdb_rgb -losgdb_osc -losgdb_zeroconf -losgdb_p3d -losgdb_freetype -losgdb_curl -losgdb_osg -losgdb_serializers_osg -losgdb_osg -losgdb_serializers_osgga -losgdb_serializers_osgFX -losgdb_serializers_osgfx -losgdb_serializers_osgvolume -losgdb_serializers_osgtext -losgdb_serializers_osgTerrain -losgdb_serializers_osgsim -losgdb_serializers_osgshadow -losgdb_serializers_osgparticle -losgdb_serializers_osgmanipulator -losgdb_serializers_osganimation -lcurl -lfreetype
