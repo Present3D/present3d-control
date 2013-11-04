@@ -112,7 +112,6 @@ P3DAppInterface::P3DAppInterface()
     _files[FileCollection::REMOTE] = new RemoteFileCollection();
     
     _viewer = new osgViewer::Viewer();
-    _viewer->setCameraManipulator(new osgGA::MultiTouchTrackballManipulator());
 }
 
 
@@ -159,10 +158,16 @@ void P3DAppInterface::applySceneData()
     _readFileThread = NULL;
     std::cout << "applying scene data" << std::endl;
     
-    osgUtil::Optimizer o;
-    o.optimize(_sceneNode);
     _viewer->setSceneData(_sceneNode);
     _sceneNode = NULL;
+}
+
+
+void P3DAppInterface::setupViewer(int width, int height)
+{
+    _viewer->setCameraManipulator(new osgGA::MultiTouchTrackballManipulator());
+    _viewer->getCamera()->setProjectionMatrixAsPerspective(30.0f, static_cast<double>(width)/static_cast<double>(height), 1.0f, 10000.0f);
+
 }
 
 
@@ -196,7 +201,7 @@ UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
     {
         _viewer->getCamera()->setGraphicsContext(graphicsContext);
         _viewer->getCamera()->setViewport(new osg::Viewport(0, 0, traits->width, traits->height));
-        
+        setupViewer(width, height);
         _viewer->realize();
         return (UIView*)(graphicsContext->getView());
     }

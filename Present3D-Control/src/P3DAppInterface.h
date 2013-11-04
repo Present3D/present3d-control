@@ -63,6 +63,7 @@ public:
     void handleMemoryWarning();
     
 protected:
+    void setupViewer(int width, int heigth);
     
 private:
     void readFinished(bool success, osg::Node* node, const std::string& file_name);

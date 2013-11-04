@@ -9,6 +9,7 @@
 #include "ReadFileThread.h"
 #include "P3DAppInterface.h"
 #include <osgDB/ReadFile>
+#include <osgUtil/Optimizer> 
 
 
 ReadFileThread::ReadFileThread(const std::string& file_name)
@@ -23,6 +24,9 @@ ReadFileThread::ReadFileThread(const std::string& file_name)
 void ReadFileThread::run()
 {
     _node = osgDB::readNodeFile(_fileName);
+    
+    osgUtil::Optimizer o;
+    o.optimize(_node);
     
     P3DAppInterface::instance()->readFinished(_node.valid(), _node, _fileName);
 }
