@@ -385,9 +385,6 @@ private:
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle: @"Error" message: [NSString stringWithFormat: @"Could not read scene-file %@", fileName] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
-    
-    
-
 }
 
 -(void)toggleAllowTrackball:(id)sender {
