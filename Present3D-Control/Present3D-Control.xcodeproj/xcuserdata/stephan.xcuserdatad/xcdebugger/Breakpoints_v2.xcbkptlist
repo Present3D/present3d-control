@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DMenuViewController.mm"
-            timestampString = "405364684.857184"
+            timestampString = "405366273.245469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "357"
-            endingLineNumber = "357"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
             landmarkName = "-startReadingSequence"
             landmarkType = "5">
          </BreakpointContent>
@@ -546,11 +546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405363277.630312"
+            timestampString = "405366345.693517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "P3DAppInterface::readFinished(bool success, osg::Node* node, const std::string&amp; file_name)"
             landmarkType = "5">
          </BreakpointContent>
@@ -562,11 +562,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405363277.630312"
+            timestampString = "405366345.693517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height)"
             landmarkType = "5">
          </BreakpointContent>
@@ -578,11 +578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405363277.630312"
+            timestampString = "405366345.693517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height)"
             landmarkType = "5">
             <Locations>
@@ -624,11 +624,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405363277.630312"
+            timestampString = "405366345.693517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height)"
             landmarkType = "5">
          </BreakpointContent>
@@ -640,11 +640,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405363277.630312"
+            timestampString = "405366345.693517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height)"
             landmarkType = "5">
             <Locations>
@@ -1019,12 +1019,12 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "405364768.127169"
+                  timestampString = "405366522.280458"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "18">
+                  offsetFromSymbolStart = "32">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1033,12 +1033,40 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "405364768.127463"
+                  timestampString = "405366522.280651"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "123">
+                  offsetFromSymbolStart = "290">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DSceneViewController dealloc]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
+                  timestampString = "405366522.280854"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "366">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DSceneViewController dealloc]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
+                  timestampString = "405366522.281037"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "394">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1128,11 +1156,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DMenuViewController.mm"
-            timestampString = "405364684.857184"
+            timestampString = "405366273.245469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
             landmarkName = "-handleReadFileResult:withFileName:"
             landmarkType = "5">
             <Locations>
@@ -1165,6 +1193,22 @@
                   offsetFromSymbolStart = "418">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/ToggleMultitouchTrackball.h"
+            timestampString = "405366301.560898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "handle(const osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

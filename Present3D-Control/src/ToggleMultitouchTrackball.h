@@ -19,13 +19,7 @@ public:
     
     virtual bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
     {
-        if (!_enabled && ((ea.getEventType() == osgGA::GUIEventAdapter::PUSH)
-            || (ea.getEventType() == osgGA::GUIEventAdapter::DRAG)
-            || (ea.getEventType() == osgGA::GUIEventAdapter::RELEASE)))
-            
-            return false;
-        
-        return osgGA::TrackballManipulator::handle(ea, aa);
+        return _enabled && osgGA::MultiTouchTrackballManipulator::handle(ea, aa);
     }
     
 private:

@@ -113,6 +113,7 @@ P3DAppInterface::P3DAppInterface()
     
     _viewer = new osgViewer::Viewer();
     _trackball = new ToggleMultiTouchTrackball();
+    _viewer->setCameraManipulator(_trackball);
 }
 
 
@@ -184,9 +185,7 @@ void P3DAppInterface::applySceneData()
 
 void P3DAppInterface::setupViewer(int width, int height)
 {
-    _viewer->setCameraManipulator(_trackball);
     _viewer->getCamera()->setProjectionMatrixAsPerspective(30.0f, static_cast<double>(width)/static_cast<double>(height), 1.0f, 10000.0f);
-
 }
 
 
