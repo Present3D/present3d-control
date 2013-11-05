@@ -8,6 +8,7 @@
 
 #import "P3DSceneViewController.h"
 #import "P3DMenuViewController.h"
+#include "IOSUtils.h"
 
 @interface P3DSceneViewController ()
 
@@ -86,10 +87,6 @@
     _app = P3DAppInterface::instance();
     _openGLView = _app->initInView(self.view, self.view.frame.size.width, self.view.frame.size.height);
     [self.view sendSubviewToBack: _openGLView];
-    _openGLView.backgroundColor = [UIColor redColor];
-    
-    NSLog(@"subviews: %@",self.view.subviews);
-    NSLog(@"view bounds: %fx%f, %fx%f)", _openGLView.frame.origin.x, _openGLView.frame.origin.y, _openGLView.frame.size.width, _openGLView.frame.size.height);
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
@@ -104,6 +101,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -132,6 +130,11 @@
     loadingView.hidden = FALSE;
     loadingView.alpha = 0.0;
     [UIView animateWithDuration:0.25 animations:^{ loadingView.alpha = 1.0;}];
+}
+
+- (void)handleSetIntermediateScene
+{
+    [UIView animateWithDuration:0.25 animations:^{ loadingView.alpha = 0.3;}];
 }
 
 - (void)stopReadingSequence

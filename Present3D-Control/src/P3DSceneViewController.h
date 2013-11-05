@@ -23,6 +23,7 @@
 
 - (IBAction)toggleButtonTapped:(id)sender;
 - (void)startReadingSequence;
+- (void)handleSetIntermediateScene;
 - (void)stopReadingSequence;
 - (void)initCommon;
 - (void)guidedAccessChanged;

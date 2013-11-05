@@ -12,6 +12,7 @@
 #include <OpenThreads/Thread>
 #include <osg/Referenced>
 #include <osg/Node>
+#include <osgDB/ReaderWriter>
 
 #include "ReadFileCompleteHandler.h"
 
@@ -24,6 +25,11 @@ public:
     virtual void run();
     
 private:
+    osgDB::Options* createOptions(const osgDB::ReaderWriter::Options* options);
+
+    osg::ref_ptr<osg::Node> readHoldingSlide(const std::string& filename);
+    osg::ref_ptr<osg::Node> readPresentation(const std::string& filename,const osgDB::ReaderWriter::Options* options);
+    
     std::string _fileName;
     osg::ref_ptr<osg::Node> _node;
 

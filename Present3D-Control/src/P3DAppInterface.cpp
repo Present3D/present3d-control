@@ -13,7 +13,7 @@
 #include <osgUtil/Optimizer>
 #include <osgViewer/api/IOS/GraphicsWindowIOS>
 #include <osgGA/MultiTouchTrackballManipulator>
-
+#include <osgDB/ReadFile>
 
 USE_GRAPICSWINDOW_IMPLEMENTATION(IOS)
 
@@ -93,7 +93,7 @@ public:
     virtual void collect()
     {
         _files.clear();
-        _files.push_back("http://192.168.1.1/test_presentation.p3d");
+        _files.push_back("http://quincy.local/gsc_ipad/interface.p3d");
         _files.push_back("http://svn.openscenegraph.org/osg/OpenSceneGraph-Data/trunk/cow.osgt");
     }
 
@@ -112,6 +112,7 @@ P3DAppInterface::P3DAppInterface()
     _files[FileCollection::REMOTE] = new RemoteFileCollection();
     
     _viewer = new osgViewer::Viewer();
+    _trackball = new ToggleMultiTouchTrackball();
 }
 
 
@@ -143,18 +144,36 @@ void P3DAppInterface::readFile(const std::string& file_name)
     _readFileThread->start();
 }
 
+
+void P3DAppInterface::setIntermediateScene(osg::Node* node)
+{
+    std::cout << "setIntermediateScene: " << _readFileThread->getFileName() << std::endl;
+    _intermediateSceneNode = node;
+    if (_readFileCompleteHandler) {
+        _readFileCompleteHandler->setIntermediateScene(node, _readFileThread->getFileName());
+    }
+}
+
+
 void P3DAppInterface::readFinished(bool success, osg::Node* node, const std::string& file_name)
 {
     std::cout << "finished with file: " << _readFileThread->getFileName() << std::endl;
     _sceneNode = node;
     if (_readFileCompleteHandler) {
-        _readFileCompleteHandler->operator()(success, node, file_name);
+        _readFileCompleteHandler->finished(success, node, file_name);
     }
 }
 
+void P3DAppInterface::applyIntermediateSceneData()
+{
+    checkEnvVars();
+    _viewer->setSceneData(_intermediateSceneNode);
+    _intermediateSceneNode = NULL;
+}
 
 void P3DAppInterface::applySceneData()
 {
+    checkEnvVars();
     _readFileThread = NULL;
     std::cout << "applying scene data" << std::endl;
     
@@ -165,7 +184,7 @@ void P3DAppInterface::applySceneData()
 
 void P3DAppInterface::setupViewer(int width, int height)
 {
-    _viewer->setCameraManipulator(new osgGA::MultiTouchTrackballManipulator());
+    _viewer->setCameraManipulator(_trackball);
     _viewer->getCamera()->setProjectionMatrixAsPerspective(30.0f, static_cast<double>(width)/static_cast<double>(height), 1.0f, 10000.0f);
 
 }
@@ -186,7 +205,7 @@ UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
     traits->width = width;
     traits->height = height;
     traits->depth = 24; //keep memory down, default is currently 24
-    traits->alpha = 8;
+    traits->alpha = 0;
     traits->windowDecoration = false;
     traits->doubleBuffer = true;
     traits->sharedContext = 0;
@@ -216,4 +235,85 @@ UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
 void P3DAppInterface::handleMemoryWarning()
 {
     osgDB::Registry::instance()->clearObjectCache();
+}
+
+
+void P3DAppInterface::addDevice(osgGA::Device *device)
+{
+    std::cout << "TODO: adddevice" << std::endl;
+}
+
+
+void P3DAppInterface::checkEnvVars()
+{
+    
+    {
+        const char* p3dDevice = getenv("P3D_DEVICE");
+        if (p3dDevice)
+        {
+            osgDB::StringList devices;
+            osgDB::split(p3dDevice, devices);
+            for(osgDB::StringList::iterator i = devices.begin(); i != devices.end(); ++i)
+            {
+                osg::ref_ptr<osgGA::Device> dev = osgDB::readFile<osgGA::Device>(*i);
+                if (dev.valid())
+                {
+                    OSG_NOTICE << "Adding Device : " << *i << std::endl;
+                    addDevice(dev.get());
+                }
+                else
+                {
+                    OSG_WARN << "could not open device: " << *i << std::endl;
+                }
+            }
+        }
+    }
+    /*
+    {
+        const char* p3dTimeOut = getenv("P3D_TIMEOUT");
+        if(p3dTimeOut)
+        {
+            unsigned int new_max_idle_time = atoi(p3dTimeOut);
+            if (new_max_idle_time > 0)
+            {
+                if (!_idleTimerEventHandler.valid())
+                {
+                    _idleTimerEventHandler = new IdleTimerEventHandler(new_max_idle_time);
+                    _viewer->getEventHandlers().push_front(_idleTimerEventHandler);
+                }
+                _idleTimerEventHandler->setNewMaxIdleTime(new_max_idle_time);
+            }
+        }
+    }*/
+    
+    {
+        char* OSGNOTIFYLEVEL=getenv("OSG_NOTIFY_LEVEL");
+        if (!OSGNOTIFYLEVEL) OSGNOTIFYLEVEL=getenv("OSGNOTIFYLEVEL");
+        if(OSGNOTIFYLEVEL)
+        {
+            osg::NotifySeverity notifyLevel = osg::NOTICE;
+            std::string stringOSGNOTIFYLEVEL(OSGNOTIFYLEVEL);
+
+            // Convert to upper case
+            for(std::string::iterator i=stringOSGNOTIFYLEVEL.begin();
+                i!=stringOSGNOTIFYLEVEL.end();
+                ++i)
+            {
+                *i=toupper(*i);
+            }
+
+            if(stringOSGNOTIFYLEVEL.find("ALWAYS")!=std::string::npos)          notifyLevel=osg::ALWAYS;
+            else if(stringOSGNOTIFYLEVEL.find("FATAL")!=std::string::npos)      notifyLevel=osg::FATAL;
+            else if(stringOSGNOTIFYLEVEL.find("WARN")!=std::string::npos)       notifyLevel=osg::WARN;
+            else if(stringOSGNOTIFYLEVEL.find("NOTICE")!=std::string::npos)     notifyLevel=osg::NOTICE;
+            else if(stringOSGNOTIFYLEVEL.find("DEBUG_INFO")!=std::string::npos) notifyLevel=osg::DEBUG_INFO;
+            else if(stringOSGNOTIFYLEVEL.find("DEBUG_FP")!=std::string::npos)   notifyLevel=osg::DEBUG_FP;
+            else if(stringOSGNOTIFYLEVEL.find("DEBUG")!=std::string::npos)      notifyLevel=osg::DEBUG_INFO;
+            else if(stringOSGNOTIFYLEVEL.find("INFO")!=std::string::npos)       notifyLevel=osg::INFO;
+            else std::cout << "Warning: invalid OSG_NOTIFY_LEVEL set ("<<stringOSGNOTIFYLEVEL<<")"<<std::endl;
+            
+            osg::setNotifyLevel(notifyLevel);
+
+        }
+    }
 }

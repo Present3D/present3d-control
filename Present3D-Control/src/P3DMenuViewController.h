@@ -15,6 +15,8 @@
 @property (nonatomic, strong) IBOutlet P3DOSCSettingsController* oscSettingsController;
 
 -(void) startReadingSequence;
+-(void) handleSetIntermediateScene;
 -(void) handleReadFileResult: (BOOL) success withFileName: (NSString*) fileName;
+-(void) toggleAllowTrackball: (id)sender;
 
 @end

@@ -16,6 +16,6 @@ class ReadFileCompleteHandler : public osg::Referenced {
 
 public:
     ReadFileCompleteHandler() : osg::Referenced() {}
-    
-    virtual void operator()(bool read_successful, osg::Node* node, const std::string& file_name) = 0;
+    virtual void setIntermediateScene(osg::Node* node, const std::string& file_name) = 0;
+    virtual void finished(bool read_successful, osg::Node* node, const std::string& file_name) = 0;
 };

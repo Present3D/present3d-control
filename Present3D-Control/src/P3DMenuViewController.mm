@@ -20,8 +20,15 @@ class MyReadFileCompletionHandler : public ReadFileCompleteHandler {
 public:
     MyReadFileCompletionHandler(P3DMenuViewController* controller) : ReadFileCompleteHandler(), _controller(controller) {}
     
-    virtual void operator()(bool success, osg::Node* node, const std::string& file_name) {
+    virtual void setIntermediateScene(osg::Node* node, const std::string& file_name) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [_controller handleSetIntermediateScene];
+        });
+    }
+    
+    virtual void finished(bool success, osg::Node* node, const std::string& file_name) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSUserDefaults standardUserDefaults] setObject: IOSUtils::toNSString(file_name) forKey: @"osgLastOpenedFile"];
             [_controller handleReadFileResult: success withFileName:IOSUtils::toNSString(osgDB::getSimpleFileName(file_name))];
         });
     }
@@ -69,6 +76,17 @@ private:
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // restore saved values
+    bool trackball_enabled = [[NSUserDefaults standardUserDefaults] boolForKey: @"osgAllowTrackball"];
+    NSString* last_file = [[NSUserDefaults standardUserDefaults] stringForKey: @"osgLastOpenedFile"];
+    
+    P3DAppInterface::instance()->toggleTrackball(trackball_enabled);
+    if(last_file) {
+        [self startReadingSequence];
+        P3DAppInterface::instance()->readFile(IOSUtils::toString(last_file));
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,7 +161,10 @@ private:
                 case 0:
                     {
                         P3DSwitchTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"SwitchCell" forIndexPath:indexPath];
-                        the_cell.textLabel.text = @"Disable interface";
+                        the_cell.textLabel.text = @"allow trackball";
+                        the_cell.toggleSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey: @"osgAllowTrackball"];
+                        
+                        [the_cell.toggleSwitch addTarget: self action:@selector(toggleAllowTrackball:) forControlEvents:UIControlEventValueChanged];
                         cell = the_cell;
                     }
                     break;
@@ -331,6 +352,7 @@ private:
     return YES;
 }
 
+
 - (void)startReadingSequence
 {
     ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
@@ -340,16 +362,39 @@ private:
     P3DAppInterface::instance()->setReadFileCompleteHandler(new MyReadFileCompletionHandler(self));
 }
 
+
+-(void) handleSetIntermediateScene
+{
+    ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
+    [(P3DSceneViewController*)svc.topViewController handleSetIntermediateScene];
+    P3DAppInterface::instance()->applyIntermediateSceneData();
+}
+
+
 -(void) handleReadFileResult: (BOOL) success withFileName:(NSString *)fileName
 {
     ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
     [(P3DSceneViewController*)svc.topViewController stopReadingSequence];
     if (success)
+    {
         P3DAppInterface::instance()->applySceneData();
-    else {
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject: NULL forKey: @"osgLastOpenedFile"];
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle: @"Error" message: [NSString stringWithFormat: @"Could not read scene-file %@", fileName] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
+    
+    
+
+}
+
+-(void)toggleAllowTrackball:(id)sender {
+    UISwitch* ui_switch = (UISwitch*)(sender);
+    P3DAppInterface::instance()->toggleTrackball(ui_switch.on);
+    [[NSUserDefaults standardUserDefaults] setBool: ui_switch.on forKey: @"osgAllowTrackball"];
+
 }
 
 @end

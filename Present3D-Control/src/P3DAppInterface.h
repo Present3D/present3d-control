@@ -21,6 +21,8 @@
 #include "ReadFileThread.h"
 #include "ReadFileCompleteHandler.h"
 
+#include "ToggleMultiTouchTrackball.h"
+
 #ifdef __OBJC__
 @class UIView;
 #else
@@ -51,6 +53,8 @@ public:
     void setReadFileCompleteHandler(ReadFileCompleteHandler* handler) { _readFileCompleteHandler = handler; }
     
     void applySceneData();
+    void applyIntermediateSceneData();
+    void checkEnvVars();
 
     void readFile(const std::string& file);
     
@@ -62,10 +66,17 @@ public:
         
     void handleMemoryWarning();
     
+    void addDevice(osgGA::Device* device);
+    
+    void toggleTrackball(bool b) {
+        _trackball->setEnabled(b);
+    }
+    
 protected:
     void setupViewer(int width, int heigth);
     
 private:
+    void setIntermediateScene(osg::Node* node);
     void readFinished(bool success, osg::Node* node, const std::string& file_name);
     bool fileTypeSupported(const std::string& file_extension);
     
@@ -74,10 +85,11 @@ private:
     
     osg::ref_ptr<ReadFileThread> _readFileThread;
     osg::ref_ptr<ReadFileCompleteHandler> _readFileCompleteHandler;
-    osg::ref_ptr<osg::Node> _sceneNode;
+    osg::ref_ptr<osg::Node> _sceneNode, _intermediateSceneNode;
     
     friend class LocalFileCollection;
     friend class RemoteFileCollection;
     friend class ReadFileThread;
     osg::ref_ptr<osgViewer::Viewer> _viewer;
+    osg::ref_ptr<ToggleMultiTouchTrackball> _trackball;
 };
