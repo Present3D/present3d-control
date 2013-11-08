@@ -7,6 +7,9 @@
 //
 
 #import "P3DAppDelegate.h"
+
+#import <Crashlytics/Crashlytics.h>
+
 #include "P3DAppInterface.h"
 #include "IOSUtils.h"
 
@@ -15,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [Crashlytics startWithAPIKey:@"c21a7f3b9b7155c2dc0ac29a3a93ddba01a41289"];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 
