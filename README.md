@@ -8,7 +8,7 @@ It also supports forwarding events via the osc-protocol to control other p3d-pre
 
 
 
-Supported evironment-variables:
+Supported environment-variables:
 -------------------------------
 
 * `P3D_CONTROL_ALLOW_TRACKBALL (1|0)` enable/disable the trackball manipulator on the device
