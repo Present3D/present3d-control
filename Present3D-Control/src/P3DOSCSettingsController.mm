@@ -9,6 +9,9 @@
 #import "P3DOSCSettingsController.h"
 #import "P3DLabelTextfieldTableViewCell.h"
 
+#include "P3DAppInterface.h"
+#include "IOSUtils.h"
+
 NSString *const oscDiscoverKey          = @"oscDiscover";
 NSString *const oscHostKey              = @"oscHost";
 NSString *const oscPortKey              = @"oscPort";
@@ -21,12 +24,26 @@ NSString *const oscDelayKey             = @"oscDelay";
 - (id)init
 {
     self = [super init];
+    
     if(self) {
         NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
         [standardDefaults registerDefaults:@{oscDiscoverKey: @TRUE, oscHostKey: @"", oscPortKey: @9000, oscMessagesPerEventKey: @3, oscDelayKey: @1000}];
         [standardDefaults synchronize];
         
         NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+        
+        OscController* osc_controller = P3DAppInterface::instance()->getOscController();
+        
+        NSString* host = [standardDefaults stringForKey: oscHostKey];
+        unsigned int port = [standardDefaults integerForKey: oscPortKey];
+        unsigned int num_messages_per_event = [standardDefaults integerForKey: oscMessagesPerEventKey];
+        unsigned int delay = [standardDefaults integerForKey: oscDelayKey];
+        osc_controller->setHostAndPort(IOSUtils::toString(host), port);
+        osc_controller->setNumMessagesPerEvent(num_messages_per_event);
+        osc_controller->setDelay(delay);
+        
+        if(![[NSUserDefaults standardUserDefaults] boolForKey: oscDiscoverKey])
+            osc_controller->reconnect();
     }
     return self;
 }
@@ -43,6 +60,10 @@ NSString *const oscDelayKey             = @"oscDelay";
         [self setDelay:[textField.text integerValue]];
     }
     
+    // reconnect osc, if necessary
+    P3DAppInterface::instance()->getOscController()->reconnect();
+
+
     UITextField* fields[4] = { _hostTextfield, _portTextfield, _numMessagesTextfield, _delayTextfield };
     for(unsigned int i=0; i < 4; ++i) {
         if (fields[i] == textField) {
@@ -55,7 +76,7 @@ NSString *const oscDelayKey             = @"oscDelay";
             }
         }
     }
-   
+    
     return YES;
 }
 
@@ -144,38 +165,42 @@ NSString *const oscDelayKey             = @"oscDelay";
     [[NSUserDefaults standardUserDefaults] setBool: discovery forKey: oscDiscoverKey];
 }
 
-- (NSString*) getHost {
-    return [[NSUserDefaults standardUserDefaults] stringForKey: oscHostKey];
+- (NSString*) getHost {   
+    return IOSUtils::toNSString(P3DAppInterface::instance()->getOscController()->getHost());
 }
 
 
 - (void) setHost: (NSString*)host {
+    P3DAppInterface::instance()->getOscController()->setHost(IOSUtils::toString(host));
     [[NSUserDefaults standardUserDefaults] setObject: host forKey: oscHostKey];
 }
 
 
 -(unsigned int)getPort {
-    return [[NSUserDefaults standardUserDefaults] integerForKey: oscPortKey];
+    return P3DAppInterface::instance()->getOscController()->getPort();
 }
 
 -(void)setPort:(unsigned int)port {
+    P3DAppInterface::instance()->getOscController()->setPort(port);
     [[NSUserDefaults standardUserDefaults] setInteger:port forKey: oscPortKey];
 }
 
 -(unsigned int)getNumMessagesPerEvent {
-    return [[NSUserDefaults standardUserDefaults] integerForKey: oscMessagesPerEventKey];
+    return P3DAppInterface::instance()->getOscController()->getNumMessagesPerEvent();
 }
 
 -(void)setNumMessagesPerEvent:(unsigned int)messages {
+    P3DAppInterface::instance()->getOscController()->setNumMessagesPerEvent(messages);
     [[NSUserDefaults standardUserDefaults] setInteger:messages forKey: oscMessagesPerEventKey];
 }
 
 
 -(unsigned int)getDelay {
-    return [[NSUserDefaults standardUserDefaults] integerForKey: oscDelayKey];
+    return P3DAppInterface::instance()->getOscController()->getDelay();
 }
 
 -(void)setDelay:(unsigned int)delay {
+    P3DAppInterface::instance()->getOscController()->setDelay(delay);
     [[NSUserDefaults standardUserDefaults] setInteger:delay forKey: oscDelayKey];
 
 }

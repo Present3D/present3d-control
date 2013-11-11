@@ -31,6 +31,9 @@ public:
     virtual std::string getSimpleNameAt(unsigned int ndx) { return osgDB::getSimpleFileName(_files[ndx]); }
     virtual std::string getDetailedAt(unsigned int ndx) { return ""; }
     
+    virtual bool add(const std::string& file_path) { return false;  }
+    virtual bool remove(const std::string& file_path) { return false;  }
+    
 protected:
     
     Type _type;

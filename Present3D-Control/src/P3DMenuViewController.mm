@@ -37,6 +37,18 @@ private:
     P3DMenuViewController* _controller;
 };
 
+
+struct MyRefreshInterfaceCallback : P3DAppInterface::RefreshInterfaceCallback {
+
+    MyRefreshInterfaceCallback(P3DMenuViewController* controller) : P3DAppInterface::RefreshInterfaceCallback(), _controller(controller) {}
+    
+    virtual void operator()() {
+        [_controller refreshInterface];
+    }
+private:
+    P3DMenuViewController* _controller;
+};
+
 @interface P3DMenuViewController ()
 
 @end
@@ -46,6 +58,7 @@ private:
 - (void) commonInit
 {
     self.oscSettingsController = [[P3DOSCSettingsController alloc] init];
+    P3DAppInterface::instance()->setRefreshInterfaceCallback(new MyRefreshInterfaceCallback(self));
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -156,6 +169,7 @@ private:
                 [tf_cell.textfield setKeyboardType:UIKeyboardTypeURL];
             }
             break;
+            
         case 2:
             switch(indexPath.row) {
                 case 0:
@@ -169,8 +183,7 @@ private:
                     }
                     break;
             }
-
-            
+            break;
         case 3:
             switch(indexPath.row) {
                 case 0:
@@ -227,6 +240,7 @@ private:
                     break;
             }
             [self.oscSettingsController updateDelegates];
+            break;
     }
     
     return cell;
@@ -334,6 +348,7 @@ private:
     }
 }
 
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     osg::ref_ptr<P3DAppInterface> app = P3DAppInterface::instance();
@@ -392,6 +407,11 @@ private:
     P3DAppInterface::instance()->toggleTrackball(ui_switch.on);
     [[NSUserDefaults standardUserDefaults] setBool: ui_switch.on forKey: @"osgAllowTrackball"];
 
+}
+
+-(void) refreshInterface
+{
+    [self.tableView reloadData];
 }
 
 @end

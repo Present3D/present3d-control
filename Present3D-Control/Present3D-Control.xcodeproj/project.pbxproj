@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D41F61E018310C78006FDEDF /* OscController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D41F61DE18310C78006FDEDF /* OscController.cpp */; };
 		D42498A818166158002C8418 /* P3DSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D42498A718166158002C8418 /* P3DSwitchTableViewCell.m */; };
 		D46015CA18269A77003EA6E3 /* Present3D-Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D46015C918269A77003EA6E3 /* Present3D-Release.xcconfig */; };
 		D46015CC18269ACE003EA6E3 /* Present3D-Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D46015CB18269ACD003EA6E3 /* Present3D-Common.xcconfig */; };
 		D46015CE1826B5F1003EA6E3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D46015CD1826B5F1003EA6E3 /* libz.dylib */; };
 		D46015D01826B5FA003EA6E3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46015CF1826B5FA003EA6E3 /* CoreMedia.framework */; };
 		D463C407181668570038BD75 /* P3DLabelTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */; };
-		D463C40A1816700C0038BD75 /* P3DOSCSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D463C4091816700C0038BD75 /* P3DOSCSettingsController.m */; };
+		D463C40A1816700C0038BD75 /* P3DOSCSettingsController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D463C4091816700C0038BD75 /* P3DOSCSettingsController.mm */; };
 		D4713E8E182BD66E0010010F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4713E8D182BD66E0010010F /* Crashlytics.framework */; };
-		D4713E91182BFB5B0010010F /* ZeroConfDiscoverHttpEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4713E8F182BFB5B0010010F /* ZeroConfDiscoverHttpEventHandler.cpp */; };
+		D4713E91182BFB5B0010010F /* ZeroConfDiscoverEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4713E8F182BFB5B0010010F /* ZeroConfDiscoverEventHandler.cpp */; };
 		D481CB381826B68900C967B0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB371826B68900C967B0 /* CoreImage.framework */; };
 		D481CB3A1826B6B400C967B0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB391826B6B400C967B0 /* ImageIO.framework */; };
 		D481CB3C1826B6C900C967B0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB3B1826B6C900C967B0 /* MobileCoreServices.framework */; };
@@ -63,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D41F61DE18310C78006FDEDF /* OscController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscController.cpp; sourceTree = "<group>"; };
+		D41F61DF18310C78006FDEDF /* OscController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscController.h; sourceTree = "<group>"; };
 		D42498A618166158002C8418 /* P3DSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DSwitchTableViewCell.h; sourceTree = "<group>"; };
 		D42498A718166158002C8418 /* P3DSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DSwitchTableViewCell.m; sourceTree = "<group>"; };
 		D46015C8182699B2003EA6E3 /* Present3D-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Present3D-Debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,10 +76,10 @@
 		D463C405181668570038BD75 /* P3DLabelTextfieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DLabelTextfieldTableViewCell.h; sourceTree = "<group>"; };
 		D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DLabelTextfieldTableViewCell.m; sourceTree = "<group>"; };
 		D463C4081816700C0038BD75 /* P3DOSCSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DOSCSettingsController.h; sourceTree = "<group>"; };
-		D463C4091816700C0038BD75 /* P3DOSCSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DOSCSettingsController.m; sourceTree = "<group>"; };
+		D463C4091816700C0038BD75 /* P3DOSCSettingsController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = P3DOSCSettingsController.mm; sourceTree = "<group>"; };
 		D4713E8D182BD66E0010010F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		D4713E8F182BFB5B0010010F /* ZeroConfDiscoverHttpEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZeroConfDiscoverHttpEventHandler.cpp; sourceTree = "<group>"; };
-		D4713E90182BFB5B0010010F /* ZeroConfDiscoverHttpEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeroConfDiscoverHttpEventHandler.h; sourceTree = "<group>"; };
+		D4713E8F182BFB5B0010010F /* ZeroConfDiscoverEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZeroConfDiscoverEventHandler.cpp; sourceTree = "<group>"; };
+		D4713E90182BFB5B0010010F /* ZeroConfDiscoverEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeroConfDiscoverEventHandler.h; sourceTree = "<group>"; };
 		D481CB371826B68900C967B0 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D481CB391826B6B400C967B0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		D481CB3B1826B6C900C967B0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -300,7 +303,7 @@
 				D463C405181668570038BD75 /* P3DLabelTextfieldTableViewCell.h */,
 				D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */,
 				D463C4081816700C0038BD75 /* P3DOSCSettingsController.h */,
-				D463C4091816700C0038BD75 /* P3DOSCSettingsController.m */,
+				D463C4091816700C0038BD75 /* P3DOSCSettingsController.mm */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -327,8 +330,10 @@
 				D4D5026D180E8AE600F445D4 /* ReadFileThread.h */,
 				D4A318F518295931006584AD /* ToggleMultitouchTrackball.cpp */,
 				D4A318F618295931006584AD /* ToggleMultitouchTrackball.h */,
-				D4713E8F182BFB5B0010010F /* ZeroConfDiscoverHttpEventHandler.cpp */,
-				D4713E90182BFB5B0010010F /* ZeroConfDiscoverHttpEventHandler.h */,
+				D4713E8F182BFB5B0010010F /* ZeroConfDiscoverEventHandler.cpp */,
+				D4713E90182BFB5B0010010F /* ZeroConfDiscoverEventHandler.h */,
+				D41F61DE18310C78006FDEDF /* OscController.cpp */,
+				D41F61DF18310C78006FDEDF /* OscController.h */,
 			);
 			name = "C++";
 			sourceTree = "<group>";
@@ -460,7 +465,8 @@
 				D4BE74B5180D321B008028DA /* P3DAppInterface.cpp in Sources */,
 				D4D50268180E89CB00F445D4 /* ReadFileCompleteHandler.cpp in Sources */,
 				D48F47331811521C00A2F8E7 /* P3DTextfieldTableViewCell.m in Sources */,
-				D4713E91182BFB5B0010010F /* ZeroConfDiscoverHttpEventHandler.cpp in Sources */,
+				D4713E91182BFB5B0010010F /* ZeroConfDiscoverEventHandler.cpp in Sources */,
+				D41F61E018310C78006FDEDF /* OscController.cpp in Sources */,
 				D42498A818166158002C8418 /* P3DSwitchTableViewCell.m in Sources */,
 				D4D5026E180E8AE600F445D4 /* ReadFileThread.cpp in Sources */,
 				D4A89399180BD86000ACB0B9 /* P3DAppDelegate.mm in Sources */,
@@ -469,7 +475,7 @@
 				D4A8936C180BD70700ACB0B9 /* main.m in Sources */,
 				D463C407181668570038BD75 /* P3DLabelTextfieldTableViewCell.m in Sources */,
 				D4A8939A180BD86000ACB0B9 /* P3DRootViewController.m in Sources */,
-				D463C40A1816700C0038BD75 /* P3DOSCSettingsController.m in Sources */,
+				D463C40A1816700C0038BD75 /* P3DOSCSettingsController.mm in Sources */,
 				D4BE74AF180D2A74008028DA /* P3DMenuViewController.mm in Sources */,
 				D4A318F718295931006584AD /* ToggleMultitouchTrackball.cpp in Sources */,
 				D4BE7699180D38DD008028DA /* IOSUtils.mm in Sources */,
@@ -552,7 +558,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -599,7 +605,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

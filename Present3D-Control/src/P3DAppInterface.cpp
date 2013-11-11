@@ -15,6 +15,8 @@
 #include <osgGA/MultiTouchTrackballManipulator>
 #include <osgDB/ReadFile>
 
+#include "ZeroConfDiscoverEventHandler.h"
+
 USE_GRAPICSWINDOW_IMPLEMENTATION(IOS)
 
 USE_OSGPLUGIN(imageio)
@@ -93,16 +95,34 @@ public:
     virtual void collect()
     {
         _files.clear();
-        _files.push_back("http://quincy.local/gsc_ipad/interface.p3d");
-        _files.push_back("http://svn.openscenegraph.org/osg/OpenSceneGraph-Data/trunk/cow.osgt");
+        //_files.push_back("http://quincy.local/gsc_ipad/interface.p3d");
+        //_files.push_back("http://svn.openscenegraph.org/osg/OpenSceneGraph-Data/trunk/cow.osgt");
+        for(FilesVector::iterator i = _discoveredFiles.begin(); i != _discoveredFiles.end(); ++i) {
+            _files.push_back(*i);
+        }
     }
-
+    
+    virtual bool add(const std::string& file_name) {
+        _discoveredFiles.push_back(file_name);
+        return true;
+    }
+    
+    virtual bool remove(const std::string& file_name) {
+        _discoveredFiles.erase(std::remove(_discoveredFiles.begin(),  _discoveredFiles.end(), file_name), _discoveredFiles.end());
+        return true;
+    }
+    
+    
+private:
+    FilesVector _discoveredFiles;
 };
 
 
 P3DAppInterface::P3DAppInterface()
     : osg::Referenced()
     , _sceneNode(NULL)
+    , _refreshInterfaceCallback(NULL)
+    , _oscController(new OscController())
 {
     addSupportedFileType("osgt");
     addSupportedFileType("osgb");
@@ -114,6 +134,8 @@ P3DAppInterface::P3DAppInterface()
     _viewer = new osgViewer::Viewer();
     _trackball = new ToggleMultiTouchTrackball();
     _viewer->setCameraManipulator(_trackball);
+    
+    _viewer->addEventHandler(new ZeroConfDiscoverEventHandler(this));
 }
 
 

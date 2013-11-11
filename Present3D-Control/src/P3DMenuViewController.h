@@ -18,5 +18,6 @@
 -(void) handleSetIntermediateScene;
 -(void) handleReadFileResult: (BOOL) success withFileName: (NSString*) fileName;
 -(void) toggleAllowTrackball: (id)sender;
+-(void) refreshInterface;
 
 @end

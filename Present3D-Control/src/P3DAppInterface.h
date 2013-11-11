@@ -20,7 +20,7 @@
 #include "FileCollection.h"
 #include "ReadFileThread.h"
 #include "ReadFileCompleteHandler.h"
-
+#include "OscController.h"
 #include "ToggleMultiTouchTrackball.h"
 
 #ifdef __OBJC__
@@ -34,6 +34,11 @@ public:
     
     typedef std::set<std::string> SupportedFileTypesSet;
     typedef std::map<FileCollection::Type, osg::ref_ptr<FileCollection> > FilesMap;
+    
+    struct RefreshInterfaceCallback : osg::Referenced {
+    virtual void operator()() = 0;
+    };
+    
     P3DAppInterface();
     
     static P3DAppInterface* instance();
@@ -72,6 +77,17 @@ public:
         _trackball->setEnabled(b);
     }
     
+    void setRefreshInterfaceCallback(RefreshInterfaceCallback* cb) { _refreshInterfaceCallback = cb; }
+    
+    void refreshInterface() {
+        if (_refreshInterfaceCallback.valid())
+            (*_refreshInterfaceCallback)();
+    };
+    
+    osgViewer::Viewer* getViewer() { return _viewer; }
+    
+    OscController* getOscController() { return _oscController; }
+    
 protected:
     void setupViewer(int width, int heigth);
     
@@ -92,4 +108,7 @@ private:
     friend class ReadFileThread;
     osg::ref_ptr<osgViewer::Viewer> _viewer;
     osg::ref_ptr<ToggleMultiTouchTrackball> _trackball;
+    
+    osg::ref_ptr<RefreshInterfaceCallback> _refreshInterfaceCallback;
+    osg::ref_ptr<OscController> _oscController;
 };
