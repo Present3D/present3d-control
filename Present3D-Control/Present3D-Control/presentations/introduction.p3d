@@ -11,6 +11,7 @@
 
 <env>OSG_COMPUTE_NEAR_FAR_MODE=COMPUTE_NEAR_FAR_USING_PRIMITIVES</env>
 <env>OSG_NEAR_FAR_RATIO=0.00001</env>
+<env>P3D_CONTROL_ALLOW_TRACKBALL=0</env>
 
 <text-settings character_size="0.035"></text-settings>
 <textcolor>YELLOW</textcolor>

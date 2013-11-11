@@ -22,6 +22,7 @@ public:
         return _enabled && osgGA::MultiTouchTrackballManipulator::handle(ea, aa);
     }
     
+    bool isEnabled() const { return _enabled; }
 private:
     bool _enabled;
 };

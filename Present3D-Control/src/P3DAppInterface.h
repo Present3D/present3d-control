@@ -76,6 +76,7 @@ public:
     void toggleTrackball(bool b) {
         _trackball->setEnabled(b);
     }
+    bool isTrackballEnabled() const { return _trackball->isEnabled(); }
     
     void setRefreshInterfaceCallback(RefreshInterfaceCallback* cb) { _refreshInterfaceCallback = cb; }
     

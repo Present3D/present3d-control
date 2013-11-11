@@ -176,7 +176,7 @@ private:
                     {
                         P3DSwitchTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"SwitchCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"allow trackball";
-                        the_cell.toggleSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey: @"osgAllowTrackball"];
+                        the_cell.toggleSwitch.on = P3DAppInterface::instance()->isTrackballEnabled();
                         
                         [the_cell.toggleSwitch addTarget: self action:@selector(toggleAllowTrackball:) forControlEvents:UIControlEventValueChanged];
                         cell = the_cell;

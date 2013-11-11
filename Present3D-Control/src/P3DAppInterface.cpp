@@ -163,6 +163,9 @@ void P3DAppInterface::readFile(const std::string& file_name)
 {
     std::cout << "read file: " << file_name << std::endl;
     
+    unsetenv("P3D_DEVICE");
+    unsetenv("P3D_CONTROL_ALLOW_TRACKBALL");
+    
     _readFileThread = new ReadFileThread(file_name);
     _readFileThread->start();
 }
@@ -185,6 +188,10 @@ void P3DAppInterface::readFinished(bool success, osg::Node* node, const std::str
     if (_readFileCompleteHandler) {
         _readFileCompleteHandler->finished(success, node, file_name);
     }
+    
+    getViewer()->getEventQueue()->keyPress(' ');
+    getViewer()->getEventQueue()->keyRelease(' ');
+    
 }
 
 void P3DAppInterface::applyIntermediateSceneData()
@@ -287,6 +294,16 @@ void P3DAppInterface::checkEnvVars()
                     OSG_WARN << "could not open device: " << *i << std::endl;
                 }
             }
+        }
+    }
+    
+    {
+        const char* p3dControlAllowTrackball = getenv("P3D_CONTROL_ALLOW_TRACKBALL");
+        if (p3dControlAllowTrackball)
+        {
+            unsigned int val = atoi(p3dControlAllowTrackball);
+            toggleTrackball( val != 0 );
+            refreshInterface();
         }
     }
     /*
