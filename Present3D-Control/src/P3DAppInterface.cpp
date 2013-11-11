@@ -163,7 +163,6 @@ void P3DAppInterface::readFile(const std::string& file_name)
 {
     std::cout << "read file: " << file_name << std::endl;
     
-    unsetenv("P3D_DEVICE");
     unsetenv("P3D_CONTROL_ALLOW_TRACKBALL");
     
     _readFileThread = new ReadFileThread(file_name);
@@ -274,29 +273,6 @@ void P3DAppInterface::addDevice(osgGA::Device *device)
 
 void P3DAppInterface::checkEnvVars()
 {
-    
-    {
-        const char* p3dDevice = getenv("P3D_DEVICE");
-        if (p3dDevice)
-        {
-            osgDB::StringList devices;
-            osgDB::split(p3dDevice, devices);
-            for(osgDB::StringList::iterator i = devices.begin(); i != devices.end(); ++i)
-            {
-                osg::ref_ptr<osgGA::Device> dev = osgDB::readFile<osgGA::Device>(*i);
-                if (dev.valid())
-                {
-                    OSG_NOTICE << "Adding Device : " << *i << std::endl;
-                    addDevice(dev.get());
-                }
-                else
-                {
-                    OSG_WARN << "could not open device: " << *i << std::endl;
-                }
-            }
-        }
-    }
-    
     {
         const char* p3dControlAllowTrackball = getenv("P3D_CONTROL_ALLOW_TRACKBALL");
         if (p3dControlAllowTrackball)
@@ -306,6 +282,7 @@ void P3DAppInterface::checkEnvVars()
             refreshInterface();
         }
     }
+    
     /*
     {
         const char* p3dTimeOut = getenv("P3D_TIMEOUT");
