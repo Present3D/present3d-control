@@ -22,6 +22,7 @@ OscController::OscController()
     , _port(9000)
     , _numMessagesPerEvent(3)
     , _delay(10)
+    , _autoDiscoveryEnabled(true)
 {
 }
 

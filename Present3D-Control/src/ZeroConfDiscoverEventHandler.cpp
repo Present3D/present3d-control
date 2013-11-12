@@ -17,7 +17,7 @@
 
 
 ZeroConfDiscoverEventHandler::ZeroConfDiscoverEventHandler(P3DAppInterface* app)
-    : osgGA::EventHandler()
+    : osgGA::GUIEventHandler()
 {
     setup(app);
 }
@@ -45,8 +45,13 @@ void ZeroConfDiscoverEventHandler::setup(P3DAppInterface* app)
 }
 
 
+
+
 bool ZeroConfDiscoverEventHandler::handle(osgGA::Event* event, osg::Object* object, osg::NodeVisitor* nv) {
     
+    
+
+
     if ((event->getName() == "/zeroconf/service-added") || (event->getName() == "/zeroconf/service-removed"))
     {
         std::string host(""), type("");
@@ -78,20 +83,54 @@ bool ZeroConfDiscoverEventHandler::handle(osgGA::Event* event, osg::Object* obje
         }
         else if (type == oscServiceType())
         {
-            if (event->getName() == "/zeroconf/service-added")
+            if (P3DAppInterface::instance()->getOscController()->isAutomaticDiscoveryEnabled())
             {
-                P3DAppInterface::instance()->getOscController()->setHostAndPort(host, port);
-                P3DAppInterface::instance()->getOscController()->reconnect();
+                if (event->getName() == "/zeroconf/service-added")
+                {
+                    P3DAppInterface::instance()->getOscController()->setAutoDiscoveredHostAndPort(host, port);
+                    P3DAppInterface::instance()->getOscController()->reconnect();
+                }
+                else {
+                    P3DAppInterface::instance()->getOscController()->setAutoDiscoveredHostAndPort("", 9000);
+                    P3DAppInterface::instance()->getOscController()->clear();
+                }
+                
+                P3DAppInterface::instance()->refreshInterface();
+                return true;
             }
             else {
-                P3DAppInterface::instance()->getOscController()->setHostAndPort("", 9000);
-                P3DAppInterface::instance()->getOscController()->clear();
+                OSG_NOTICE << "ZeroConfDiscoverEventHandler :: ignore autodiscovered osc-device: " << host << ":" << port << std::endl;
             }
-            
-            P3DAppInterface::instance()->refreshInterface();
-            return true;
         }
     }
     
-    return osgGA::EventHandler::handle(event,object, nv);
+    if (!event->asGUIEventAdapter()) {
+        forwardEvent(*event);
+        return true;
+    }
+    
+    return osgGA::GUIEventHandler::handle(event, object, nv);
+}
+
+bool ZeroConfDiscoverEventHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object*, osg::NodeVisitor*)
+{
+    // forward all key + user-events to devices
+    if ((ea.getEventType() == osgGA::GUIEventAdapter::KEYDOWN) ||
+        (ea.getEventType() == osgGA::GUIEventAdapter::KEYUP) ||
+        (ea.getEventType() == osgGA::GUIEventAdapter::USER))
+    {
+        forwardEvent(ea);
+    }
+    return false;
+}
+
+void ZeroConfDiscoverEventHandler::forwardEvent(const osgGA::Event& event) {
+    
+    osgViewer::Viewer* viewer = P3DAppInterface::instance()->getViewer();
+    
+    for(osgViewer::View::Devices::iterator i = viewer->getDevices().begin(); i != viewer->getDevices().end(); ++i)
+    {
+        if ((*i)->getCapabilities() & osgGA::Device::SEND_EVENTS)
+            (*i)->sendEvent(event);
+    }
 }

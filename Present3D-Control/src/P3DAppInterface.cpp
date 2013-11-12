@@ -135,7 +135,7 @@ P3DAppInterface::P3DAppInterface()
     _trackball = new ToggleMultiTouchTrackball();
     _viewer->setCameraManipulator(_trackball);
     
-    _viewer->addEventHandler(new ZeroConfDiscoverEventHandler(this));
+    _viewer->getEventHandlers().push_front(new ZeroConfDiscoverEventHandler(this));
 }
 
 
@@ -188,8 +188,7 @@ void P3DAppInterface::readFinished(bool success, osg::Node* node, const std::str
         _readFileCompleteHandler->finished(success, node, file_name);
     }
     
-    getViewer()->getEventQueue()->keyPress(' ');
-    getViewer()->getEventQueue()->keyRelease(' ');
+
     
 }
 
@@ -208,6 +207,11 @@ void P3DAppInterface::applySceneData()
     
     _viewer->setSceneData(_sceneNode);
     _sceneNode = NULL;
+    
+    getViewer()->getEventQueue()->keyPress(' ');
+    getViewer()->getEventQueue()->keyRelease(' ');
+    getViewer()->getEventQueue()->keyPress(osgGA::GUIEventAdapter::KEY_Home);
+    getViewer()->getEventQueue()->keyRelease(osgGA::GUIEventAdapter::KEY_Home);
 }
 
 

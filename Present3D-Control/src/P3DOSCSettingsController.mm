@@ -27,7 +27,7 @@ NSString *const oscDelayKey             = @"oscDelay";
     
     if(self) {
         NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
-        [standardDefaults registerDefaults:@{oscDiscoverKey: @TRUE, oscHostKey: @"", oscPortKey: @9000, oscMessagesPerEventKey: @3, oscDelayKey: @1000}];
+        [standardDefaults registerDefaults:@{oscDiscoverKey: @TRUE, oscHostKey: @"", oscPortKey: @9000, oscMessagesPerEventKey: @2, oscDelayKey: @0}];
         [standardDefaults synchronize];
         
         NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
@@ -38,6 +38,9 @@ NSString *const oscDelayKey             = @"oscDelay";
         unsigned int port = [standardDefaults integerForKey: oscPortKey];
         unsigned int num_messages_per_event = [standardDefaults integerForKey: oscMessagesPerEventKey];
         unsigned int delay = [standardDefaults integerForKey: oscDelayKey];
+        BOOL automatic_discovery = [[NSUserDefaults standardUserDefaults] boolForKey: oscDiscoverKey];
+        
+        osc_controller->enableAutomaticDiscovery(automatic_discovery);
         osc_controller->setHostAndPort(IOSUtils::toString(host), port);
         osc_controller->setNumMessagesPerEvent(num_messages_per_event);
         osc_controller->setDelay(delay);
@@ -103,6 +106,8 @@ NSString *const oscDelayKey             = @"oscDelay";
     UISwitch *onoff = (UISwitch *) sender;
     [self toggleHostAndPortInput: !onoff.on];
     [self setAutomaticDiscovery: onoff.on];
+    _hostTextfield.text = [self getHost];
+    _portTextfield.text = [NSString stringWithFormat:@"%d", [self getPort]];
 }
 
 
@@ -157,11 +162,12 @@ NSString *const oscDelayKey             = @"oscDelay";
 }
 
 - (BOOL) getAutomaticDiscovery {
-    return [[NSUserDefaults standardUserDefaults] boolForKey: oscDiscoverKey];
+    return P3DAppInterface::instance()->getOscController()->isAutomaticDiscoveryEnabled();
 }
 
 - (void) setAutomaticDiscovery: (BOOL)discovery
 {
+    P3DAppInterface::instance()->getOscController()->enableAutomaticDiscovery(discovery);
     [[NSUserDefaults standardUserDefaults] setBool: discovery forKey: oscDiscoverKey];
 }
 

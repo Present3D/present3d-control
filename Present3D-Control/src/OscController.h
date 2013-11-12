@@ -15,6 +15,12 @@ public:
     OscController();
     
     bool hasDevice() { return _device.valid(); }
+    void setAutoDiscoveredHostAndPort(const std::string& host, unsigned int port) {
+        _autoDiscoveredHost = host;
+        _autoDiscoveredPort = port;
+        if (isAutomaticDiscoveryEnabled()) setHostAndPort(host, port);
+    }
+        
     void setHostAndPort(const std::string& host, unsigned int port) { setHost(host), setPort(port); }
     void setHost(const std::string& host) { _host = host; }
     void setPort(unsigned int port) { _port = port; }
@@ -31,12 +37,25 @@ public:
     void clear();
     void reconnect();
     
+    void enableAutomaticDiscovery(bool b) {
+        _autoDiscoveryEnabled = b;
+        if (b && !_autoDiscoveredHost.empty()) {
+            clear();
+            setHostAndPort(_autoDiscoveredHost, _autoDiscoveredPort);
+            reconnect();
+        }
+    }
+    
+    bool isAutomaticDiscoveryEnabled() const { return _autoDiscoveryEnabled; }
 private:
     osg::ref_ptr<osgGA::Device> _device;
     std::string _host;
     unsigned int _port;
     unsigned int _numMessagesPerEvent;
     unsigned int _delay;
+    bool _autoDiscoveryEnabled;
+    std::string _autoDiscoveredHost;
+    unsigned int _autoDiscoveredPort;
     
 
 };
