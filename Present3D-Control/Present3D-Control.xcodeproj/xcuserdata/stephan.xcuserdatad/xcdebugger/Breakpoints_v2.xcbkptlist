@@ -321,12 +321,12 @@
                   symbolName = "-[P3DOSCSettingsController setHost:]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
-                  timestampString = "405959820.269534"
+                  timestampString = "410950516.235778"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
                   endingLineNumber = "180"
-                  offsetFromSymbolStart = "162">
+                  offsetFromSymbolStart = "46">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -335,12 +335,40 @@
                   symbolName = "-[P3DOSCSettingsController setHost:]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
-                  timestampString = "405959820.269755"
+                  timestampString = "410950516.236042"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
                   endingLineNumber = "180"
-                  offsetFromSymbolStart = "374">
+                  offsetFromSymbolStart = "302">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DOSCSettingsController setHost:]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
+                  timestampString = "410950516.236209"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "342">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DOSCSettingsController setHost:]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
+                  timestampString = "410950516.23637"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "392">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1121,7 +1149,7 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "405959820.27049"
+                  timestampString = "410950516.23765"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -1135,7 +1163,7 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "405959820.270834"
+                  timestampString = "410950516.23792"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -1149,7 +1177,7 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "405959820.271052"
+                  timestampString = "410950516.23816"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -1163,7 +1191,7 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "405959820.271337"
+                  timestampString = "410950516.238431"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -1580,6 +1608,22 @@
             startingLineNumber = "59"
             endingLineNumber = "59"
             landmarkName = "OscController::reconnect()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../OpenSceneGraph/osg/src/osgGA/OrbitManipulator.cpp"
+            timestampString = "410809720.800692"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "OrbitManipulator::getHeading()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
