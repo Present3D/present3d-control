@@ -28,5 +28,6 @@
 - (void)initCommon;
 - (void)guidedAccessChanged;
 - (void)updateScene;
+- (void)refreshInterface;
 
 @end

@@ -136,6 +136,7 @@ P3DAppInterface::P3DAppInterface()
     _viewer->setCameraManipulator(_trackball);
     
     _viewer->getEventHandlers().push_front(new ZeroConfDiscoverEventHandler(this));
+    _viewer->getEventQueue()->setFirstTouchEmulatesMouse(false);
 }
 
 
@@ -164,6 +165,7 @@ void P3DAppInterface::readFile(const std::string& file_name)
     std::cout << "read file: " << file_name << std::endl;
     
     unsetenv("P3D_CONTROL_ALLOW_TRACKBALL");
+    unsetenv("P3D_CONTROL_MENU_BUTTON_CAPTION");
     
     _readFileThread = new ReadFileThread(file_name);
     _readFileThread->start();
@@ -283,6 +285,15 @@ void P3DAppInterface::checkEnvVars()
         {
             unsigned int val = atoi(p3dControlAllowTrackball);
             toggleTrackball( val != 0 );
+            refreshInterface();
+        }
+    }
+    _menuBtnCaption = "Menu";
+    {
+        const char* p3dControlMenuButtonCaption = getenv("P3D_CONTROL_MENU_BUTTON_CAPTION");
+        if (p3dControlMenuButtonCaption)
+        {
+            _menuBtnCaption = std::string(p3dControlMenuButtonCaption);
             refreshInterface();
         }
     }

@@ -258,11 +258,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DSceneViewController.h"
-            timestampString = "405358823.435732"
+            timestampString = "411921199.918684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "@interface P3DSceneViewController"
             landmarkType = "2">
          </BreakpointContent>
@@ -321,7 +321,7 @@
                   symbolName = "-[P3DOSCSettingsController setHost:]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
-                  timestampString = "410950516.235778"
+                  timestampString = "411929696.498775"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
@@ -335,7 +335,7 @@
                   symbolName = "-[P3DOSCSettingsController setHost:]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
-                  timestampString = "410950516.236042"
+                  timestampString = "411929696.49904"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
@@ -349,7 +349,7 @@
                   symbolName = "-[P3DOSCSettingsController setHost:]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
-                  timestampString = "410950516.236209"
+                  timestampString = "411929696.499202"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
@@ -363,7 +363,7 @@
                   symbolName = "-[P3DOSCSettingsController setHost:]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
-                  timestampString = "410950516.23637"
+                  timestampString = "411929696.499361"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
@@ -678,11 +678,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405884688.393152"
+            timestampString = "411921604.40131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "P3DAppInterface::readFinished(bool success, osg::Node* node, const std::string&amp; file_name)"
             landmarkType = "5">
          </BreakpointContent>
@@ -694,11 +694,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405957797.272359"
+            timestampString = "411921604.40131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222">
+            startingLineNumber = "224"
+            endingLineNumber = "224">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -708,11 +708,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405957797.272359"
+            timestampString = "411921604.40131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "P3DAppInterface::setupViewer(int width, int height)"
             landmarkType = "5">
             <Locations>
@@ -754,11 +754,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405957797.272359"
+            timestampString = "411921604.40131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height)"
             landmarkType = "5">
          </BreakpointContent>
@@ -770,11 +770,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405957797.272359"
+            timestampString = "411921604.40131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height)"
             landmarkType = "5">
             <Locations>
@@ -844,11 +844,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DSceneViewController.mm"
-            timestampString = "405364684.857184"
+            timestampString = "411920259.639919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-startReadingSequence"
             landmarkType = "5">
          </BreakpointContent>
@@ -860,7 +860,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DSceneViewController.mm"
-            timestampString = "405364306.569845"
+            timestampString = "411920259.639919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -920,7 +920,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DSceneViewController.mm"
-            timestampString = "405364400.87892"
+            timestampString = "411920259.639919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -992,11 +992,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DSceneViewController.mm"
-            timestampString = "405364400.87892"
+            timestampString = "411920259.639919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-viewDidDisappear:"
             landmarkType = "5">
             <Locations>
@@ -1149,7 +1149,7 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "410950516.23765"
+                  timestampString = "411929696.499906"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -1163,7 +1163,7 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "410950516.23792"
+                  timestampString = "411929696.500071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -1177,7 +1177,7 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "410950516.23816"
+                  timestampString = "411929696.500233"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -1191,7 +1191,7 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "410950516.238431"
+                  timestampString = "411929696.500398"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -1538,11 +1538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405957797.272359"
+            timestampString = "411921604.40131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "P3DAppInterface::checkEnvVars()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1554,11 +1554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405957797.272359"
+            timestampString = "411921604.40131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "P3DAppInterface::checkEnvVars()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1586,11 +1586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
-            timestampString = "405957877.626568"
+            timestampString = "411921604.40131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "P3DAppInterface::applySceneData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1624,6 +1624,208 @@
             startingLineNumber = "174"
             endingLineNumber = "174"
             landmarkName = "OrbitManipulator::getHeading()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/ZeroConfDiscoverEventHandler.cpp"
+            timestampString = "411918955.3885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "ZeroConfDiscoverEventHandler::forwardEvent(const osgGA::Event&amp; event)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../OpenSceneGraph/osg/src/osgPlugins/osc/OscSendingDevice.cpp"
+            timestampString = "411925473.296618"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "OscSendingDevice::sendUIEventImpl(const osgGA::GUIEventAdapter &amp;ea, MsgIdType msg_id)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../OpenSceneGraph/osg/src/osgPlugins/osc/OscSendingDevice.cpp"
+            timestampString = "411925473.296618"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "OscSendingDevice::sendUIEventImpl(const osgGA::GUIEventAdapter &amp;ea, MsgIdType msg_id)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/P3DSceneViewController.mm"
+            timestampString = "411921665.577413"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "-refreshInterface"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DSceneViewController refreshInterface]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
+                  timestampString = "411921665.87699"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DSceneViewController refreshInterface]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
+                  timestampString = "411921665.877141"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "290">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DSceneViewController refreshInterface]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
+                  timestampString = "411921665.877289"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "356">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../OpenSceneGraph/osg/src/osgPlugins/osc/OscSendingDevice.cpp"
+            timestampString = "411925473.296618"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "OscSendingDevice::sendMultiTouchData(const osgGA::GUIEventAdapter &amp;ea)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OscSendingDevice::sendMultiTouchData(osgGA::GUIEventAdapter const&amp;)"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/OpenSceneGraph/osg/src/osgPlugins/osc/OscSendingDevice.cpp"
+                  timestampString = "411923034.141041"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "694">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OscSendingDevice::sendMultiTouchData(osgGA::GUIEventAdapter const&amp;)"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/OpenSceneGraph/osg/src/osgPlugins/osc/OscSendingDevice.cpp"
+                  timestampString = "411923034.141223"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "824">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../OpenSceneGraph/osg/src/osgPlugins/osc/OscSendingDevice.cpp"
+            timestampString = "411925567.534992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "OscSendingDevice::sendUIEventImpl(const osgGA::GUIEventAdapter &amp;ea, MsgIdType msg_id)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../OpenSceneGraph/osg/src/osgPlugins/osc/OscSendingDevice.cpp"
+            timestampString = "411929144.452244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "OscSendingDevice::sendUIEventImpl(const osgGA::GUIEventAdapter &amp;ea, MsgIdType msg_id)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../OpenSceneGraph/osg/src/osgPlugins/osc/OscSendingDevice.cpp"
+            timestampString = "411929172.963184"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "OscSendingDevice::sendUIEventImpl(const osgGA::GUIEventAdapter &amp;ea, MsgIdType msg_id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

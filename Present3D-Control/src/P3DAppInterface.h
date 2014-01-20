@@ -89,6 +89,8 @@ public:
     
     OscController* getOscController() { return _oscController; }
     
+    const std::string& getMenuBtnCaption() const { return _menuBtnCaption; }
+    
 protected:
     void setupViewer(int width, int heigth);
     
@@ -112,4 +114,6 @@ private:
     
     osg::ref_ptr<RefreshInterfaceCallback> _refreshInterfaceCallback;
     osg::ref_ptr<OscController> _oscController;
+    
+    std::string _menuBtnCaption;
 };

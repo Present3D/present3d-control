@@ -87,6 +87,9 @@
     _app = P3DAppInterface::instance();
     _openGLView = _app->initInView(self.view, self.view.frame.size.width, self.view.frame.size.height);
     [self.view sendSubviewToBack: _openGLView];
+    
+    toggleButton.transform = CGAffineTransformMakeRotation(90.0*M_PI/180.0);
+
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
@@ -95,6 +98,7 @@
     if (_displayLink)
         [_displayLink invalidate];
     _displayLink = NULL;
+    
 }
 
 - (void)viewDidLoad
@@ -142,4 +146,9 @@
     [UIView animateWithDuration:0.25 animations:^{ loadingView.alpha = 0.0;}];
 }
 
+
+- (void)refreshInterface {
+    [toggleButton setTitle:IOSUtils::toNSString(P3DAppInterface::instance()->getMenuBtnCaption()) forState: UIControlStateNormal];
+    [toggleButton setTitle:IOSUtils::toNSString(P3DAppInterface::instance()->getMenuBtnCaption()) forState: UIControlStateHighlighted];
+}
 @end

@@ -412,6 +412,11 @@ private:
 -(void) refreshInterface
 {
     [self.tableView reloadData];
+    
+    ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
+    [(P3DSceneViewController*)svc.topViewController refreshInterface];
+
+    
 }
 
 @end
