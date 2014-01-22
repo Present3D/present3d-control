@@ -637,6 +637,48 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Present3D-Control/Present3D-Control-Prefix.pch";
 				INFOPLIST_FILE = "Present3D-Control/Present3D-Control-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lOpenThreadsd",
+					"-losgd",
+					"-losgDBd",
+					"-losgGAd",
+					"-losgUtild",
+					"-losgViewerd",
+					"-losgTextd",
+					"-losgAnimationd",
+					"-losgFXd",
+					"-losgTerraind",
+					"-losgVolumed",
+					"-losgManipulatord",
+					"-losgParticled",
+					"-losgShadowd",
+					"-losgPresentationd",
+					"-losgSimd",
+					"-losgdb_imageiod",
+					"-losgdb_rgbd",
+					"-losgdb_oscd",
+					"-losgdb_zeroconfd",
+					"-losgdb_p3dd",
+					"-losgdb_freetyped",
+					"-losgdb_curld",
+					"-losgdb_osgd",
+					"-losgdb_serializers_osgd",
+					"-losgdb_osgd",
+					"-losgdb_serializers_osggad",
+					"-losgdb_serializers_osgFXd",
+					"-losgdb_serializers_osgfxd",
+					"-losgdb_serializers_osgvolumed",
+					"-losgdb_serializers_osgtextd",
+					"-losgdb_serializers_osgTerraind",
+					"-losgdb_serializers_osgsimd",
+					"-losgdb_serializers_osgshadowd",
+					"-losgdb_serializers_osgparticled",
+					"-losgdb_serializers_osgmanipulatord",
+					"-losgdb_serializers_osganimationd",
+					"-lcurl",
+					"-lfreetype",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
