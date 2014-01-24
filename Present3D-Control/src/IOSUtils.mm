@@ -8,7 +8,6 @@
 
 #include "IOSUtils.h"
 
-
 NSString* IOSUtils::toNSString(const std::string& str)
 {
     return [NSString stringWithUTF8String: str.c_str()];
@@ -50,3 +49,4 @@ std::string IOSUtils::getDocumentsFolder() {
     NSString* doc_folder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return toString(doc_folder);
 }
+

@@ -22,7 +22,7 @@ public:
     static UIImage* createFromOsgImage(osg::Image* img);
     
     static std::string getDocumentsFolder();
-    
+        
 private:
     IOSUtils() {}
 };

@@ -1,3 +1,6 @@
 [submodule "Present3D-Control/vendor/ECSlidingViewController"]
 	path = Present3D-Control/vendor/ECSlidingViewController
 	url = https://github.com/edgecase/ECSlidingViewController.git
+[submodule "Present3D-Control/vendor/asio"]
+	path = Present3D-Control/vendor/asio
+	url = https://github.com/chriskohlhoff/asio
