@@ -9,17 +9,49 @@
 #pragma once
 
 #include <osGGA/Device>
+#include <iostream>
 
 class OscController : public osg::Referenced {
 public:
+    struct HostAndPort {
+    
+        std::string host;
+        unsigned int port;
+        HostAndPort() : host(), port() {}
+        HostAndPort(const std::string& a_host, unsigned int a_port) : host(a_host), port(a_port) {}
+        
+        bool operator<(const HostAndPort& p) const {
+            return (p.host == host) ?  port < p.port : host < p.host;
+        }
+        
+        bool operator==(const HostAndPort& p) const {
+            return (p.host == host) && (port == p.port);
+        }
+        
+        bool valid() const { return !host.empty() && (port != 0); }
+    };
+    
     OscController();
     
     bool hasDevice() { return _device.valid(); }
-    void setAutoDiscoveredHostAndPort(const std::string& host, unsigned int port) {
-        _autoDiscoveredHost = host;
-        _autoDiscoveredPort = port;
-        if (isAutomaticDiscoveryEnabled()) setHostAndPort(host, port);
+    void addAutoDiscoveredHostAndPort(const std::string& host, unsigned int port) {
+        std::cout << "registering " << host << ":" << port << std::endl;
+        _hostAndPorts.insert(HostAndPort(host, port));
+        if (isAutomaticDiscoveryEnabled()) checkConnection();
     }
+    
+    void removeAutoDiscoveredHostAndPort(const std::string& host, unsigned int port) {
+        HostAndPort hap(host, port);
+        std::set<HostAndPort>::iterator i = _hostAndPorts.find(hap);
+        if (i != _hostAndPorts.end()) {
+            std::cout << "deregistering " << host << ":" << port << std::endl;
+            _hostAndPorts.erase(i);
+        }
+        
+        if (isAutomaticDiscoveryEnabled()) checkConnection();
+    }
+    
+
         
     void setHostAndPort(const std::string& host, unsigned int port) { setHost(host), setPort(port); }
     void setHost(const std::string& host) { _host = host; }
@@ -39,14 +71,15 @@ public:
     
     void enableAutomaticDiscovery(bool b) {
         _autoDiscoveryEnabled = b;
-        if (b && !_autoDiscoveredHost.empty()) {
-            clear();
-            setHostAndPort(_autoDiscoveredHost, _autoDiscoveredPort);
-            reconnect();
+        if (b && !_hostAndPorts.empty()) {
+            checkConnection();
         }
     }
     
     bool isAutomaticDiscoveryEnabled() const { return _autoDiscoveryEnabled; }
+    
+    void checkConnection();
+    
 private:
     osg::ref_ptr<osgGA::Device> _device;
     std::string _host;
@@ -54,8 +87,9 @@ private:
     unsigned int _numMessagesPerEvent;
     unsigned int _delay;
     bool _autoDiscoveryEnabled;
-    std::string _autoDiscoveredHost;
-    unsigned int _autoDiscoveredPort;
+    
+    std::set<HostAndPort> _hostAndPorts;
+    HostAndPort _currentAutoDiscoveredHAP;
     
 
 };

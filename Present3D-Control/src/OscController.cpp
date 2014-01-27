@@ -23,6 +23,8 @@ OscController::OscController()
     , _numMessagesPerEvent(3)
     , _delay(10)
     , _autoDiscoveryEnabled(true)
+    , _hostAndPorts()
+    , _currentAutoDiscoveredHAP()
 {
 }
 
@@ -69,5 +71,49 @@ void OscController::reconnect()
     else {
         P3DAppInterface::instance()->getViewer()->addDevice(_device);
         OSG_INFO << "added osc-device: " << ss.str() << " (" << options_ss.str() << ")" << std::endl;
+    }
+}
+
+void OscController::checkConnection()
+{
+    if (!isAutomaticDiscoveryEnabled())
+        return;
+    
+    unsigned int num_haps = _hostAndPorts.size();
+    
+    // clear any connection, autodiscovered available
+    if(num_haps == 0) {
+        std::cout << "clearing connections" << std::endl;
+        _currentAutoDiscoveredHAP = HostAndPort();
+        clear();
+        setHostAndPort("", 9000);
+        return;
+    }
+    
+    // no connection till now, start a new one
+    if (!_currentAutoDiscoveredHAP.valid()) {
+        _currentAutoDiscoveredHAP = *_hostAndPorts.begin();
+        std::cout << "new connection to " << _currentAutoDiscoveredHAP.host << ":" << _currentAutoDiscoveredHAP.port << std::endl;
+        
+        setHostAndPort(_currentAutoDiscoveredHAP.host, _currentAutoDiscoveredHAP.port);
+        return;
+    }
+    
+    // see, if our current connection is still available
+    bool found = false;
+    for(std::set<HostAndPort>::iterator i = _hostAndPorts.begin(); (i != _hostAndPorts.end()) && !found; ++i)
+    {
+        if ((*i) == _currentAutoDiscoveredHAP) {
+            found = true;
+        }
+    }
+    
+    // our previous connection is not available anymore, reset and take the first valid.
+    if (!found) {
+        std::cout << "connection to " << _currentAutoDiscoveredHAP.host << ":" << _currentAutoDiscoveredHAP.port << " not valid anymore" << std::endl;
+
+        _currentAutoDiscoveredHAP = HostAndPort();
+        clear();
+        checkConnection();
     }
 }

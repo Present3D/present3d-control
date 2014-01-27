@@ -11,6 +11,8 @@
 
 #include "P3DAppInterface.h"
 #include "IOSUtils.h"
+#import <Foundation/Foundation.h>
+
 
 NSString *const oscDiscoverKey          = @"oscDiscover";
 NSString *const oscHostKey              = @"oscHost";
@@ -176,6 +178,7 @@ NSString *const oscDelayKey             = @"oscDelay";
 }
 
 
+
 - (void) setHost: (NSString*)host {
     P3DAppInterface::instance()->getOscController()->setHost(IOSUtils::toString(host));
     [[NSUserDefaults standardUserDefaults] setObject: host forKey: oscHostKey];
@@ -210,6 +213,10 @@ NSString *const oscDelayKey             = @"oscDelay";
     [[NSUserDefaults standardUserDefaults] setInteger:delay forKey: oscDelayKey];
 
 }
+
+
+
+
 
 @end
 

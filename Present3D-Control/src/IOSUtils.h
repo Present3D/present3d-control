@@ -10,7 +10,15 @@
 
 #include <string>
 #include <osg/Image>
-#include <UIKit/UIKit.h>
+
+#ifdef __OBJC__
+@class NSString;
+@class UIImage;
+
+#else
+class UIImage;
+class NSString;
+#endif
 
 
 
@@ -22,7 +30,9 @@ public:
     static UIImage* createFromOsgImage(osg::Image* img);
     
     static std::string getDocumentsFolder();
-        
+    
+    static std::string lookupHost(const std::string& address);
+    
 private:
     IOSUtils() {}
 };

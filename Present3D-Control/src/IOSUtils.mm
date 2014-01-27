@@ -7,6 +7,9 @@
 //
 
 #include "IOSUtils.h"
+#include <sys/socket.h>
+#include <netdb.h>
+
 
 NSString* IOSUtils::toNSString(const std::string& str)
 {
@@ -50,3 +53,59 @@ std::string IOSUtils::getDocumentsFolder() {
     return toString(doc_folder);
 }
 
+std::string convertCFString( CFStringRef str )
+{
+        char buffer[4096];
+        bool worked = CFStringGetCString( str, buffer, 4095, kCFStringEncodingUTF8 );
+        if( worked ) {
+                std::string result( buffer );
+                return result;
+        }
+        else
+                return std::string();
+}
+
+
+std::string IOSUtils::lookupHost(const std::string& address) {
+
+    std::string result_str = address;
+    struct addrinfo *result = NULL;
+    struct addrinfo hints;
+
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_flags = AI_NUMERICHOST;
+    hints.ai_family = PF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = 0;
+
+    int errorStatus = getaddrinfo(address.c_str(), NULL, &hints, &result);
+    if (errorStatus == 0)
+    {
+        CFDataRef addressRef = CFDataCreate(NULL, (UInt8 *)result->ai_addr, result->ai_addrlen);
+        if (addressRef != nil)
+        {
+            CFHostRef hostRef = CFHostCreateWithAddress(kCFAllocatorDefault, addressRef);
+            BOOL succeeded = CFHostStartInfoResolution(hostRef, kCFHostNames, NULL);
+            if (succeeded)
+            {
+                CFArrayRef hostnamesRef = CFHostGetNames(hostRef, NULL);
+                if (hostnamesRef && (CFArrayGetCount(hostnamesRef) > 0))
+                {
+                        CFStringRef first_hostname = (CFStringRef)CFArrayGetValueAtIndex(hostnamesRef, 0);
+                    
+                        result_str = convertCFString(first_hostname);
+                        //CFRelease(first_hostname);
+                }
+                // CFRelease(hostnamesRef);
+            }
+            CFRelease(hostRef);
+
+        }
+        CFRelease(addressRef);
+
+    }
+    freeaddrinfo(result);
+    
+    return result_str;
+    
+}

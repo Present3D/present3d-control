@@ -15,6 +15,8 @@
 
 #include <sstream>
 
+#include "IOSUtils.h"
+
 
 ZeroConfDiscoverEventHandler::ZeroConfDiscoverEventHandler(P3DAppInterface* app)
     : osgGA::GUIEventHandler()
@@ -61,6 +63,8 @@ bool ZeroConfDiscoverEventHandler::handle(osgGA::Event* event, osg::Object* obje
         event->getUserValue("port", port);
         event->getUserValue("type", type);
         
+        host = IOSUtils::lookupHost(host);
+        
         if (type == httpServiceType())
         {
             std::ostringstream ss;
@@ -83,24 +87,18 @@ bool ZeroConfDiscoverEventHandler::handle(osgGA::Event* event, osg::Object* obje
         }
         else if (type == oscServiceType())
         {
-            if (P3DAppInterface::instance()->getOscController()->isAutomaticDiscoveryEnabled())
+            if (event->getName() == "/zeroconf/service-added")
             {
-                if (event->getName() == "/zeroconf/service-added")
-                {
-                    P3DAppInterface::instance()->getOscController()->setAutoDiscoveredHostAndPort(host, port);
-                    P3DAppInterface::instance()->getOscController()->reconnect();
-                }
-                else {
-                    P3DAppInterface::instance()->getOscController()->setAutoDiscoveredHostAndPort("", 9000);
-                    P3DAppInterface::instance()->getOscController()->clear();
-                }
-                
-                P3DAppInterface::instance()->refreshInterface();
-                return true;
+                P3DAppInterface::instance()->getOscController()->addAutoDiscoveredHostAndPort(host, port);
+                P3DAppInterface::instance()->getOscController()->checkConnection();
             }
             else {
-                OSG_NOTICE << "ZeroConfDiscoverEventHandler :: ignore autodiscovered osc-device: " << host << ":" << port << std::endl;
+                P3DAppInterface::instance()->getOscController()->removeAutoDiscoveredHostAndPort(host, port);
+                P3DAppInterface::instance()->getOscController()->checkConnection();
             }
+            
+            P3DAppInterface::instance()->refreshInterface();
+            return true;
         }
     }
     

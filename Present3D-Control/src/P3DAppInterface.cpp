@@ -167,6 +167,9 @@ void P3DAppInterface::readFile(const std::string& file_name)
     unsetenv("P3D_CONTROL_ALLOW_TRACKBALL");
     unsetenv("P3D_CONTROL_MENU_BUTTON_CAPTION");
     
+    _menuBtnCaption = "Menu";
+    refreshInterface();
+    
     _readFileThread = new ReadFileThread(file_name);
     _readFileThread->start();
 }
@@ -294,10 +297,10 @@ void P3DAppInterface::checkEnvVars()
         if (p3dControlMenuButtonCaption)
         {
             _menuBtnCaption = std::string(p3dControlMenuButtonCaption);
-            refreshInterface();
         }
     }
-    
+    refreshInterface();
+
     /*
     {
         const char* p3dTimeOut = getenv("P3D_TIMEOUT");
