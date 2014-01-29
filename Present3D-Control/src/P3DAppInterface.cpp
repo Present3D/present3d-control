@@ -67,7 +67,7 @@ public:
     }
     
     virtual void loadAt(unsigned int ndx) {
-        P3DAppInterface::instance()->readFile(_files[ndx]);;
+        P3DAppInterface::instance()->readFile(_files[ndx]);
     }
 
     
@@ -87,7 +87,8 @@ public:
     }
     
     virtual void loadAt(unsigned int ndx) {
-        P3DAppInterface::instance()->readFile(_files[ndx]);;
+        P3DAppInterface::instance()->readFile(_files[ndx]);
+        P3DAppInterface::instance()->getOscController()->findOSCHostFromFile(_files[ndx]);
     }
     
     virtual std::string getDetailedAt(unsigned int ndx) { return osgDB::getServerAddress(_files[ndx]); }
@@ -166,15 +167,19 @@ void P3DAppInterface::addLocalFilePath(const std::string& path)
         fc->addLocalFilePath(path);
 }
 
-void P3DAppInterface::readFile(const std::string& file_name)
-{
-    std::cout << "read file: " << file_name << std::endl;
-    
+void P3DAppInterface::reset() {
     unsetenv("P3D_CONTROL_ALLOW_TRACKBALL");
     unsetenv("P3D_CONTROL_MENU_BUTTON_CAPTION");
     
     _menuBtnCaption = "Menu";
     refreshInterface();
+}
+
+void P3DAppInterface::readFile(const std::string& file_name)
+{
+    std::cout << "read file: " << file_name << std::endl;
+    
+    reset();
     
     _readFileThread = new ReadFileThread(file_name);
     _readFileThread->start();

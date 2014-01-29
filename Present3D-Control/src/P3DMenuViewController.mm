@@ -97,6 +97,8 @@ private:
     NSString* last_file = [[NSUserDefaults standardUserDefaults] stringForKey: @"osgLastOpenedFile"];
     
     P3DAppInterface::instance()->toggleTrackball(trackball_enabled);
+    P3DAppInterface::instance()->reset();
+    
     if(last_file) {
         [self startReadingSequence];
         P3DAppInterface::instance()->readFile(IOSUtils::toString(last_file));

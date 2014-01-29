@@ -57,6 +57,8 @@ public:
     
     void setReadFileCompleteHandler(ReadFileCompleteHandler* handler) { _readFileCompleteHandler = handler; }
     
+    void reset();
+    
     void applySceneData();
     void applyIntermediateSceneData();
     void checkEnvVars();

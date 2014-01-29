@@ -91,6 +91,8 @@ public:
     
     void connectToAutoDiscoveredHostAt(unsigned int ndx);
     
+    void findOSCHostFromFile(const std::string& file_name);
+    
 private:
     osg::ref_ptr<osgGA::Device> _device;
     std::string _host;

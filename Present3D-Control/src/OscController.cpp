@@ -139,3 +139,25 @@ void OscController::connectToAutoDiscoveredHostAt(unsigned int ndx)
     setHostAndPort(_currentAutoDiscoveredHAP.host, _currentAutoDiscoveredHAP.port);
     reconnect();
 }
+
+void OscController::findOSCHostFromFile(const std::string& file_name)
+{
+    if (!isAutomaticDiscoveryEnabled())
+        return;
+    
+    std::string server = osgDB::getServerAddress(file_name);
+    std::size_t p = server.find_first_of(':');
+    if(p != std::string::npos)
+        server = server.substr(0, p);
+    
+    std::cout << server << std::endl;
+    
+    unsigned int ndx(0);
+    for(std::set<HostAndPort>::iterator i = _hostAndPorts.begin(); i  != _hostAndPorts.end(); ++i, ++ndx) {
+        if(i->host == server) {
+            connectToAutoDiscoveredHostAt(ndx);
+            P3DAppInterface::instance()->refreshInterface();
+            return;
+        }
+    }
+}
