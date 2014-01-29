@@ -103,7 +103,13 @@ public:
     }
     
     virtual bool add(const std::string& file_name) {
-        _discoveredFiles.push_back(file_name);
+        bool found = false;
+        for(FilesVector::iterator i = _discoveredFiles.begin(); !found && (i != _discoveredFiles.end()); ++i) {
+            if (*i == file_name)
+                found = true;
+        }
+        if (!found)
+            _discoveredFiles.push_back(file_name);
         return true;
     }
     

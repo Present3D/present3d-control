@@ -80,6 +80,17 @@ public:
     
     void checkConnection();
     
+    unsigned int getNumAutoDiscoveredHosts() { return _hostAndPorts.size(); }
+    const HostAndPort& getAutoDiscoveredHostAt(unsigned int ndx) {
+        std::set<HostAndPort>::const_iterator itr = _hostAndPorts.begin();
+        std::advance(itr, ndx);
+        return (*itr);
+    }
+    
+    unsigned int getCurrentSelectedAutoDiscoveredHost();
+    
+    void connectToAutoDiscoveredHostAt(unsigned int ndx);
+    
 private:
     osg::ref_ptr<osgGA::Device> _device;
     std::string _host;

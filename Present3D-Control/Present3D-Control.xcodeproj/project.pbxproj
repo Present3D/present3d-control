@@ -93,6 +93,7 @@
 		D481CB3E1826B72F00C967B0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB3D1826B72F00C967B0 /* Accelerate.framework */; };
 		D48F47331811521C00A2F8E7 /* P3DTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */; };
 		D4A318F718295931006584AD /* ToggleMultitouchTrackball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4A318F518295931006584AD /* ToggleMultitouchTrackball.cpp */; };
+		D4A6C7671898FAAE0058BD96 /* P3DOSCHostPickerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D4A6C7661898FAAE0058BD96 /* P3DOSCHostPickerViewController.mm */; };
 		D4A89360180BD70700ACB0B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A8935F180BD70700ACB0B9 /* Foundation.framework */; };
 		D4A89362180BD70700ACB0B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A89361180BD70700ACB0B9 /* CoreGraphics.framework */; };
 		D4A89364180BD70700ACB0B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A89363180BD70700ACB0B9 /* UIKit.framework */; };
@@ -223,6 +224,8 @@
 		D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DTextfieldTableViewCell.m; sourceTree = "<group>"; };
 		D4A318F518295931006584AD /* ToggleMultitouchTrackball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToggleMultitouchTrackball.cpp; sourceTree = "<group>"; };
 		D4A318F618295931006584AD /* ToggleMultitouchTrackball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleMultitouchTrackball.h; sourceTree = "<group>"; };
+		D4A6C7651898FAAE0058BD96 /* P3DOSCHostPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DOSCHostPickerViewController.h; sourceTree = "<group>"; };
+		D4A6C7661898FAAE0058BD96 /* P3DOSCHostPickerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = P3DOSCHostPickerViewController.mm; sourceTree = "<group>"; };
 		D4A8935C180BD70700ACB0B9 /* Present3D-Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Present3D-Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A8935F180BD70700ACB0B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4A89361180BD70700ACB0B9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -499,6 +502,8 @@
 				D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */,
 				D463C4081816700C0038BD75 /* P3DOSCSettingsController.h */,
 				D463C4091816700C0038BD75 /* P3DOSCSettingsController.mm */,
+				D4A6C7651898FAAE0058BD96 /* P3DOSCHostPickerViewController.h */,
+				D4A6C7661898FAAE0058BD96 /* P3DOSCHostPickerViewController.mm */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -724,6 +729,7 @@
 				D4A893A2180BF0BF00ACB0B9 /* P3DSceneViewController.mm in Sources */,
 				D4BE74B5180D321B008028DA /* P3DAppInterface.cpp in Sources */,
 				D4D50268180E89CB00F445D4 /* ReadFileCompleteHandler.cpp in Sources */,
+				D4A6C7671898FAAE0058BD96 /* P3DOSCHostPickerViewController.mm in Sources */,
 				D48F47331811521C00A2F8E7 /* P3DTextfieldTableViewCell.m in Sources */,
 				D4713E91182BFB5B0010010F /* ZeroConfDiscoverEventHandler.cpp in Sources */,
 				D41F61E018310C78006FDEDF /* OscController.cpp in Sources */,

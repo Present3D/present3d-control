@@ -58,6 +58,8 @@ private:
 - (void) commonInit
 {
     self.oscSettingsController = [[P3DOSCSettingsController alloc] init];
+    self.oscSettingsController.parentViewController = self;
+    
     P3DAppInterface::instance()->setRefreshInterfaceCallback(new MyRefreshInterfaceCallback(self));
 }
 
@@ -99,6 +101,8 @@ private:
         [self startReadingSequence];
         P3DAppInterface::instance()->readFile(IOSUtils::toString(last_file));
     }
+    
+    [self refreshInterface];
 
 }
 
@@ -118,7 +122,6 @@ private:
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     osg::ref_ptr<P3DAppInterface> app = P3DAppInterface::instance();
     switch(section) {
@@ -185,6 +188,7 @@ private:
             }
             break;
         case 3:
+            
             switch(indexPath.row) {
                 case 0:
                     {
@@ -197,6 +201,15 @@ private:
                     break;
                 case 1:
                     {
+                        cell = [tableView dequeueReusableCellWithIdentifier:@"LocalFileCell" forIndexPath:indexPath];
+                        cell.textLabel.text = @"Autodiscovered Hosts";
+                        self.oscSettingsController.autodiscoveredHostsCell = cell;
+
+                    }
+                    break;
+                    
+                case 2:
+                    {
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Host";
                         self.oscSettingsController.hostTextfield = the_cell.textfield;
@@ -205,7 +218,7 @@ private:
                     }
                     break;
 
-                case 2:
+                case 3:
                     {
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Port";
@@ -214,7 +227,7 @@ private:
                         cell = the_cell;
                     }
                     break;
-                case 3:
+                case 4:
                     {
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Messages / event";
@@ -224,7 +237,7 @@ private:
                     }
                     break;
                     
-                case 4:
+                case 5:
                     {
                         P3DTextfieldTableViewCell* the_cell =[tableView dequeueReusableCellWithIdentifier:@"LabelTextfieldCell" forIndexPath:indexPath];
                         the_cell.textLabel.text = @"Delay (ms)";
@@ -239,6 +252,7 @@ private:
                     cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
                     break;
             }
+            
             [self.oscSettingsController updateDelegates];
             break;
     }
@@ -342,7 +356,10 @@ private:
                 app->getRemoteFiles()->loadAt(indexPath.row);
             }
             break;
-
+        case 3:
+            if(indexPath.row == 1) {
+                [self showAutodiscoveredHosts];
+            }
         default:
             break;
     }
@@ -402,6 +419,7 @@ private:
     }
 }
 
+
 -(void)toggleAllowTrackball:(id)sender {
     UISwitch* ui_switch = (UISwitch*)(sender);
     P3DAppInterface::instance()->toggleTrackball(ui_switch.on);
@@ -409,13 +427,25 @@ private:
 
 }
 
+
+-(void) showAutodiscoveredHosts
+{
+    NSLog(@"show autodiscovered hosts");
+    
+    ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
+    
+    [_oscSettingsController showAutoDiscoveredHosts:svc.view];
+}
+
+
 -(void) refreshInterface
 {
     [self.tableView reloadData];
     
     ECSlidingViewController* svc = (ECSlidingViewController*)[self parentViewController];
     [(P3DSceneViewController*)svc.topViewController refreshInterface];
-
+    
+    [_oscSettingsController refreshInterface];
     
 }
 

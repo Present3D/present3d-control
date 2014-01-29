@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface P3DOSCSettingsController : NSObject <UITextFieldDelegate> {
+@class P3DMenuViewController;
+
+@interface P3DOSCSettingsController : NSObject <UITextFieldDelegate, UIPopoverControllerDelegate> {
 
 }
 
@@ -17,7 +19,9 @@
 @property (nonatomic, weak)  UITextField* portTextfield;
 @property (nonatomic, weak)  UITextField* numMessagesTextfield;
 @property (nonatomic, weak)  UITextField* delayTextfield;
-
+@property (nonatomic, weak)  UITableViewCell* autodiscoveredHostsCell;
+@property (nonatomic, strong) UIPopoverController* popover;
+@property (nonatomic, weak)  P3DMenuViewController* parentViewController;
 
 
 
@@ -38,7 +42,8 @@
 -(unsigned int)getDelay;
 -(void)setDelay:(unsigned int)delay;
 
-
-
+-(void)showAutoDiscoveredHosts: (UIView*)view;
+-(void)refreshInterface;
+-(void)selectAutoDiscoveredHost: (unsigned int)ndx;
 
 @end

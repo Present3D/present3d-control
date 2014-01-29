@@ -70,9 +70,10 @@ void OscController::reconnect()
     }
     else {
         P3DAppInterface::instance()->getViewer()->addDevice(_device);
-        OSG_INFO << "added osc-device: " << ss.str() << " (" << options_ss.str() << ")" << std::endl;
+        OSG_ALWAYS << "added osc-device: " << ss.str() << " (" << options_ss.str() << ")" << std::endl;
     }
 }
+
 
 void OscController::checkConnection()
 {
@@ -96,6 +97,7 @@ void OscController::checkConnection()
         std::cout << "new connection to " << _currentAutoDiscoveredHAP.host << ":" << _currentAutoDiscoveredHAP.port << std::endl;
         
         setHostAndPort(_currentAutoDiscoveredHAP.host, _currentAutoDiscoveredHAP.port);
+        reconnect();
         return;
     }
     
@@ -116,4 +118,24 @@ void OscController::checkConnection()
         clear();
         checkConnection();
     }
+}
+
+
+unsigned int OscController::getCurrentSelectedAutoDiscoveredHost()
+{
+    unsigned int ndx(0);
+    for(std::set<HostAndPort>::iterator i = _hostAndPorts.begin(); i != _hostAndPorts.end(); ++i, ndx++) {
+        if (*i == _currentAutoDiscoveredHAP)
+            return ndx;
+    }
+    
+    return 0;
+}
+
+
+void OscController::connectToAutoDiscoveredHostAt(unsigned int ndx)
+{
+    _currentAutoDiscoveredHAP = getAutoDiscoveredHostAt(ndx);
+    setHostAndPort(_currentAutoDiscoveredHAP.host, _currentAutoDiscoveredHAP.port);
+    reconnect();
 }

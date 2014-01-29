@@ -12,6 +12,8 @@
 #include "P3DAppInterface.h"
 #include "IOSUtils.h"
 #import <Foundation/Foundation.h>
+#import "P3DOSCHostPickerViewController.h"
+#import "P3DMenuViewController.h"
 
 
 NSString *const oscDiscoverKey          = @"oscDiscover";
@@ -110,6 +112,8 @@ NSString *const oscDelayKey             = @"oscDelay";
     [self setAutomaticDiscovery: onoff.on];
     _hostTextfield.text = [self getHost];
     _portTextfield.text = [NSString stringWithFormat:@"%d", [self getPort]];
+    
+    [self refreshInterface];
 }
 
 
@@ -216,6 +220,62 @@ NSString *const oscDelayKey             = @"oscDelay";
 
 
 
+-(void) showAutoDiscoveredHosts: (UIView*) view
+{
+    if (P3DAppInterface::instance()->getOscController()->getNumAutoDiscoveredHosts() < 2)
+        return;
+    
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    P3DOSCHostPickerViewController * secondview = (P3DOSCHostPickerViewController*)[storyboard instantiateViewControllerWithIdentifier:@"HostPicker"];
+
+    _popover = [[UIPopoverController alloc] initWithContentViewController:secondview];
+    _popover.delegate = self;
+
+    secondview.parentController = self;
+    [secondview.picker selectRow: P3DAppInterface::instance()->getOscController()->getCurrentSelectedAutoDiscoveredHost() inComponent:0 animated: TRUE];
+    
+    UITableView* table_view = (UITableView*)(_parentViewController.view);
+    CGRect frame = [table_view rectForRowAtIndexPath:[table_view indexPathForSelectedRow]];
+    CGPoint yOffset = table_view.contentOffset;
+    
+    frame = CGRectMake(frame.origin.x, (frame.origin.y - yOffset.y), frame.size.width, frame.size.height);
+    
+    [_popover presentPopoverFromRect: frame inView: view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+}
+
+
+-(void)selectAutoDiscoveredHost: (unsigned int)ndx {
+    
+    P3DAppInterface::instance()->getOscController()->connectToAutoDiscoveredHostAt(ndx);
+    [_popover dismissPopoverAnimated:TRUE];
+    
+    
+    [self popoverControllerDidDismissPopover: _popover];
+    _popover = NULL;
+    
+    
+    // update interface:
+    _hostTextfield.text = [self getHost];
+    _portTextfield.text = [NSString stringWithFormat:@"%d", [self getPort]];
+
+}
+
+-(void)refreshInterface
+{
+    bool auto_hosts_enabled = _toggleSwitch.on && (P3DAppInterface::instance()->getOscController()->getNumAutoDiscoveredHosts() > 0);
+    
+    self.autodiscoveredHostsCell.userInteractionEnabled = auto_hosts_enabled;
+    self.autodiscoveredHostsCell.textLabel.enabled = auto_hosts_enabled;
+    self.autodiscoveredHostsCell.textLabel.textColor = (auto_hosts_enabled) ? [UIColor blackColor] : [UIColor lightGrayColor];
+    
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    UITableView* table_view = (UITableView*)(_parentViewController.view);
+    [table_view deselectRowAtIndexPath: [table_view indexPathForSelectedRow] animated:TRUE];
+}
 
 
 @end
