@@ -140,7 +140,7 @@ private:
             return 1;
             break;
         case 3:
-            return 5;
+            return 6;
             break;
     }
     
