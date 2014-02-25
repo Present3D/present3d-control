@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "class RemoteFileCollection"
-            landmarkType = "3">
+            landmarkName = "loadAt(unsigned int ndx)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -698,7 +698,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
-            endingLineNumber = "238">
+            endingLineNumber = "238"
+            landmarkName = "P3DAppInterface::setupViewer(int width, int height)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -759,82 +761,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "256"
             endingLineNumber = "256"
-            landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height)"
+            landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height, float scale)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/P3DAppInterface.cpp"
-            timestampString = "412691791.39108"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "P3DAppInterface::initInView(UIView *view, int width, int height)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "P3DAppInterface::initInView(UIView*, int, int)"
-                  moduleName = "Present3D-Control"
-                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DAppInterface.cpp"
-                  timestampString = "405015536.51793"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "194">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "P3DAppInterface::initInView(UIView*, int, int)"
-                  moduleName = "Present3D-Control"
-                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DAppInterface.cpp"
-                  timestampString = "405015536.518163"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "250">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "P3DAppInterface::initInView(UIView*, int, int)"
-                  moduleName = "Present3D-Control"
-                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DAppInterface.cpp"
-                  timestampString = "405015536.518323"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "828">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "P3DAppInterface::initInView(UIView*, int, int)"
-                  moduleName = "Present3D-Control"
-                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DAppInterface.cpp"
-                  timestampString = "405015536.518481"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "1040">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -65,7 +65,7 @@ public:
 
     void readFile(const std::string& file);
     
-    UIView* initInView(UIView* view, int width, int height);
+    UIView* initInView(UIView* view, int width, int height, float scale);
     
     inline void frame() {
         _viewer->frame();

@@ -238,20 +238,20 @@ void P3DAppInterface::setupViewer(int width, int height)
 }
 
 
-UIView* P3DAppInterface::initInView(UIView *view, int width, int height)
+UIView* P3DAppInterface::initInView(UIView *view, int width, int height, float scale)
 {
     _viewer->setThreadingModel(osgViewer::Viewer::SingleThreaded);
     _viewer->getEventQueue()->setFirstTouchEmulatesMouse(true);
-    
+
  
     osg::ref_ptr<osgViewer::GraphicsWindowIOS::WindowData> window_data = new osgViewer::GraphicsWindowIOS::WindowData(view, osgViewer::GraphicsWindowIOS::WindowData::IGNORE_ORIENTATION);
-    window_data->setViewContentScaleFactor(1.0);
+    window_data->setViewContentScaleFactor(scale);
     osg::ref_ptr<osg::GraphicsContext::Traits> traits = new osg::GraphicsContext::Traits();
     
     traits->x = 0;
     traits->y = 0;
-    traits->width = width;
-    traits->height = height;
+    traits->width = width*scale;
+    traits->height = height*scale;
     traits->depth = 24; //keep memory down, default is currently 24
     traits->alpha = 0;
     traits->windowDecoration = false;

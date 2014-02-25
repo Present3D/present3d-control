@@ -85,7 +85,8 @@
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
     _app = P3DAppInterface::instance();
-    _openGLView = _app->initInView(self.view, self.view.frame.size.width, self.view.frame.size.height);
+    
+    _openGLView = _app->initInView(self.view, self.view.frame.size.width, self.view.frame.size.height, [UIScreen mainScreen].scale);
     [self.view sendSubviewToBack: _openGLView];
     
     toggleButton.transform = CGAffineTransformMakeRotation(90.0*M_PI/180.0);
