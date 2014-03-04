@@ -71,4 +71,8 @@
 }
 
 
+- (IBAction)handleCancelBtn:(id)sender {
+    [self.parentController selectAutoDiscoveredHost: -1];
+}
+
 @end

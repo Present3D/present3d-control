@@ -929,6 +929,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Present3D-Control/Present3D-Control-Prefix.pch";
 				INFOPLIST_FILE = "Present3D-Control/Present3D-Control-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lOpenThreadsd",

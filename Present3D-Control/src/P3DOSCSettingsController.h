@@ -10,7 +10,7 @@
 
 @class P3DMenuViewController;
 
-@interface P3DOSCSettingsController : NSObject <UITextFieldDelegate, UIPopoverControllerDelegate> {
+@interface P3DOSCSettingsController : NSObject <UITextFieldDelegate, UIPopoverControllerDelegate, UIActionSheetDelegate> {
 
 }
 
@@ -22,6 +22,7 @@
 @property (nonatomic, weak)  UITableViewCell* autodiscoveredHostsCell;
 @property (nonatomic, strong) UIPopoverController* popover;
 @property (nonatomic, weak)  P3DMenuViewController* parentViewController;
+@property (nonatomic, strong) UIActionSheet* actionSheet;
 
 
 
@@ -44,6 +45,6 @@
 
 -(void)showAutoDiscoveredHosts: (UIView*)view;
 -(void)refreshInterface;
--(void)selectAutoDiscoveredHost: (unsigned int)ndx;
+-(void)selectAutoDiscoveredHost: (int)ndx;
 
 @end

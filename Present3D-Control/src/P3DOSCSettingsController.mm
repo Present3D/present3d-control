@@ -222,38 +222,71 @@ NSString *const oscDelayKey             = @"oscDelay";
 
 -(void) showAutoDiscoveredHosts: (UIView*) view
 {
-    if (P3DAppInterface::instance()->getOscController()->getNumAutoDiscoveredHosts() < 2)
+    if (P3DAppInterface::instance()->getOscController()->getNumAutoDiscoveredHosts() < 1)
         return;
     
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    P3DOSCHostPickerViewController * secondview = (P3DOSCHostPickerViewController*)[storyboard instantiateViewControllerWithIdentifier:@"HostPicker"];
+    P3DOSCHostPickerViewController * secondview = NULL;
 
-    _popover = [[UIPopoverController alloc] initWithContentViewController:secondview];
-    _popover.delegate = self;
-
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        secondview = (P3DOSCHostPickerViewController*)[storyboard instantiateViewControllerWithIdentifier:@"HostPicker"];
+    }
+    else {
+        secondview = (P3DOSCHostPickerViewController*)[storyboard instantiateViewControllerWithIdentifier:@"HostPickerIPhone"];
+    }
+    
     secondview.parentController = self;
     [secondview.picker selectRow: P3DAppInterface::instance()->getOscController()->getCurrentSelectedAutoDiscoveredHost() inComponent:0 animated: TRUE];
     
-    UITableView* table_view = (UITableView*)(_parentViewController.view);
-    CGRect frame = [table_view rectForRowAtIndexPath:[table_view indexPathForSelectedRow]];
-    CGPoint yOffset = table_view.contentOffset;
-    
-    frame = CGRectMake(frame.origin.x, (frame.origin.y - yOffset.y), frame.size.width, frame.size.height);
-    
-    [_popover presentPopoverFromRect: frame inView: view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        _popover = [[UIPopoverController alloc] initWithContentViewController:secondview];
+        _popover.delegate = self;
+
+        UITableView* table_view = (UITableView*)(_parentViewController.view);
+        CGRect frame = [table_view rectForRowAtIndexPath:[table_view indexPathForSelectedRow]];
+        CGPoint yOffset = table_view.contentOffset;
+        
+        frame = CGRectMake(frame.origin.x, (frame.origin.y - yOffset.y), frame.size.width, frame.size.height);
+        
+        [_popover presentPopoverFromRect: frame inView: view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+    }
+    else {
+        
+        /*
+        [secondview.view setFrame: CGRectMake(0,0,480, 300)];
+        _actionSheet = [[UIActionSheet alloc] initWithTitle: @"Autodiscovered hosts"
+            delegate:self
+            cancelButtonTitle: @"Done"
+            destructiveButtonTitle:nil
+            otherButtonTitles:nil];
+        [_actionSheet addSubview: secondview.view];
+        [_actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+        [_actionSheet setBounds:CGRectMake(0,0,480, 320)];
+        */
+        
+        [_parentViewController presentViewController:secondview animated:YES completion:nil];
+
+        
+    }
 }
 
 
--(void)selectAutoDiscoveredHost: (unsigned int)ndx {
+-(void)selectAutoDiscoveredHost: (int)ndx {
     
-    P3DAppInterface::instance()->getOscController()->connectToAutoDiscoveredHostAt(ndx);
-    [_popover dismissPopoverAnimated:TRUE];
+    if (ndx >= 0)
+        P3DAppInterface::instance()->getOscController()->connectToAutoDiscoveredHostAt(ndx);
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [_popover dismissPopoverAnimated:TRUE];
     
     
-    [self popoverControllerDidDismissPopover: _popover];
-    _popover = NULL;
-    
+        [self popoverControllerDidDismissPopover: _popover];
+        _popover = NULL;
+    } else {
+        [_parentViewController dismissViewControllerAnimated:YES completion:nil];
+    }
     
     // update interface:
     _hostTextfield.text = [self getHost];

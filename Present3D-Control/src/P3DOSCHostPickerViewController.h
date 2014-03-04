@@ -15,10 +15,12 @@
 
 
 @property (nonatomic, weak) IBOutlet UIPickerView* picker;
+@property (nonatomic, weak) IBOutlet UIButton* cancelBtn;
 @property (nonatomic, weak)  P3DOSCSettingsController* parentController;
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+- (IBAction)handleCancelBtn:(id)sender;
 
 @end

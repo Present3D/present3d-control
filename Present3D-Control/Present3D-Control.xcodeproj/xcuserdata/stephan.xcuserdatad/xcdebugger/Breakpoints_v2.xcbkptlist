@@ -1077,12 +1077,12 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "412884048.307984"
+                  timestampString = "415620028.546758"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "18">
+                  offsetFromSymbolStart = "32">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1091,12 +1091,40 @@
                   symbolName = "-[P3DSceneViewController dealloc]"
                   moduleName = "Present3D-Control"
                   urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
-                  timestampString = "412884048.308176"
+                  timestampString = "415620028.547092"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "123">
+                  offsetFromSymbolStart = "290">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DSceneViewController dealloc]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
+                  timestampString = "415620028.547476"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "366">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DSceneViewController dealloc]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DSceneViewController.mm"
+                  timestampString = "415620028.547939"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "394">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1954,11 +1982,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DOSCSettingsController.mm"
-            timestampString = "412686969.757495"
+            timestampString = "415623818.677509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "-popoverControllerDidDismissPopover:"
             landmarkType = "5">
             <Locations>
@@ -2040,7 +2068,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/P3DAppInterface.cpp"
@@ -2067,6 +2095,112 @@
             endingLineNumber = "180"
             landmarkName = "P3DAppInterface::readFile(const std::string&amp; file_name)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/P3DOSCSettingsController.mm"
+            timestampString = "415623099.434986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "-showAutoDiscoveredHosts:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DOSCSettingsController showAutoDiscoveredHosts:]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
+                  timestampString = "415619696.639707"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "230"
+                  endingLineNumber = "230"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DOSCSettingsController showAutoDiscoveredHosts:]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
+                  timestampString = "415619696.639998"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "230"
+                  endingLineNumber = "230"
+                  offsetFromSymbolStart = "1310">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/P3DOSCSettingsController.mm"
+            timestampString = "415619708.759788"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "-showAutoDiscoveredHosts:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DOSCSettingsController showAutoDiscoveredHosts:]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
+                  timestampString = "415620028.671007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DOSCSettingsController showAutoDiscoveredHosts:]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
+                  timestampString = "415620028.671196"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "1190">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DOSCSettingsController showAutoDiscoveredHosts:]"
+                  moduleName = "Present3D-Control"
+                  urlString = "file:///Volumes/Daten/dev/ios/present3d-control/Present3D-Control/src/P3DOSCSettingsController.mm"
+                  timestampString = "415620028.671419"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "1322">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
