@@ -22,6 +22,8 @@ NSString *const oscPortKey              = @"oscPort";
 NSString *const oscMessagesPerEventKey  = @"oscMessagesPerEvent";
 NSString *const oscDelayKey             = @"oscDelay";
 
+static unsigned int MIN_HOSTS_REQUIRED = 2;
+
 
 @implementation P3DOSCSettingsController
 
@@ -222,7 +224,7 @@ NSString *const oscDelayKey             = @"oscDelay";
 
 -(void) showAutoDiscoveredHosts: (UIView*) view
 {
-    if (P3DAppInterface::instance()->getOscController()->getNumAutoDiscoveredHosts() < 1)
+    if (P3DAppInterface::instance()->getOscController()->getNumAutoDiscoveredHosts() < MIN_HOSTS_REQUIRED)
         return;
     
     NSString * storyboardName = @"Main";
@@ -296,7 +298,7 @@ NSString *const oscDelayKey             = @"oscDelay";
 
 -(void)refreshInterface
 {
-    bool auto_hosts_enabled = _toggleSwitch.on && (P3DAppInterface::instance()->getOscController()->getNumAutoDiscoveredHosts() > 0);
+    bool auto_hosts_enabled = _toggleSwitch.on && (P3DAppInterface::instance()->getOscController()->getNumAutoDiscoveredHosts() >= MIN_HOSTS_REQUIRED);
     
     self.autodiscoveredHostsCell.userInteractionEnabled = auto_hosts_enabled;
     self.autodiscoveredHostsCell.textLabel.enabled = auto_hosts_enabled;
