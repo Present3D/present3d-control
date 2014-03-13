@@ -35,6 +35,7 @@ osgDB::Options* ReadFileThread::createOptions(const osgDB::ReaderWriter::Options
 
 osg::ref_ptr<osg::Node> ReadFileThread::readHoldingSlide(const std::string& filename)
 {
+    osg::setNotifyLevel(osg::DEBUG_FP);
     std::string ext = osgDB::getFileExtension(filename);
     if (!osgDB::equalCaseInsensitive(ext,"xml") && 
         !osgDB::equalCaseInsensitive(ext,"p3d")) return 0;
@@ -42,8 +43,9 @@ osg::ref_ptr<osg::Node> ReadFileThread::readHoldingSlide(const std::string& file
     osg::ref_ptr<osgDB::ReaderWriter::Options> options = createOptions(0);
     options->setObjectCacheHint(osgDB::ReaderWriter::Options::CACHE_NONE);
     options->setOptionString("preview");
-
-    return osgDB::readRefNodeFile(filename, options.get());
+    osg::ref_ptr<osg::Node> node = osgDB::readRefNodeFile(filename, options.get());
+    osg::setNotifyLevel(osg::WARN);
+    return node;
 }
 
 osg::ref_ptr<osg::Node> ReadFileThread::readPresentation(const std::string& filename,const osgDB::ReaderWriter::Options* options)

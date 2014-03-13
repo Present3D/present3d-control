@@ -109,3 +109,22 @@ std::string IOSUtils::lookupHost(const std::string& address) {
     return result_str;
     
 }
+
+
+bool IOSUtils::isIphone()
+{ 
+    return ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone);
+}
+
+bool IOSUtils::isIpad() 
+{ 
+    return ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad);
+}
+
+bool IOSUtils::isIphone5() {
+    if (!isIphone())
+        return false;
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    return screenSize.height > 480.0f;
+}

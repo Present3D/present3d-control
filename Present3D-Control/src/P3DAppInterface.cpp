@@ -16,6 +16,7 @@
 #include <osgDB/ReadFile>
 
 #include "ZeroConfDiscoverEventHandler.h"
+#include "IOSUtils.h"
 
 USE_GRAPICSWINDOW_IMPLEMENTATION(IOS)
 
@@ -53,6 +54,8 @@ public:
         _files.clear();
         osg::ref_ptr<P3DAppInterface> app = P3DAppInterface::instance();
         
+        std::string device_class = std::string("@") + (IOSUtils::isIpad() ? "ipad" : (IOSUtils::isIphone5() ? "iphone5" : "iphone"));
+        device_class += ".";
         for(FilesVector::iterator i = _localFilePaths.begin(); i != _localFilePaths.end(); ++i)
         {
             osgDB::DirectoryContents contents = osgDB::getDirectoryContents(*i);
@@ -61,6 +64,11 @@ public:
                 std::string full_file_path = (*i) + "/" + (*j);
                 if ((osgDB::fileType(full_file_path) == osgDB::REGULAR_FILE) && app->fileTypeSupported(osgDB::getFileExtension(full_file_path)))
                 {
+                    std::string file_name = *j;
+                    if((file_name.find('@') != std::string::npos) && (file_name.find(device_class) == std::string::npos)) {
+                        
+                        continue;
+                    }
                     _files.push_back(full_file_path);
                 }
             }
@@ -172,7 +180,7 @@ void P3DAppInterface::reset() {
     unsetenv("P3D_CONTROL_ALLOW_TRACKBALL");
     unsetenv("P3D_CONTROL_MENU_BUTTON_CAPTION");
     
-    _menuBtnCaption = "Menu";
+    _menuBtnCaption = "menu";
     refreshInterface();
 }
 
@@ -303,7 +311,7 @@ void P3DAppInterface::checkEnvVars()
             refreshInterface();
         }
     }
-    _menuBtnCaption = "Menu";
+    _menuBtnCaption = "menu";
     {
         const char* p3dControlMenuButtonCaption = getenv("P3D_CONTROL_MENU_BUTTON_CAPTION");
         if (p3dControlMenuButtonCaption)

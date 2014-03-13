@@ -19,5 +19,5 @@
 -(void) handleReadFileResult: (BOOL) success withFileName: (NSString*) fileName;
 -(void) toggleAllowTrackball: (id)sender;
 -(void) refreshInterface;
-
+-(NSString*) removeDeviceClassesFrom: (NSString*) file_name;
 @end

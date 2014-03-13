@@ -147,6 +147,16 @@ private:
     return 0;
 }
 
+-(NSString*) removeDeviceClassesFrom: (NSString*) file_name
+{
+    NSString* result = file_name;
+    result = [result stringByReplacingOccurrencesOfString: @"@iphone5" withString:@""];
+    result = [result stringByReplacingOccurrencesOfString: @"@iphone" withString:@""];
+    result = [result stringByReplacingOccurrencesOfString: @"@ipad" withString:@""];
+    
+    return result;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     osg::ref_ptr<P3DAppInterface> app = P3DAppInterface::instance();
@@ -156,7 +166,7 @@ private:
     switch(indexPath.section) {
         case 0:
             cell = [tableView dequeueReusableCellWithIdentifier:@"LocalFileCell" forIndexPath:indexPath];
-            cell.textLabel.text = IOSUtils::toNSString(app->getLocalFiles()->getSimpleNameAt(indexPath.row));
+            cell.textLabel.text = [self removeDeviceClassesFrom: IOSUtils::toNSString(app->getLocalFiles()->getSimpleNameAt(indexPath.row))];
             break;
             
         case 1:

@@ -90,6 +90,7 @@
     [self.view sendSubviewToBack: _openGLView];
     
     toggleButton.transform = CGAffineTransformMakeRotation(90.0*M_PI/180.0);
+    [toggleButton setTranslatesAutoresizingMaskIntoConstraints: NO];
 
 }
 
@@ -149,7 +150,19 @@
 
 
 - (void)refreshInterface {
-    [toggleButton setTitle:IOSUtils::toNSString(P3DAppInterface::instance()->getMenuBtnCaption()) forState: UIControlStateNormal];
-    [toggleButton setTitle:IOSUtils::toNSString(P3DAppInterface::instance()->getMenuBtnCaption()) forState: UIControlStateHighlighted];
+    NSString* new_title = IOSUtils::toNSString(P3DAppInterface::instance()->getMenuBtnCaption());
+    
+    
+    CGSize stringsize = [new_title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0f]}];
+    
+    [toggleButton removeFromSuperview];
+    
+    [toggleButton setTranslatesAutoresizingMaskIntoConstraints:YES];
+    [toggleButton setFrame:CGRectMake(0,0,40, 30 + stringsize.width)];
+    [toggleButton setTitle: new_title forState: UIControlStateNormal];
+    [toggleButton setTitle: new_title forState: UIControlStateHighlighted];
+    
+    [self.view addSubview: toggleButton];
+    
 }
 @end

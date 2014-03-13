@@ -33,6 +33,10 @@ public:
     
     static std::string lookupHost(const std::string& address);
     
+    static bool isIphone();
+    static bool isIphone5();
+    static bool isIpad();
+    
 private:
     IOSUtils() {}
 };

@@ -13,6 +13,10 @@
 #include "P3DAppInterface.h"
 #include "IOSUtils.h"
 
+#import "P3DRootViewController.h"
+#import "P3DMenuViewController.h"
+
+
 @implementation P3DAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -56,5 +60,40 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+/*
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    NSURL* url = (NSURL *)[launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
+    if ([[url scheme] isEqualToString:@"present3d"]) {
+        return YES;
+    }
+    
+    return NO;
+}
+*/
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+        sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([[url scheme] isEqualToString:@"present3d"]) {
+        
+        //NSLog(@"URL: %@", url);
+        
+        NSString* path = [url absoluteString];
+        path = [path stringByReplacingOccurrencesOfString:@"present3d" withString:@"http"];
+        
+        P3DRootViewController* root = (P3DRootViewController*)self.window.rootViewController;
+        P3DMenuViewController* menu = (P3DMenuViewController*)root.underLeftViewController;
+        [menu startReadingSequence];
+        
+        P3DAppInterface::instance()->readFile(IOSUtils::toString(path));
+        return YES;
+        
+    }
+    return NO;
+}
+
 
 @end
