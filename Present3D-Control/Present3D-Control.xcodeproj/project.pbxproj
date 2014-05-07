@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		D41F61E018310C78006FDEDF /* OscController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D41F61DE18310C78006FDEDF /* OscController.cpp */; };
 		D42498A818166158002C8418 /* P3DSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D42498A718166158002C8418 /* P3DSwitchTableViewCell.m */; };
-		D46015CA18269A77003EA6E3 /* Present3D-Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D46015C918269A77003EA6E3 /* Present3D-Release.xcconfig */; };
-		D46015CC18269ACE003EA6E3 /* Present3D-Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D46015CB18269ACD003EA6E3 /* Present3D-Common.xcconfig */; };
 		D46015CE1826B5F1003EA6E3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D46015CD1826B5F1003EA6E3 /* libz.dylib */; };
 		D46015D01826B5FA003EA6E3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46015CF1826B5FA003EA6E3 /* CoreMedia.framework */; };
 		D463C407181668570038BD75 /* P3DLabelTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D463C406181668570038BD75 /* P3DLabelTextfieldTableViewCell.m */; };
@@ -615,7 +613,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = P3D;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Stephan Huber";
 				TargetAttributes = {
 					D4A8935B180BD70700ACB0B9 = {
@@ -668,7 +666,6 @@
 				D4BB8E8118D1A99300F6747D /* up.png in Resources */,
 				D4BB8E5818D1A99300F6747D /* help_back.png in Resources */,
 				D4BB8E7718D1A99300F6747D /* six_alt.png in Resources */,
-				D46015CC18269ACE003EA6E3 /* Present3D-Common.xcconfig in Resources */,
 				D4BB8E5918D1A99300F6747D /* help_layer.png in Resources */,
 				D4BB8E7F18D1A99300F6747D /* two.png in Resources */,
 				D4BB8E5E18D1A99300F6747D /* minus.png in Resources */,
@@ -726,7 +723,6 @@
 				D4BB8E4F18D1A99300F6747D /* four.png in Resources */,
 				D4BB8E7018D1A99300F6747D /* prev.png in Resources */,
 				D4BB8E4518D1A99300F6747D /* density.png in Resources */,
-				D46015CA18269A77003EA6E3 /* Present3D-Release.xcconfig in Resources */,
 				D4A89373180BD70700ACB0B9 /* Main.storyboard in Resources */,
 				D4BB8E4218D1A99300F6747D /* cursor_alt.png in Resources */,
 				D4BB8E7D18D1A99300F6747D /* trans.png in Resources */,
