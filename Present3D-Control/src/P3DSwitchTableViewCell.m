@@ -10,6 +10,8 @@
 
 @implementation P3DSwitchTableViewCell
 
+@synthesize textLabel;
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
