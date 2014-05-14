@@ -640,7 +640,6 @@
 				D4A89358180BD70700ACB0B9 /* Sources */,
 				D4A89359180BD70700ACB0B9 /* Frameworks */,
 				D4A8935A180BD70700ACB0B9 /* Resources */,
-				D41CD772189C1E0B000B1599 /* ShellScript */,
 				D4713E8C182BD6320010010F /* ShellScript */,
 			);
 			buildRules = (
@@ -826,19 +825,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D41CD772189C1E0B000B1599 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "#!/bin/bash\n \n# This script automatically sets the version and short version string of\n# an Xcode project from the Git repository containing the project.\n#\n# To use this script in Xcode 4, add the contents to a \"Run Script\" build\n# phase for your application target.\n \nset -o errexit\nset -o nounset\n \nINFO_PLIST=\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Info\"\n \n# Use the latest version tag for CFBundleShortVersionString. I tag releases\n# in Git using the format v0.0.0; this assumes you're doing the same.\nSHORT_VERSION=$(git --git-dir=\"${PROJECT_DIR}/../.git\" --work-tree=\"${PROJECT_DIR}\" describe --dirty | sed -e 's/^v//' -e 's/g//')\n \n# I'd like to use the Git commit hash for CFBundleVersion.\n# VERSION=$(git --git-dir=\"${PROJECT_DIR}/.git\" --work-tree=\"${PROJECT_DIR}\" rev-parse --short HEAD)\n \n# But Apple wants this value to be a monotonically increasing integer, so\n# instead use the number of commits on the master branch. If you like to\n# play fast and loose with your Git history, this may cause you problems.\n# Thanks to @amrox for pointing out the issue and fix.\nVERSION=$(git --git-dir=\"${PROJECT_DIR}/../.git\" --work-tree=\"${PROJECT_DIR}\" rev-list master | wc -l)\n \ndefaults write $INFO_PLIST CFBundleShortVersionString $SHORT_VERSION\ndefaults write $INFO_PLIST CFBundleVersion $VERSION";
-		};
 		D4713E8C182BD6320010010F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1082,7 +1068,7 @@
 					"-lfreetype",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "52BDF591-0B8B-487E-902B-9EC31DED17D7";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1107,7 +1093,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Present3D-Control/Present3D-Control-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "52BDF591-0B8B-487E-902B-9EC31DED17D7";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
