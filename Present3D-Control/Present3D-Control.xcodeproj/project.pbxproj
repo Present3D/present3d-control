@@ -20,6 +20,24 @@
 		D481CB3C1826B6C900C967B0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB3B1826B6C900C967B0 /* MobileCoreServices.framework */; };
 		D481CB3E1826B72F00C967B0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D481CB3D1826B72F00C967B0 /* Accelerate.framework */; };
 		D48F47331811521C00A2F8E7 /* P3DTextfieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */; };
+		D49BED06192357FF00B37809 /* Control Panel@iphone.p3d in Resources */ = {isa = PBXBuildFile; fileRef = D49BECF8192357FF00B37809 /* Control Panel@iphone.p3d */; };
+		D49BED07192357FF00B37809 /* iphone4c.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D49BECF9192357FF00B37809 /* iphone4c.jpg */; };
+		D49BED08192357FF00B37809 /* p_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BECFA192357FF00B37809 /* p_1.png */; };
+		D49BED09192357FF00B37809 /* p_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BECFB192357FF00B37809 /* p_2.png */; };
+		D49BED0A192357FF00B37809 /* p_3.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BECFC192357FF00B37809 /* p_3.png */; };
+		D49BED0B192357FF00B37809 /* p_4.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BECFD192357FF00B37809 /* p_4.png */; };
+		D49BED0C192357FF00B37809 /* p_5.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BECFE192357FF00B37809 /* p_5.png */; };
+		D49BED0D192357FF00B37809 /* p_6.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BECFF192357FF00B37809 /* p_6.png */; };
+		D49BED0E192357FF00B37809 /* p_box.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BED00192357FF00B37809 /* p_box.png */; };
+		D49BED0F192357FF00B37809 /* p_next.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BED01192357FF00B37809 /* p_next.png */; };
+		D49BED10192357FF00B37809 /* p_prev.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BED02192357FF00B37809 /* p_prev.png */; };
+		D49BED11192357FF00B37809 /* p_reset.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BED03192357FF00B37809 /* p_reset.png */; };
+		D49BED12192357FF00B37809 /* p_touch.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BED04192357FF00B37809 /* p_touch.png */; };
+		D49BED13192357FF00B37809 /* p_up.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BED05192357FF00B37809 /* p_up.png */; };
+		D49BED1919235ADD00B37809 /* Control Panel@iphone5.p3d in Resources */ = {isa = PBXBuildFile; fileRef = D49BED1419235ADC00B37809 /* Control Panel@iphone5.p3d */; };
+		D49BED1A19235ADD00B37809 /* iphone5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D49BED1519235ADC00B37809 /* iphone5.jpg */; };
+		D49BED1B19235ADD00B37809 /* px_box.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BED1619235ADC00B37809 /* px_box.png */; };
+		D49BED1C19235ADD00B37809 /* px.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BED1719235ADC00B37809 /* px.png */; };
 		D4A318F718295931006584AD /* ToggleMultitouchTrackball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4A318F518295931006584AD /* ToggleMultitouchTrackball.cpp */; };
 		D4A6C7671898FAAE0058BD96 /* P3DOSCHostPickerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D4A6C7661898FAAE0058BD96 /* P3DOSCHostPickerViewController.mm */; };
 		D4A89360180BD70700ACB0B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A8935F180BD70700ACB0B9 /* Foundation.framework */; };
@@ -48,7 +66,6 @@
 		D4BB8E3E18D1A99300F6747D /* click_t.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8DEF18D1A99300F6747D /* click_t.png */; };
 		D4BB8E3F18D1A99300F6747D /* click.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8DF018D1A99300F6747D /* click.png */; };
 		D4BB8E4018D1A99300F6747D /* Control Panel@ipad.p3d in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8DF118D1A99300F6747D /* Control Panel@ipad.p3d */; };
-		D4BB8E4118D1A99300F6747D /* Control Panel@iphone.p3d in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8DF218D1A99300F6747D /* Control Panel@iphone.p3d */; };
 		D4BB8E4218D1A99300F6747D /* cursor_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8DF318D1A99300F6747D /* cursor_alt.png */; };
 		D4BB8E4318D1A99300F6747D /* cursor.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8DF418D1A99300F6747D /* cursor.png */; };
 		D4BB8E4418D1A99300F6747D /* density_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8DF518D1A99300F6747D /* density_alt.png */; };
@@ -117,7 +134,6 @@
 		D4BB8E8318D1A99300F6747D /* v_line.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8E3418D1A99300F6747D /* v_line.png */; };
 		D4BB8E8418D1A99300F6747D /* view_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8E3518D1A99300F6747D /* view_alt.png */; };
 		D4BB8E8518D1A99300F6747D /* view.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8E3618D1A99300F6747D /* view.png */; };
-		D4BB8E8718D1BE7700F6747D /* Control Panel@iphone5.p3d in Resources */ = {isa = PBXBuildFile; fileRef = D4BB8E8618D1BE7700F6747D /* Control Panel@iphone5.p3d */; };
 		D4BE74AF180D2A74008028DA /* P3DMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D4BE74AE180D2A74008028DA /* P3DMenuViewController.mm */; };
 		D4BE74B2180D2D40008028DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4BE74B0180D2D40008028DA /* Localizable.strings */; };
 		D4BE74B5180D321B008028DA /* P3DAppInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4BE74B3180D321B008028DA /* P3DAppInterface.cpp */; };
@@ -160,6 +176,24 @@
 		D481CB3D1826B72F00C967B0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		D48F47311811521C00A2F8E7 /* P3DTextfieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DTextfieldTableViewCell.h; sourceTree = "<group>"; };
 		D48F47321811521C00A2F8E7 /* P3DTextfieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DTextfieldTableViewCell.m; sourceTree = "<group>"; };
+		D49BECF8192357FF00B37809 /* Control Panel@iphone.p3d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Control Panel@iphone.p3d"; sourceTree = "<group>"; };
+		D49BECF9192357FF00B37809 /* iphone4c.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone4c.jpg; sourceTree = "<group>"; };
+		D49BECFA192357FF00B37809 /* p_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_1.png; sourceTree = "<group>"; };
+		D49BECFB192357FF00B37809 /* p_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_2.png; sourceTree = "<group>"; };
+		D49BECFC192357FF00B37809 /* p_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_3.png; sourceTree = "<group>"; };
+		D49BECFD192357FF00B37809 /* p_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_4.png; sourceTree = "<group>"; };
+		D49BECFE192357FF00B37809 /* p_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_5.png; sourceTree = "<group>"; };
+		D49BECFF192357FF00B37809 /* p_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_6.png; sourceTree = "<group>"; };
+		D49BED00192357FF00B37809 /* p_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_box.png; sourceTree = "<group>"; };
+		D49BED01192357FF00B37809 /* p_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_next.png; sourceTree = "<group>"; };
+		D49BED02192357FF00B37809 /* p_prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_prev.png; sourceTree = "<group>"; };
+		D49BED03192357FF00B37809 /* p_reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_reset.png; sourceTree = "<group>"; };
+		D49BED04192357FF00B37809 /* p_touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_touch.png; sourceTree = "<group>"; };
+		D49BED05192357FF00B37809 /* p_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_up.png; sourceTree = "<group>"; };
+		D49BED1419235ADC00B37809 /* Control Panel@iphone5.p3d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Control Panel@iphone5.p3d"; sourceTree = "<group>"; };
+		D49BED1519235ADC00B37809 /* iphone5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone5.jpg; sourceTree = "<group>"; };
+		D49BED1619235ADC00B37809 /* px_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = px_box.png; sourceTree = "<group>"; };
+		D49BED1719235ADC00B37809 /* px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = px.png; sourceTree = "<group>"; };
 		D4A318F518295931006584AD /* ToggleMultitouchTrackball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToggleMultitouchTrackball.cpp; sourceTree = "<group>"; };
 		D4A318F618295931006584AD /* ToggleMultitouchTrackball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleMultitouchTrackball.h; sourceTree = "<group>"; };
 		D4A6C7651898FAAE0058BD96 /* P3DOSCHostPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DOSCHostPickerViewController.h; sourceTree = "<group>"; };
@@ -197,7 +231,6 @@
 		D4BB8DEF18D1A99300F6747D /* click_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = click_t.png; sourceTree = "<group>"; };
 		D4BB8DF018D1A99300F6747D /* click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = click.png; sourceTree = "<group>"; };
 		D4BB8DF118D1A99300F6747D /* Control Panel@ipad.p3d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Control Panel@ipad.p3d"; sourceTree = "<group>"; };
-		D4BB8DF218D1A99300F6747D /* Control Panel@iphone.p3d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Control Panel@iphone.p3d"; sourceTree = "<group>"; };
 		D4BB8DF318D1A99300F6747D /* cursor_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cursor_alt.png; sourceTree = "<group>"; };
 		D4BB8DF418D1A99300F6747D /* cursor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cursor.png; sourceTree = "<group>"; };
 		D4BB8DF518D1A99300F6747D /* density_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = density_alt.png; sourceTree = "<group>"; };
@@ -266,7 +299,6 @@
 		D4BB8E3418D1A99300F6747D /* v_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v_line.png; sourceTree = "<group>"; };
 		D4BB8E3518D1A99300F6747D /* view_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_alt.png; sourceTree = "<group>"; };
 		D4BB8E3618D1A99300F6747D /* view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view.png; sourceTree = "<group>"; };
-		D4BB8E8618D1BE7700F6747D /* Control Panel@iphone5.p3d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Control Panel@iphone5.p3d"; sourceTree = "<group>"; };
 		D4BE74AD180D2A74008028DA /* P3DMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DMenuViewController.h; sourceTree = "<group>"; };
 		D4BE74AE180D2A74008028DA /* P3DMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = P3DMenuViewController.mm; sourceTree = "<group>"; };
 		D4BE74B1180D2D40008028DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Present3D-Control/en.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -316,7 +348,8 @@
 		D41CD6DF189C1CDA000B1599 /* presentations */ = {
 			isa = PBXGroup;
 			children = (
-				D4BB8E8618D1BE7700F6747D /* Control Panel@iphone5.p3d */,
+				D49BECF7192357FF00B37809 /* iphone4 */,
+				D49BECCA192356B000B37809 /* iphone5 */,
 				D4BB8DE818D1A99300F6747D /* alpha_alt.png */,
 				D4BB8DE918D1A99300F6747D /* alpha.png */,
 				D4BB8DEA18D1A99300F6747D /* back_h.png */,
@@ -327,7 +360,6 @@
 				D4BB8DEF18D1A99300F6747D /* click_t.png */,
 				D4BB8DF018D1A99300F6747D /* click.png */,
 				D4BB8DF118D1A99300F6747D /* Control Panel@ipad.p3d */,
-				D4BB8DF218D1A99300F6747D /* Control Panel@iphone.p3d */,
 				D4BB8DF318D1A99300F6747D /* cursor_alt.png */,
 				D4BB8DF418D1A99300F6747D /* cursor.png */,
 				D4BB8DF518D1A99300F6747D /* density_alt.png */,
@@ -398,6 +430,38 @@
 				D4BB8E3618D1A99300F6747D /* view.png */,
 			);
 			path = presentations;
+			sourceTree = "<group>";
+		};
+		D49BECCA192356B000B37809 /* iphone5 */ = {
+			isa = PBXGroup;
+			children = (
+				D49BED1419235ADC00B37809 /* Control Panel@iphone5.p3d */,
+				D49BED1519235ADC00B37809 /* iphone5.jpg */,
+				D49BED1619235ADC00B37809 /* px_box.png */,
+				D49BED1719235ADC00B37809 /* px.png */,
+			);
+			path = iphone5;
+			sourceTree = "<group>";
+		};
+		D49BECF7192357FF00B37809 /* iphone4 */ = {
+			isa = PBXGroup;
+			children = (
+				D49BECF8192357FF00B37809 /* Control Panel@iphone.p3d */,
+				D49BECF9192357FF00B37809 /* iphone4c.jpg */,
+				D49BECFA192357FF00B37809 /* p_1.png */,
+				D49BECFB192357FF00B37809 /* p_2.png */,
+				D49BECFC192357FF00B37809 /* p_3.png */,
+				D49BECFD192357FF00B37809 /* p_4.png */,
+				D49BECFE192357FF00B37809 /* p_5.png */,
+				D49BECFF192357FF00B37809 /* p_6.png */,
+				D49BED00192357FF00B37809 /* p_box.png */,
+				D49BED01192357FF00B37809 /* p_next.png */,
+				D49BED02192357FF00B37809 /* p_prev.png */,
+				D49BED03192357FF00B37809 /* p_reset.png */,
+				D49BED04192357FF00B37809 /* p_touch.png */,
+				D49BED05192357FF00B37809 /* p_up.png */,
+			);
+			path = iphone4;
 			sourceTree = "<group>";
 		};
 		D4A89353180BD70700ACB0B9 = {
@@ -653,34 +717,47 @@
 				D4BB8E3C18D1A99300F6747D /* back3.png in Resources */,
 				D4BB8E6518D1A99300F6747D /* next.png in Resources */,
 				D4BB8E6018D1A99300F6747D /* move.png in Resources */,
+				D49BED0B192357FF00B37809 /* p_4.png in Resources */,
+				D49BED11192357FF00B37809 /* p_reset.png in Resources */,
 				D4BB8E4C18D1A99300F6747D /* five_alt.png in Resources */,
+				D49BED1B19235ADD00B37809 /* px_box.png in Resources */,
 				D4BB8E3E18D1A99300F6747D /* click_t.png in Resources */,
 				D4BB8E6118D1A99300F6747D /* nevis.ttf in Resources */,
 				D4BB8E7A18D1A99300F6747D /* three.png in Resources */,
-				D4BB8E4118D1A99300F6747D /* Control Panel@iphone.p3d in Resources */,
 				D4BB8E5118D1A99300F6747D /* global.png in Resources */,
+				D49BED1919235ADD00B37809 /* Control Panel@iphone5.p3d in Resources */,
 				D4BB8E6B18D1A99300F6747D /* play_alt.png in Resources */,
 				D4BB8E3D18D1A99300F6747D /* click_t_alt.png in Resources */,
 				D4BB8E4618D1A99300F6747D /* display_alt.png in Resources */,
 				D4BB8E4718D1A99300F6747D /* display.png in Resources */,
 				D4BB8E8118D1A99300F6747D /* up.png in Resources */,
+				D49BED06192357FF00B37809 /* Control Panel@iphone.p3d in Resources */,
+				D49BED0D192357FF00B37809 /* p_6.png in Resources */,
 				D4BB8E5818D1A99300F6747D /* help_back.png in Resources */,
 				D4BB8E7718D1A99300F6747D /* six_alt.png in Resources */,
 				D4BB8E5918D1A99300F6747D /* help_layer.png in Resources */,
 				D4BB8E7F18D1A99300F6747D /* two.png in Resources */,
 				D4BB8E5E18D1A99300F6747D /* minus.png in Resources */,
+				D49BED0F192357FF00B37809 /* p_next.png in Resources */,
+				D49BED07192357FF00B37809 /* iphone4c.jpg in Resources */,
 				D4BB8E7C18D1A99300F6747D /* trans_alt.png in Resources */,
 				D4BB8E3918D1A99300F6747D /* back_h.png in Resources */,
+				D49BED0A192357FF00B37809 /* p_3.png in Resources */,
 				D4BB8E6918D1A99300F6747D /* pause_alt.png in Resources */,
 				D4BB8E3718D1A99300F6747D /* alpha_alt.png in Resources */,
 				D4BB8E3F18D1A99300F6747D /* click.png in Resources */,
 				D4BB8E5C18D1A99300F6747D /* last.png in Resources */,
 				D4BB8E7E18D1A99300F6747D /* two_alt.png in Resources */,
+				D49BED10192357FF00B37809 /* p_prev.png in Resources */,
 				D4BB8E7418D1A99300F6747D /* reset.png in Resources */,
 				D4BB8E8218D1A99300F6747D /* v_dots.png in Resources */,
 				D4BB8E3818D1A99300F6747D /* alpha.png in Resources */,
 				D4BB8E6D18D1A99300F6747D /* plus_alt.png in Resources */,
 				D4BB8E4918D1A99300F6747D /* down.png in Resources */,
+				D49BED12192357FF00B37809 /* p_touch.png in Resources */,
+				D49BED1A19235ADD00B37809 /* iphone5.jpg in Resources */,
+				D49BED08192357FF00B37809 /* p_1.png in Resources */,
+				D49BED1C19235ADD00B37809 /* px.png in Resources */,
 				D4BB8E5318D1A99300F6747D /* h_line.png in Resources */,
 				D4BB8E4318D1A99300F6747D /* cursor.png in Resources */,
 				D4BB8E8018D1A99300F6747D /* up_alt.png in Resources */,
@@ -690,7 +767,6 @@
 				D4A89378180BD70700ACB0B9 /* Images.xcassets in Resources */,
 				D4BE74B2180D2D40008028DA /* Localizable.strings in Resources */,
 				D4BB8E4E18D1A99300F6747D /* four_alt.png in Resources */,
-				D4BB8E8718D1BE7700F6747D /* Control Panel@iphone5.p3d in Resources */,
 				D4BB8E5018D1A99300F6747D /* global_alt.png in Resources */,
 				D4BB8E5218D1A99300F6747D /* h_dots.png in Resources */,
 				D4BB8E7118D1A99300F6747D /* redm.png in Resources */,
@@ -704,12 +780,16 @@
 				D4BB8E6818D1A99300F6747D /* p3d_logo.png in Resources */,
 				D4BB8E6C18D1A99300F6747D /* play.png in Resources */,
 				D4BB8E7518D1A99300F6747D /* restart_alt.png in Resources */,
+				D49BED0E192357FF00B37809 /* p_box.png in Resources */,
 				D4BB8E4418D1A99300F6747D /* density_alt.png in Resources */,
 				D4BB8E3B18D1A99300F6747D /* back2.png in Resources */,
+				D49BED13192357FF00B37809 /* p_up.png in Resources */,
 				D4BB8E6318D1A99300F6747D /* next_m_alt.png in Resources */,
 				D4BB8E6718D1A99300F6747D /* one.png in Resources */,
+				D49BED0C192357FF00B37809 /* p_5.png in Resources */,
 				D4A8936A180BD70700ACB0B9 /* InfoPlist.strings in Resources */,
 				D4BB8E7818D1A99300F6747D /* six.png in Resources */,
+				D49BED09192357FF00B37809 /* p_2.png in Resources */,
 				D4BB8E5718D1A99300F6747D /* help_back_org.png in Resources */,
 				D4BB8E8318D1A99300F6747D /* v_line.png in Resources */,
 				D4BB8E4A18D1A99300F6747D /* first_alt.png in Resources */,
@@ -1014,8 +1094,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Digital Learning Foundation (KBFUZ926G3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Digital Learning Foundation (KBFUZ926G3)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

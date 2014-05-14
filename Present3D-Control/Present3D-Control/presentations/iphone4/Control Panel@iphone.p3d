@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : iPhone Interface Control P3D
+    Created on : May 2014
+    Author     : Phil Lavery
+    Description: iPhone4 interface
+-->
+<presentation>
+<env>OSG_STEREO=OFF</env>
+<env>OSG_NOTIFY_LEVEL=ALWAYS</env>
+<env>P3D_CONTROL_MENU_BUTTON_CAPTION=• • •</env>
+<!--<env>P3D_TIMEOUT=100</env>-->
+
+<holding_slide>
+<duration></duration>
+<background></background>
+<title></title>
+<layer>
+
+ <image  fade="1" scale="4" position="0.5 0.5 0">back.png</image>
+	<image hud="on" fade="0.9" scale="1" rotate="0 0 1 0" position="0.5 0.5 0.02">p3d_logo.png</image>
+   
+
+</layer>
+</holding_slide>
+
+  
+<!-- iPhone4 Interface -->  
+
+<slide slide_name="master">
+<duration></duration>
+
+
+
+<!-- master interactive-->
+<clean_layer layer_name="main">
+
+<!-- background layout-->
+
+    <image  fade="1" scale="1.25" position="0.5 0.5 0">iphone4c.jpg</image>
+   
+    
+   
+	<!-- touchpad -->
+	<forward_touch_event_to_device></forward_touch_event_to_device> 
+	<image position="0.35 0.59 0.01" fade="0.9" scale_x="0.75" scale_y="0.65">p_touch.png</image>
+
+
+     
+     <!-- slide  and scene controls -->
+     
+      <!-- layer controls -->
+     
+     
+     <!-- down layer -->
+     <!--
+     <click_to_event forward_to_devices="true" >0xFF54</click_to_event>
+     <image position="0.34 0.15 0.001" fade="0.9" scale="0.08">down_c.png</image>
+     -->
+     
+     <!-- up layer-->
+     
+     <click_to_event forward_to_devices="true" >0xFF52</click_to_event>
+     <image position="0.918 0.325 0.001" fade="0.9" scale="0.13">p_up.png</image>
+     
+     
+      <!-- next button -->
+     <click_to_event forward_to_devices="true" >0x6E</click_to_event>
+     <image position="0.99 0.12 0.001" fade="0.9" scale_x="0.21" scale_y="0.13">p_next.png</image>
+     
+      <!-- slide controls -->
+   
+     
+      <!-- next slide -->
+      <!--
+      <click_to_event forward_to_devices="true" >0xFF53</click_to_event>
+     <image position="-0.02 0.365 0.001" fade="0.9" scale="0.12">left_c.png</image>
+     -->
+     
+     <!-- prev slide -->
+     <click_to_event forward_to_devices="true" >0xFF51</click_to_event>
+     <image position="0.8 0.12 0.001" fade="0.9" scale="0.13">p_prev.png </image>
+     
+     <!-- Jump to First Last Slide -->
+     <!--
+     <click_to_event forward_to_devices="true" >0xFF50</click_to_event>
+     <image position="0.13 0.08 0.001" fade="0.9" scale="0.075">first.png</image>
+     
+      <click_to_event forward_to_devices="true" >0xFF9C</click_to_event>
+     <image position="0.22 0.08 0.001" fade="0.9" scale="0.075">last.png</image>
+     -->
+     
+      <!-- reset -->
+     <click_to_event forward_to_devices="true" >0x20</click_to_event>
+          <image position="0.09 0.08 0.001" fade="0.9" scale_x="0.3" scale_y="0.12">p_reset.png</image>
+     
+
+      <!-- Cursor Show/Hide -->
+      <!--
+     <click_to_event forward_to_devices="true" >0x63</click_to_event>
+    <image position="1.04 0.91 0.001" fade="0.9" scale="0.13">cursor2.png</image>
+    -->
+   
+     
+       <!-- number 1 to 6  -->
+       
+        <click_to_event forward_to_devices="true" >11</click_to_event>
+     <image  position="0.8 0.87 0.001" fade="0.9" scale="0.115">p_1.png</image>
+       
+     <click_to_event forward_to_devices="true" >12</click_to_event>
+     <image  position="0.925 0.8 0.001" fade="0.9" scale="0.115" >p_2.png</image>
+     
+      <click_to_event forward_to_devices="true" >13</click_to_event>
+     <image  position="1.05 0.73 0.001" fade="0.9" scale="0.115">p_3.png</image>
+     
+     
+        <click_to_event forward_to_devices="true" >14</click_to_event>
+     <image  position="0.8 0.665 0.001" fade="0.9" scale="0.115">p_4.png</image>
+     
+     <click_to_event forward_to_devices="true" >15</click_to_event>
+     <image  position="0.925 0.585 0.001" fade="0.9" scale="0.115">p_5.png</image>
+  
+     <click_to_event forward_to_devices="true" >16</click_to_event>
+     <image   position="1.05 0.515 0.001" fade="0.9" scale="0.115">p_6.png</image>
+     
+     
+   <!--  help - jump to help layer on iPad -->
+   <!--
+     <click_to_event forward_to_devices="false">0xFF54</click_to_event>
+     <image position="0.025 0.08 0.001" fade="0.9" scale="0.09">help.png</image>
+  
+    </clean_layer> 
+    
+<clean_layer layer_name="help_layer">
+<image position="0.5 0.5 0" fade="1" scale="1.1">help_layer.png</image>
+    <click_to_event forward_to_devices="false">0xFF52</click_to_event>
+     <image position="0.025 0.08 0.001" fade="0.9" scale="0.09">help_back.png</image>
+     <bullet position="0.35 0.3 0.1" text_alignment="centre" font="nevis.ttf" character_size="0.03"></bullet>
+    
+</clean_layer>
+   -->
+   
+</slide>
+
+
+
+  </presentation>

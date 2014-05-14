@@ -8,6 +8,7 @@
 <presentation>
 <env>OSG_STEREO=OFF</env>
 <env>OSG_NOTIFY_LEVEL=ALWAYS</env>
+<env>P3D_CONTROL_MENU_BUTTON_CAPTION=• • •</env>
 <!--<env>P3D_TIMEOUT=100</env>-->
 
 <holding_slide>
