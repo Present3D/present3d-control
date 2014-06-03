@@ -198,7 +198,7 @@
 		D4A318F618295931006584AD /* ToggleMultitouchTrackball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleMultitouchTrackball.h; sourceTree = "<group>"; };
 		D4A6C7651898FAAE0058BD96 /* P3DOSCHostPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DOSCHostPickerViewController.h; sourceTree = "<group>"; };
 		D4A6C7661898FAAE0058BD96 /* P3DOSCHostPickerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = P3DOSCHostPickerViewController.mm; sourceTree = "<group>"; };
-		D4A8935C180BD70700ACB0B9 /* Present3D-Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Present3D-Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4A8935C180BD70700ACB0B9 /* P3D Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P3D Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A8935F180BD70700ACB0B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4A89361180BD70700ACB0B9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D4A89363180BD70700ACB0B9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -480,7 +480,7 @@
 		D4A8935D180BD70700ACB0B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4A8935C180BD70700ACB0B9 /* Present3D-Control.app */,
+				D4A8935C180BD70700ACB0B9 /* P3D Control.app */,
 				D4A8937D180BD70700ACB0B9 /* Present3D-ControlTests.xctest */,
 			);
 			name = Products;
@@ -648,7 +648,7 @@
 			);
 			name = "Present3D-Control";
 			productName = "Present3D-Control";
-			productReference = D4A8935C180BD70700ACB0B9 /* Present3D-Control.app */;
+			productReference = D4A8935C180BD70700ACB0B9 /* P3D Control.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D4A8937C180BD70700ACB0B9 /* Present3D-ControlTests */ = {
@@ -1067,8 +1067,8 @@
 					"-lcurl",
 					"-lfreetype",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52BDF591-0B8B-487E-902B-9EC31DED17D7";
+				PRODUCT_NAME = "P3D Control";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1080,8 +1080,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Digital Learning Foundation (KBFUZ926G3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Digital Learning Foundation (KBFUZ926G3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1092,8 +1092,8 @@
 				GCC_PREFIX_HEADER = "Present3D-Control/Present3D-Control-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Present3D-Control/Present3D-Control-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52BDF591-0B8B-487E-902B-9EC31DED17D7";
+				PRODUCT_NAME = "P3D Control";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
